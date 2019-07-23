@@ -3,29 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>简单的HTTP代理服务器的实现 | ZHAOYANGのBlog</title>
+  <title>test | ZHAOYANGのBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="keywords" content="代理">
   
   
   
-  
-  <meta name="description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
-<meta name="keywords" content="代理">
-<meta property="og:type" content="article">
-<meta property="og:title" content="简单的HTTP代理服务器的实现">
-<meta property="og:url" content="http://yoursite.com/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="test">
+<meta property="og:url" content="http://yoursite.com/2019/07/23/test/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180508211633657?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-07-23T07:50:43.018Z">
+<meta property="og:image" content="http://yoursite.com/img/1.jpg">
+<meta property="og:updated_time" content="2019-07-23T08:54:39.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="简单的HTTP代理服务器的实现">
-<meta name="twitter:description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="test">
+<meta name="twitter:image" content="http://yoursite.com/img/1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="ZHAOYANGのBlog" type="application/atom+xml">
   
@@ -110,7 +103,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-简单的HTTP代理服务器的实现（基本功能-拓展功能）" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-test" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -118,7 +111,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      简单的HTTP代理服务器的实现
+      test
     </h1>
   
 
@@ -126,14 +119,11 @@
     
     <div class="article-meta">
       
-	<a href="/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/" class="article-date">
-	  <time datetime="2018-05-08T13:22:38.000Z" itemprop="datePublished">May 8, 2018</time>
+	<a href="/2019/07/23/test/" class="article-date">
+	  <time datetime="2019-07-23T08:53:57.000Z" itemprop="datePublished">July 23, 2019</time>
 	</a>
 
-      
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/踩过的坑/">踩过的坑</a>
- 
+       
       
 	<span id="busuanzi_container_page_pv">
 	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -142,33 +132,13 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简单的HTTP代理服务器的实现（基本功能+拓展功能）</p>
-<a id="more"></a>
-<h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><ul>
-<li><strong>在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览</strong></li>
-<li><strong>支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本</strong></li>
-<li><strong>网站过滤：允许/不允许重点内容访问某些网站</strong></li>
-<li><strong>用户过滤：支持/不支持某些用户访问外部网站</strong></li>
-<li><strong>网站引导：将用户对某个网站的访问引导至一个模拟网站（钓鱼）</strong></li>
-</ul>
-<p>完整的代码（VS2015）：<a href="https://github.com/Salanghei/ProxyServer" target="_blank" rel="noopener">https://github.com/Salanghei/ProxyServer</a></p>
-<hr>
-<h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><p>1、加载套接字库，创建套接字<br>2、初始化套接字：设置  IP 地址和端口等属性<br>3、代理服务器接收客户端发送的 TCP 请求报文，并解析 HTTP 头部（method, url, host 等信息）<br>4、拓展功能：网站过滤，用户过滤，网站引导，检查是否有本地缓存（改造HTTP头添加 If-Modified-Since 字段）<br>5、代理连接到服务器，并将客户端发送的 HTTP 数据报文转发给目标服务器<br>6、接收目标服务器的响应报文 ，解析报文头信息：状态码为304时不需要更新缓存，并将本地缓存转发给客户端；否则直接将响应报文转发给客户端，并进行缓存<br>7、关闭套接字</p>
-<h3 id="关于程序的运行"><a href="#关于程序的运行" class="headerlink" title="关于程序的运行"></a>关于程序的运行</h3><p>为了使浏览器访问网址时通过代理服务器，必须进行相关设置，以 Chrome 浏览器设置为例，打开 Chrome 浏览器中的设置，点击高级，选择打开代理设置：<br><img src="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>选择局域网设置，按如图所示进行配置<br><img src="https://img-blog.csdn.net/20180508211633657?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<p>然后程序就可以监听10240端口啦~</p>
-<p>代码是根据指导书改编的，菜鸟一枚，还望大神们多多指教~</p>
+        <p><img src="/img/1.jpg" alt="图片"></p>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
-	<span class="ico-folder"></span>
-    <a class="article-category-link" href="/categories/踩过的坑/">踩过的坑</a>
-
       
-  <span class="ico-tags"></span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代理/">代理</a></li></ul>
-
       
         
 	<div id="comment">
@@ -202,19 +172,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/07/23/Calibrated-Recommendations/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Calibrated Recommendations
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)</div>
+      <div class="article-nav-title">简单的HTTP代理服务器的实现</div>
     </a>
   
 </nav>
@@ -228,7 +189,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现功能"><span class="nav-number">1.</span> <span class="nav-text">实现功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现步骤"><span class="nav-number">2.</span> <span class="nav-text">实现步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于程序的运行"><span class="nav-number">3.</span> <span class="nav-text">关于程序的运行</span></a></li></ol>
+      <ol class="nav">None</ol>
     
     </div>
   </aside>
