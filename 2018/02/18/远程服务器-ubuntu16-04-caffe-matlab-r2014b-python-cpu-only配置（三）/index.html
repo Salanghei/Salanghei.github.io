@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三) | ZHAOYANGのBlog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="caffe">
+  
+  
+  
+  
+  <meta name="description" content="Caffe配置过程中的一些问题">
+<meta name="keywords" content="caffe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)">
+<meta property="og:url" content="http://yoursite.com/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）/index.html">
+<meta property="og:site_name" content="ZHAOYANGのBlog">
+<meta property="og:description" content="Caffe配置过程中的一些问题">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-23T06:45:18.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)">
+<meta name="twitter:description" content="Caffe配置过程中的一些问题">
+  
+    <link rel="alternate" href="/atom.xml" title="ZHAOYANGのBlog" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Oswald%3A300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/fashion.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+
+</head>
+</html>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+
+
+<header id="allheader" class="site-header" role="banner" 
+   >
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="ZHAOYANGのBlog" rel="home"> ZHAOYANGのBlog </a>
+            
+          </h1>
+          
+          
+            <div class="site-description">Notes and Experiences</div>
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+
+            <div class="clearfix sf-menu">
+              <ul id="main-nav" class="menu sf-js-enabled sf-arrows"  style="touch-action: pan-y;">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）/" class="article-date">
+	  <time datetime="2018-02-18T09:14:50.000Z" itemprop="datePublished">February 18, 2018</time>
+	</a>
+
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/踩过的坑/">踩过的坑</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Caffe配置过程中的一些问题</p>
+<a id="more"></a>
+<p>参考链接：<br><a href="https://groups.google.com/forum/#!topic/caffe-users/x8Y26vf-or8" target="_blank" rel="noopener">https://groups.google.com/forum/#!topic/caffe-users/x8Y26vf-or8</a><br><a href="http://blog.csdn.net/striker_v/article/details/52890747" target="_blank" rel="noopener">http://blog.csdn.net/striker_v/article/details/52890747</a><br><a href="http://www.echojb.com/cuda/2017/05/05/375103.html" target="_blank" rel="noopener">http://www.echojb.com/cuda/2017/05/05/375103.html</a><br><a href="http://www.caffecn.cn/?/question/1113" target="_blank" rel="noopener">http://www.caffecn.cn/?/question/1113</a><br><a href="https://blog.csdn.net/dym755833564/article/details/77965966" target="_blank" rel="noopener">https://blog.csdn.net/dym755833564/article/details/77965966</a></p>
+<hr>
+<h4 id="GCC版本太新"><a href="#GCC版本太新" class="headerlink" title="GCC版本太新"></a>GCC版本太新</h4><p>在make过程中可能 string.h ‘memcy’ was not declared in this scope的错误，这是因为ubuntu中gcc编译器版本太新，解决方法是打开Makefile文件，找到下面这行代码（大概在409行左右）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NVCCFLAGS += -ccbin=(CXX)−Xcompiler−fPIC(COMMON_FLAGS)</span><br></pre></td></tr></table></figure>
+
+<p>将其改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NVCCFLAGS += -D_FORCE_INLINES -ccbin=(CXX)−Xcompiler−fPIC(COMMON_FLAGS)</span><br></pre></td></tr></table></figure>
+
+<h4 id="make-matcaffe时报错"><a href="#make-matcaffe时报错" class="headerlink" title="make matcaffe时报错"></a>make matcaffe时报错</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp: In function ‘void delete_solver(int, mxArray**, int, const mxArray**)’:</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:208:3: warning: lambda expressions only available with -std=c++11 or -std=gnu++11 [enabled by default]</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:208:4: error: no matching function for call to ‘remove_if(std::vector&lt;boost::shared_ptr&lt;caffe::Solver&lt;float&gt; &gt; &gt;::iterator, std::vector&lt;boost::shared_ptr&lt;caffe::Solver&lt;float&gt; &gt; &gt;::iterator, delete_solver(int, mxArray**, int, const mxArray**)::&lt;lambda(const boost::shared_ptr&lt;caffe::Solver&lt;float&gt; &gt;&amp;)&gt;)’</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:208:4: note: candidate is:</span><br><span class="line">In file included from /usr/include/c++/4.7/algorithm:63:0,</span><br><span class="line">                 from ./include/caffe/blob.hpp:4,</span><br><span class="line">                 from ./include/caffe/caffe.hpp:7,</span><br><span class="line">                 from /home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:18:</span><br><span class="line">/usr/include/c++/4.7/bits/stl_algo.h:1166:5: note: template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:208:4: error: template argument for ‘template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)’ uses local type ‘delete_solver(int, mxArray**, int, const mxArray**)::&lt;lambda(const boost::shared_ptr&lt;caffe::Solver&lt;float&gt; &gt;&amp;)&gt;’</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:208:4: error:   trying to instantiate ‘template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)’</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp: In function ‘void delete_net(int, mxArray**, int, const mxArray**)’:</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:293:3: warning: lambda expressions only available with -std=c++11 or -std=gnu++11 [enabled by default]</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:293:4: error: no matching function for call to ‘remove_if(std::vector&lt;boost::shared_ptr&lt;caffe::Net&lt;float&gt; &gt; &gt;::iterator, std::vector&lt;boost::shared_ptr&lt;caffe::Net&lt;float&gt; &gt; &gt;::iterator, delete_net(int, mxArray**, int, const mxArray**)::&lt;lambda(const boost::shared_ptr&lt;caffe::Net&lt;float&gt; &gt;&amp;)&gt;)’</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:293:4: note: candidate is:</span><br><span class="line">In file included from /usr/include/c++/4.7/algorithm:63:0,</span><br><span class="line">                 from ./include/caffe/blob.hpp:4,</span><br><span class="line">                 from ./include/caffe/caffe.hpp:7,</span><br><span class="line">                 from /home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:18:</span><br><span class="line">/usr/include/c++/4.7/bits/stl_algo.h:1166:5: note: template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:293:4: error: template argument for ‘template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)’ uses local type ‘delete_net(int, mxArray**, int, const mxArray**)::&lt;lambda(const boost::shared_ptr&lt;caffe::Net&lt;float&gt; &gt;&amp;)&gt;’</span><br><span class="line">/home/zkk/caffe/matlab/+caffe/private/caffe_.cpp:293:4: error:   trying to instantiate ‘template&lt;class _FIter, class _Predicate&gt; _FIter std::remove_if(_FIter, _FIter, _Predicate)’</span><br><span class="line"></span><br><span class="line">Makefile:518: recipe for target &apos;matlab/+caffe/private/caffe_.mexa64&apos; failed</span><br><span class="line">make: *** [matlab/+caffe/private/caffe_.mexa64] Error 255</span><br></pre></td></tr></table></figure>
+
+<p>修改Makefile里面的CXXFLAGS，添加CXXFLAGS += -std=c++11.然后重新编译就可以了，即：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CXXFLAGS += -MMD -MP</span><br><span class="line">CXXFLAGS += -std=c++11</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 是添加不是修改</p>
+<h4 id="make-mattest时报错："><a href="#make-mattest时报错：" class="headerlink" title="make mattest时报错："></a>make mattest时报错：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Invalid MEX-file &apos;caffe/matlab/+caffe/private/caffe_.mexa64&apos;:</span><br><span class="line">caffe/matlab/+caffe/private/caffe_.mexa64: undefined</span><br><span class="line">symbol: _ZN2cv8imencodeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS_11_InputArrayERSt6vectorIhSaIhEERKSB_IiSaIiEE。</span><br><span class="line"> </span><br><span class="line">Error in caffe.set_mode_cpu (line 5)</span><br><span class="line">caffe_(&apos;set_mode_cpu&apos;);</span><br><span class="line"> </span><br><span class="line">Error in caffe.run_tests (line 6)</span><br><span class="line">caffe.set_mode_cpu();</span><br></pre></td></tr></table></figure>
+
+<p>有些说法是要执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4:/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4:/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4:/usr/lib/x86_64-linux-gnu/libstdc++.so.6:/usr/lib/x86_64-linux-gnu/libfreetype.so.6</span><br><span class="line">export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6</span><br></pre></td></tr></table></figure>
+
+<p>但是再次运行make mattest时会有新错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">malloc: unknown:0: assertion botched</span><br><span class="line">free: called with unallocated block argument</span><br><span class="line">last command: (null)</span><br><span class="line">Aborting...find: ‘bash’ terminated by signal 6</span><br></pre></td></tr></table></figure>
+
+<p>虽然最后还是能运行成功，但发现在运行bash指令时无法成功执行，纠结了好久发现是这里没有彻底解决问题，解决方法是：</p>
+<p>将 libopencv_imgproc.so.2.4, libopencv_core.so.2.4, libopencv_highgui.so.2.4三个文件拷贝到/usr/local/MATLAB/R2016b/bin/glnxa64/中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mv /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_imgproc.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_imgproc.so.2.4.old</span><br><span class="line">$ sudo cp /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/</span><br><span class="line"></span><br><span class="line">$ sudo mv /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_core.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_core.so.2.4.old</span><br><span class="line">$ sudo cp /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/</span><br><span class="line"></span><br><span class="line">$ sudo mv /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_highgui.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/libopencv_highgui.so.2.4.old</span><br><span class="line">$ sudo cp /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4 /usr/local/MATLAB/R2016b/bin/glnxa64/</span><br></pre></td></tr></table></figure>
+
+<p>再执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6</span><br></pre></td></tr></table></figure>
+
+<p>问题就解决啦，bash指令也没有问题啦</p>
+<h4 id="关于opencv"><a href="#关于opencv" class="headerlink" title="关于opencv"></a>关于opencv</h4><p>make all时报错，错误信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">CXX/LD -o .build_release/tools/convert_imageset.bin .build_release/lib/libcaffe.so: undefined reference to cv::imread(cv::String const&amp;, int)’ </span><br><span class="line">.build_release/lib/libcaffe.so: undefined reference to cv::imencode(cv::String const&amp;, cv::_InputArray const&amp;, std::vector &gt;&amp;, std::vector &gt; const&amp;)’ </span><br><span class="line">.build_release/lib/libcaffe.so: undefined reference to cv::imdecode(cv::_InputArray const&amp;, int)’ collect2: error: ld returned 1 exit status </span><br><span class="line">...</span><br><span class="line">Makefile:518: recipe for target &apos;matlab/+caffe/private/caffe_.mexa64&apos; failed</span><br><span class="line">make: *** [matlab/+caffe/private/caffe_.mexa64] Error 255</span><br></pre></td></tr></table></figure>
+
+<p>首先，已经配置过了opencv，可以这样查询安装版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pkg-config --modversion opencv</span><br></pre></td></tr></table></figure>
+
+<p>所以出现上面的错误，应该是opencv_imgcodecs链接的问题，比较有效的解决方案是，把opencv需要的lib添加到Makefile文件中，找到LIBRARIES（在PYTHON_LIBRARIES := boost_python python2.7 前一行），并进行修改，向该句末尾添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs</span><br></pre></td></tr></table></figure>
+
+<p>我的Makefile文件修改后为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_hl hdf5 opencv_core opencv_highgui opencv_imgproc opencv_imgcodecs</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/踩过的坑/">踩过的坑</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/caffe/">caffe</a></li></ul>
+
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          简单的HTTP代理服务器的实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（二）/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(二)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#GCC版本太新"><span class="nav-number">1.</span> <span class="nav-text">GCC版本太新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#make-matcaffe时报错"><span class="nav-number">2.</span> <span class="nav-text">make matcaffe时报错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#make-mattest时报错："><span class="nav-number">3.</span> <span class="nav-text">make mattest时报错：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于opencv"><span class="nav-number">4.</span> <span class="nav-text">关于opencv</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 ZHAOYANGのBlog All Rights Reserved.
+        
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hipaper" target="_blank">hipaper</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+
+
+    <!-- headerblur min height -->
+    
+    
+</script>
+    
+<div style="display: none;">
+  <script src="https://s11.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+</div>
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
