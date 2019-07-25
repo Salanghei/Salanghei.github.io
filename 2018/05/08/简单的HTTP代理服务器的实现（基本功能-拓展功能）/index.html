@@ -11,20 +11,20 @@
   
   
   
-  <meta name="description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
+  <meta name="description" content="实现功能 在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览 支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本 网站过滤：允许/不">
 <meta name="keywords" content="代理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单的HTTP代理服务器的实现">
 <meta property="og:url" content="http://yoursite.com/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
+<meta property="og:description" content="实现功能 在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览 支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本 网站过滤：允许/不">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180508211633657?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-07-23T07:50:43.018Z">
+<meta property="og:updated_time" content="2019-07-25T04:31:11.834Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的HTTP代理服务器的实现">
-<meta name="twitter:description" content="简单的HTTP代理服务器的实现（基本功能+拓展功能）">
+<meta name="twitter:description" content="实现功能 在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览 支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本 网站过滤：允许/不">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
   
     <link rel="alternate" href="/atom.xml" title="ZHAOYANGのBlog" type="application/atom+xml">
@@ -142,16 +142,14 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简单的HTTP代理服务器的实现（基本功能+拓展功能）</p>
-<a id="more"></a>
-<h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><ul>
-<li><strong>在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览</strong></li>
-<li><strong>支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本</strong></li>
-<li><strong>网站过滤：允许/不允许重点内容访问某些网站</strong></li>
-<li><strong>用户过滤：支持/不支持某些用户访问外部网站</strong></li>
-<li><strong>网站引导：将用户对某个网站的访问引导至一个模拟网站（钓鱼）</strong></li>
-</ul>
-<p>完整的代码（VS2015）：<a href="https://github.com/Salanghei/ProxyServer" target="_blank" rel="noopener">https://github.com/Salanghei/ProxyServer</a></p>
+        <h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><ol>
+<li>在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览</li>
+<li>支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本</li>
+<li>网站过滤：允许/不允许重点内容访问某些网站</li>
+<li>用户过滤：支持/不支持某些用户访问外部网站</li>
+<li>网站引导：将用户对某个网站的访问引导至一个模拟网站（钓鱼）<a id="more"></a>
+完整的代码（VS2015）：<a href="https://github.com/Salanghei/ProxyServer" target="_blank" rel="noopener">https://github.com/Salanghei/ProxyServer</a></li>
+</ol>
 <hr>
 <h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><p>1、加载套接字库，创建套接字<br>2、初始化套接字：设置  IP 地址和端口等属性<br>3、代理服务器接收客户端发送的 TCP 请求报文，并解析 HTTP 头部（method, url, host 等信息）<br>4、拓展功能：网站过滤，用户过滤，网站引导，检查是否有本地缓存（改造HTTP头添加 If-Modified-Since 字段）<br>5、代理连接到服务器，并将客户端发送的 HTTP 数据报文转发给目标服务器<br>6、接收目标服务器的响应报文 ，解析报文头信息：状态码为304时不需要更新缓存，并将本地缓存转发给客户端；否则直接将响应报文转发给客户端，并进行缓存<br>7、关闭套接字</p>
 <h3 id="关于程序的运行"><a href="#关于程序的运行" class="headerlink" title="关于程序的运行"></a>关于程序的运行</h3><p>为了使浏览器访问网址时通过代理服务器，必须进行相关设置，以 Chrome 浏览器设置为例，打开 Chrome 浏览器中的设置，点击高级，选择打开代理设置：<br><img src="https://img-blog.csdn.net/20180508211430815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>选择局域网设置，按如图所示进行配置<br><img src="https://img-blog.csdn.net/20180508211633657?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMzMDAzNzk3/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
