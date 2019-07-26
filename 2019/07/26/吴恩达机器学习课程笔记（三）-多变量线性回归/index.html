@@ -3,22 +3,36 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>test | ZHAOYANGのBlog</title>
+  <title>吴恩达机器学习课程笔记（三）-多变量线性回归（一） | ZHAOYANGのBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="机器学习吴恩达机器学习课程">
   
   
   
-  <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http://yoursite.com/2019/07/23/test/index.html">
+  
+  <meta name="description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。">
+<meta name="keywords" content="机器学习,吴恩达机器学习课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归（一）">
+<meta property="og:url" content="http://yoursite.com/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
+<meta property="og:description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/1.jpg">
-<meta property="og:updated_time" content="2019-07-23T08:54:39.213Z">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-2.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-3.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-4.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-5.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-6.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-7.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-8.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-9.png">
+<meta property="og:updated_time" content="2019-07-26T07:34:10.667Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:image" content="http://yoursite.com/img/1.jpg">
+<meta name="twitter:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归（一）">
+<meta name="twitter:description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。">
+<meta name="twitter:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
   
     <link rel="alternate" href="/atom.xml" title="ZHAOYANGのBlog" type="application/atom+xml">
   
@@ -103,7 +117,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-test" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-吴恩达机器学习课程笔记（三）-多变量线性回归" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -111,7 +125,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      test
+      吴恩达机器学习课程笔记（三）-多变量线性回归（一）
     </h1>
   
 
@@ -119,11 +133,14 @@
     
     <div class="article-meta">
       
-	<a href="/2019/07/23/test/" class="article-date">
-	  <time datetime="2019-07-23T08:53:57.000Z" itemprop="datePublished">July 23, 2019</time>
+	<a href="/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/" class="article-date">
+	  <time datetime="2019-07-26T07:25:42.000Z" itemprop="datePublished">July 26, 2019</time>
 	</a>
 
-       
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+ 
       
 	<span id="busuanzi_container_page_pv">
 	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
@@ -132,13 +149,37 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/img/1.jpg" alt="图片"></p>
+        <p>本节课内容：<br>介绍多变量线性回归的Hypothesis公式、参数、代价函数。<br>介绍特征缩放、归一化处理、以及学习率α值的选取。</p>
+<a id="more"></a>
+
+<h4 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h4><p><img src="/img/wuenda3/wuenda3-1.png" alt><br><img src="/img/wuenda3/wuenda3-2.png" alt><br><img src="/img/wuenda3/wuenda3-3.png" alt></p>
+<h4 id="特征缩放（Feature-Scaling）"><a href="#特征缩放（Feature-Scaling）" class="headerlink" title="特征缩放（Feature Scaling）"></a>特征缩放（Feature Scaling）</h4><p>不同特征的取值在相近的范围内，梯度下降法就能更快的收敛</p>
+<p>e.g. 假设要根据房屋的面积和卧室的数量预测房屋的售价，房屋的面积取值范围是0-2000，卧室的数量的取值范围是1-5，画出代价函数的等值线（忽略θ_0），图形是很狭长的，这样在梯度下降找到全局最小时，需要很长的时间，且来回波动。<br>如果将特征进行缩放，把x_1 定义为房屋面积除以2000，把x_2 定义为卧室数量除以5，那么代价函数的等值线就不会很狭长，会更圆一点，在这样的代价函数上进行梯度下降，会找到一条更直接的路径通向全局最小</p>
+<p><img src="/img/wuenda3/wuenda3-4.png" alt></p>
+<p>特征缩放是将特征的取值通过乘除限制在某个合适的范围内（不一定必须是-1~1之间），以使梯度下降更快的收敛，使迭代次数更少</p>
+<p><img src="/img/wuenda3/wuenda3-5.png" alt></p>
+<h4 id="归一化处理"><a href="#归一化处理" class="headerlink" title="归一化处理"></a>归一化处理</h4><p>使用x_i−μ_i 代替x_i，使特征值取值的平均值为0<br>不用将归一化应用于特征x_0，因为x_0 的取值始终为1</p>
+<h4 id="将归一化和特征放缩相结合"><a href="#将归一化和特征放缩相结合" class="headerlink" title="将归一化和特征放缩相结合"></a>将归一化和特征放缩相结合</h4><p><img src="/img/wuenda3/wuenda3-6.png" alt><br>图中μ_i 的取值为特征值的平均值，s_i 的取值为特征值的范围（max-min）或者标准差</p>
+<h4 id="代价函数曲线"><a href="#代价函数曲线" class="headerlink" title="代价函数曲线"></a>代价函数曲线</h4><p>如果梯度下降算法正常工作，每一步迭代后的代价函数都应该下降<br>代价函数曲线可以判断是否收敛，以及梯度下降在迭代多少次后收敛</p>
+<p>自动收敛测试：如果代价函数在一步迭代后的下降小于一个很小的值ϵ，即判断函数已经收敛<br>实际上，选择一个合适的阈值ϵ还是很困难的，所以（老师）更倾向于看代价函数曲线来判断收敛，而不是用自动收敛测试</p>
+<p><img src="/img/wuenda3/wuenda3-7.png" alt></p>
+<p>代价函数也可以提前警告算法没有正常工作：<br>1、如果代价函数的值在不断上升，通常意味着应该使用较小的学习率α<br>最常见的原因是（代码中无错误的情况下），在尝试最小化一个碗型函数（图中粉色函数）时，学习率太大，梯度下降算法可能会不断冲过最小值<br>2、代价函数值不断的下降再升高，也是学习率α过大</p>
+<p><img src="/img/wuenda3/wuenda3-8.png" alt></p>
+<p>数学家已经证明，只要学习率α足够小，每次迭代后的代价函数都会下降<br>但如果学习率α取值非常小的话，梯度下降算法可能收敛的很慢</p>
+<p>综上所述：<br>-如果学习率α取值非常小，梯度下降算法可能收敛的很慢<br>-如果学习率α取值非常大，代价函数可能在迭代后不下降；最后可能不收敛；也可能收敛很慢<br>通常选择α取值时，尝试一系列α值，直到找到一个使算法正常工作的最小的α值，和一个最大的α值，然后取最大的α值，或者比最大α值略小一点的比较合理的值</p>
+<p><img src="/img/wuenda3/wuenda3-9.png" alt></p>
 
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/学习笔记/">学习笔记</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/吴恩达机器学习课程/">吴恩达机器学习课程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/机器学习/">机器学习</a></li></ul>
+
       
         
 	<div id="comment">
@@ -173,9 +214,9 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/07/25/吴恩达机器学习课程笔记（二）-单变量线性回归/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">简单的HTTP代理服务器的实现</div>
+      <div class="article-nav-title">吴恩达机器学习课程笔记（二）-单变量线性回归</div>
     </a>
   
 </nav>
@@ -189,7 +230,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav">None</ol>
+      <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li></ol>
     
     </div>
   </aside>

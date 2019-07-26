@@ -19,13 +19,13 @@
 <meta property="og:site_name" content="ZHAOYANGのBlog">
 <meta property="og:description" content="实现功能1、在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览2、支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本3、网站过滤：允">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/http1.jpg">
-<meta property="og:image" content="http://yoursite.com/img/http2.jpg">
-<meta property="og:updated_time" content="2019-07-25T04:38:08.371Z">
+<meta property="og:image" content="http://yoursite.com/img/http/http1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/http/http2.jpg">
+<meta property="og:updated_time" content="2019-07-26T07:21:41.685Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单的HTTP代理服务器的实现">
 <meta name="twitter:description" content="实现功能1、在指定端口（例如 8080）接收来自客户的 HTTP 请求并且根据其中的 URL 地址访问该地址所指向的 HTTP 服务器（原服务器），接收 HTTP 服务器的响应报文，并将响应报文转发给对应的客户进行浏览2、支持 Cache 功能：求能缓存原服务器响应的对象，并能够通过修改请求报文（添加 If-Modified-Since 头行），向原服务器确认缓存对象是否是最新版本3、网站过滤：允">
-<meta name="twitter:image" content="http://yoursite.com/img/http1.jpg">
+<meta name="twitter:image" content="http://yoursite.com/img/http/http1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="ZHAOYANGのBlog" type="application/atom+xml">
   
@@ -147,7 +147,7 @@
 <p>完整的代码（VS2015）：<a href="https://github.com/Salanghei/ProxyServer" target="_blank" rel="noopener">https://github.com/Salanghei/ProxyServer</a></p>
 <hr>
 <h3 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h3><p>1、加载套接字库，创建套接字<br>2、初始化套接字：设置  IP 地址和端口等属性<br>3、代理服务器接收客户端发送的 TCP 请求报文，并解析 HTTP 头部（method, url, host 等信息）<br>4、拓展功能：网站过滤，用户过滤，网站引导，检查是否有本地缓存（改造HTTP头添加 If-Modified-Since 字段）<br>5、代理连接到服务器，并将客户端发送的 HTTP 数据报文转发给目标服务器<br>6、接收目标服务器的响应报文 ，解析报文头信息：状态码为304时不需要更新缓存，并将本地缓存转发给客户端；否则直接将响应报文转发给客户端，并进行缓存<br>7、关闭套接字</p>
-<h3 id="关于程序的运行"><a href="#关于程序的运行" class="headerlink" title="关于程序的运行"></a>关于程序的运行</h3><p>为了使浏览器访问网址时通过代理服务器，必须进行相关设置，以 Chrome 浏览器设置为例，打开 Chrome 浏览器中的设置，点击高级，选择打开代理设置：<br><img src="/img/http1.jpg" alt><br>选择局域网设置，按如图所示进行配置<br><img src="/img/http2.jpg" alt></p>
+<h3 id="关于程序的运行"><a href="#关于程序的运行" class="headerlink" title="关于程序的运行"></a>关于程序的运行</h3><p>为了使浏览器访问网址时通过代理服务器，必须进行相关设置，以 Chrome 浏览器设置为例，打开 Chrome 浏览器中的设置，点击高级，选择打开代理设置：<br><img src="/img/http/http1.jpg" alt><br>选择局域网设置，按如图所示进行配置<br><img src="/img/http/http2.jpg" alt></p>
 <p>然后程序就可以监听10240端口啦~</p>
 <p>代码是根据指导书改编的，菜鸟一枚，还望大神们多多指教~</p>
 
