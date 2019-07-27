@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。 多变量线性回归">
+<meta name="description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
 <meta name="keywords" content="机器学习,吴恩达机器学习课程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归（一）">
+<meta property="og:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归">
 <meta property="og:url" content="http://yoursite.com/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。 多变量线性回归">
+<meta property="og:description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-2.png">
@@ -96,10 +96,15 @@
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-7.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-8.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-9.png">
-<meta property="og:updated_time" content="2019-07-26T08:39:53.215Z">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-10.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-11.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-12.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-13.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-14.png">
+<meta property="og:updated_time" content="2019-07-27T04:47:54.242Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归（一）">
-<meta name="twitter:description" content="本节课内容：介绍多变量线性回归的Hypothesis公式、参数、代价函数。介绍特征缩放、归一化处理、以及学习率α值的选取。 多变量线性回归">
+<meta name="twitter:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归">
+<meta name="twitter:description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
 <meta name="twitter:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
 
 
@@ -136,7 +141,7 @@
 
 
 
-  <title>吴恩达机器学习课程笔记（三）-多变量线性回归（一） | ZHAOYANGのBlog</title>
+  <title>吴恩达机器学习课程笔记（三）-多变量线性回归 | ZHAOYANGのBlog</title>
   
 
 
@@ -322,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（三）-多变量线性回归（一）</h1>
+          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（三）-多变量线性回归</h1>
         
 
         <div class="post-meta">
@@ -394,7 +399,7 @@
       
 
       
-        <p>本节课内容：<br>介绍多变量线性回归的Hypothesis公式、参数、代价函数。<br>介绍特征缩放、归一化处理、以及学习率α值的选取。</p>
+        <p>本节课内容：<br>1、多变量线性回归的Hypothesis公式、参数、代价函数。<br>2、特征缩放、归一化处理、以及学习率α值的选取。<br>3、特征的选取和多项式回归。<br>4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。</p>
 <h4 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h4><p><img src="/img/wuenda3/wuenda3-1.png" alt><a id="more"></a><br><img src="/img/wuenda3/wuenda3-2.png" alt><br><img src="/img/wuenda3/wuenda3-3.png" alt></p>
 <h4 id="特征缩放（Feature-Scaling）"><a href="#特征缩放（Feature-Scaling）" class="headerlink" title="特征缩放（Feature Scaling）"></a>特征缩放（Feature Scaling）</h4><p>不同特征的取值在相近的范围内，梯度下降法就能更快的收敛</p>
 <p>e.g. 假设要根据房屋的面积和卧室的数量预测房屋的售价，房屋的面积取值范围是0-2000，卧室的数量的取值范围是1-5，画出代价函数的等值线（忽略θ_0），图形是很狭长的，这样在梯度下降找到全局最小时，需要很长的时间，且来回波动。<br>如果将特征进行缩放，把x_1 定义为房屋面积除以2000，把x_2 定义为卧室数量除以5，那么代价函数的等值线就不会很狭长，会更圆一点，在这样的代价函数上进行梯度下降，会找到一条更直接的路径通向全局最小</p>
@@ -411,6 +416,10 @@
 <p>数学家已经证明，只要学习率α足够小，每次迭代后的代价函数都会下降<br>但如果学习率α取值非常小的话，梯度下降算法可能收敛的很慢</p>
 <p>综上所述：<br>-如果学习率α取值非常小，梯度下降算法可能收敛的很慢<br>-如果学习率α取值非常大，代价函数可能在迭代后不下降；最后可能不收敛；也可能收敛很慢<br>通常选择α取值时，尝试一系列α值，直到找到一个使算法正常工作的最小的α值，和一个最大的α值，然后取最大的α值，或者比最大α值略小一点的比较合理的值</p>
 <p><img src="/img/wuenda3/wuenda3-9.png" alt></p>
+<h4 id="特征和多项式回归"><a href="#特征和多项式回归" class="headerlink" title="特征和多项式回归"></a>特征和多项式回归</h4><p>1、特征：当使用线性回归时，不一定直接使用给出的特征，可以自己创造新的特征<br>e.g.给定的特征是房屋的宽度和深度，但我们可以选择将宽度和深度的乘积，即面积，作为特征<br>2、多项式回归：对于一个数据集，可能会有多个不同的模型进行拟合，当直线不能很好的拟合数据时，可以使用二次模型、三次模型等。可以使用多元线性回归的方法，对多元线性回归算法稍作修改，来实现二次模型、三次模型等。<br>3、当使用多项式回归时，特征放缩就变得更重要<br>4、凭着对各种函数图形到的了解，以及对数据形状的了解，通过选择不同的特征，可以得到更好的模型<br><img src="/img/wuenda3/wuenda3-10.png" alt></p>
+<h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><p>一种求θ的解析解法，一次性求解θ的最优值，无需迭代<br><img src="/img/wuenda3/wuenda3-11.png" alt><br><img src="/img/wuenda3/wuenda3-12.png" alt><br><img src="/img/wuenda3/wuenda3-13.png" alt><br>使用正规方程，不需要进行特征放缩</p>
+<p>正规方程与梯度下降的优缺点：<br><img src="/img/wuenda3/wuenda3-14.png" alt><br>当n较小时，选择正规方程；当n较大时，选择梯度下降，因为正规方程中求取逆矩阵的时间复杂度太高<br>正规方程不适合用于更复杂的学习算法中</p>
+<h4 id="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><a href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）" class="headerlink" title="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"></a>正规方程中X’X不可逆的情况（X’为X的转置矩阵）</h4><p>1、多余的特征（线性相关）<br>e.g.在预测房屋价格时，x1为房屋的面积（平方米），x2为房屋的面积（平方英尺），那么x1和x2之间存在一个线性关系，这时的特征矩阵X’X不可逆<br>2、特征太多（e.g.m≤n）<br>可以删除某些特征，或正则化</p>
 
       
     </div>
@@ -601,7 +610,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征和多项式回归"><span class="nav-number">6.</span> <span class="nav-text">特征和多项式回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程"><span class="nav-number">7.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><span class="nav-number">8.</span> <span class="nav-text">正规方程中X’X不可逆的情况（X’为X的转置矩阵）</span></a></li></ol></div>
             
 
           </div>
