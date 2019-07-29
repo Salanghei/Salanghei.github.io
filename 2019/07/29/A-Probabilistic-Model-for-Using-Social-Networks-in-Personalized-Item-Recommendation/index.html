@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="机器学习,吴恩达机器学习课程,">
+  <meta name="keywords" content="推荐系统,RecSys2015,">
 
 
 
@@ -79,33 +79,31 @@
 
 
 
-<meta name="description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
-<meta name="keywords" content="机器学习,吴恩达机器学习课程">
+<meta name="description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
+<meta name="keywords" content="推荐系统,RecSys2015">
 <meta property="og:type" content="article">
-<meta property="og:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归">
-<meta property="og:url" content="http://yoursite.com/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/index.html">
+<meta property="og:title" content="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
+<meta property="og:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-2.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-3.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-4.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-5.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-6.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-7.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-8.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-9.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-10.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-11.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-12.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-13.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-14.png">
-<meta property="og:updated_time" content="2019-07-27T04:47:54.242Z">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel1.jpg">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel2.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel3.jpg">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel4.jpg">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel5.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel6.jpg">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel7.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel8.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel9.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel10.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel11.png">
+<meta property="og:image" content="http://yoursite.com/img/SPFmodel/SPFmodel12.png">
+<meta property="og:updated_time" content="2019-07-29T08:11:17.644Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归">
-<meta name="twitter:description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
-<meta name="twitter:image" content="http://yoursite.com/img/wuenda3/wuenda3-1.png">
+<meta name="twitter:title" content="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
+<meta name="twitter:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
+<meta name="twitter:image" content="http://yoursite.com/img/SPFmodel/SPFmodel1.jpg">
 
 
 
@@ -135,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/">
 
 
 
 
 
-  <title>吴恩达机器学习课程笔记（三）-多变量线性回归 | ZHAOYANGのBlog</title>
+  <title>A Probabilistic Model for Using Social Networks in Personalized Item Recommendation | ZHAOYANGのBlog</title>
   
 
 
@@ -310,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhaoYang">
@@ -327,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（三）-多变量线性回归</h1>
+          <h1 class="post-title" itemprop="name headline">A Probabilistic Model for Using Social Networks in Personalized Item Recommendation</h1>
         
 
         <div class="post-meta">
@@ -339,8 +337,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-26T15:25:42+08:00">
-                2019-07-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-29T15:31:41+08:00">
+                2019-07-29
               </time>
             
 
@@ -362,8 +360,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/论文笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">论文笔记</span>
                   </a>
                 </span>
 
@@ -399,27 +397,44 @@
       
 
       
-        <p>本节课内容：<br>1、多变量线性回归的Hypothesis公式、参数、代价函数。<br>2、特征缩放、归一化处理、以及学习率α值的选取。<br>3、特征的选取和多项式回归。<br>4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。</p>
-<h4 id="多变量线性回归"><a href="#多变量线性回归" class="headerlink" title="多变量线性回归"></a>多变量线性回归</h4><p><img src="/img/wuenda3/wuenda3-1.png" alt><a id="more"></a><br><img src="/img/wuenda3/wuenda3-2.png" alt><br><img src="/img/wuenda3/wuenda3-3.png" alt></p>
-<h4 id="特征缩放（Feature-Scaling）"><a href="#特征缩放（Feature-Scaling）" class="headerlink" title="特征缩放（Feature Scaling）"></a>特征缩放（Feature Scaling）</h4><p>不同特征的取值在相近的范围内，梯度下降法就能更快的收敛</p>
-<p>e.g. 假设要根据房屋的面积和卧室的数量预测房屋的售价，房屋的面积取值范围是0-2000，卧室的数量的取值范围是1-5，画出代价函数的等值线（忽略θ_0），图形是很狭长的，这样在梯度下降找到全局最小时，需要很长的时间，且来回波动。<br>如果将特征进行缩放，把x_1 定义为房屋面积除以2000，把x_2 定义为卧室数量除以5，那么代价函数的等值线就不会很狭长，会更圆一点，在这样的代价函数上进行梯度下降，会找到一条更直接的路径通向全局最小</p>
-<p><img src="/img/wuenda3/wuenda3-4.png" alt></p>
-<p>特征缩放是将特征的取值通过乘除限制在某个合适的范围内（不一定必须是-1~1之间），以使梯度下降更快的收敛，使迭代次数更少</p>
-<p><img src="/img/wuenda3/wuenda3-5.png" alt></p>
-<h4 id="归一化处理"><a href="#归一化处理" class="headerlink" title="归一化处理"></a>归一化处理</h4><p>使用x_i−μ_i 代替x_i，使特征值取值的平均值为0<br>不用将归一化应用于特征x_0，因为x_0 的取值始终为1</p>
-<h4 id="将归一化和特征放缩相结合"><a href="#将归一化和特征放缩相结合" class="headerlink" title="将归一化和特征放缩相结合"></a>将归一化和特征放缩相结合</h4><p><img src="/img/wuenda3/wuenda3-6.png" alt><br>图中μ_i 的取值为特征值的平均值，s_i 的取值为特征值的范围（max-min）或者标准差</p>
-<h4 id="代价函数曲线"><a href="#代价函数曲线" class="headerlink" title="代价函数曲线"></a>代价函数曲线</h4><p>如果梯度下降算法正常工作，每一步迭代后的代价函数都应该下降<br>代价函数曲线可以判断是否收敛，以及梯度下降在迭代多少次后收敛</p>
-<p>自动收敛测试：如果代价函数在一步迭代后的下降小于一个很小的值ϵ，即判断函数已经收敛<br>实际上，选择一个合适的阈值ϵ还是很困难的，所以（老师）更倾向于看代价函数曲线来判断收敛，而不是用自动收敛测试</p>
-<p><img src="/img/wuenda3/wuenda3-7.png" alt></p>
-<p>代价函数也可以提前警告算法没有正常工作：<br>1、如果代价函数的值在不断上升，通常意味着应该使用较小的学习率α<br>最常见的原因是（代码中无错误的情况下），在尝试最小化一个碗型函数（图中粉色函数）时，学习率太大，梯度下降算法可能会不断冲过最小值<br>2、代价函数值不断的下降再升高，也是学习率α过大</p>
-<p><img src="/img/wuenda3/wuenda3-8.png" alt></p>
-<p>数学家已经证明，只要学习率α足够小，每次迭代后的代价函数都会下降<br>但如果学习率α取值非常小的话，梯度下降算法可能收敛的很慢</p>
-<p>综上所述：<br>-如果学习率α取值非常小，梯度下降算法可能收敛的很慢<br>-如果学习率α取值非常大，代价函数可能在迭代后不下降；最后可能不收敛；也可能收敛很慢<br>通常选择α取值时，尝试一系列α值，直到找到一个使算法正常工作的最小的α值，和一个最大的α值，然后取最大的α值，或者比最大α值略小一点的比较合理的值</p>
-<p><img src="/img/wuenda3/wuenda3-9.png" alt></p>
-<h4 id="特征和多项式回归"><a href="#特征和多项式回归" class="headerlink" title="特征和多项式回归"></a>特征和多项式回归</h4><p>1、特征：当使用线性回归时，不一定直接使用给出的特征，可以自己创造新的特征<br>e.g.给定的特征是房屋的宽度和深度，但我们可以选择将宽度和深度的乘积，即面积，作为特征<br>2、多项式回归：对于一个数据集，可能会有多个不同的模型进行拟合，当直线不能很好的拟合数据时，可以使用二次模型、三次模型等。可以使用多元线性回归的方法，对多元线性回归算法稍作修改，来实现二次模型、三次模型等。<br>3、当使用多项式回归时，特征放缩就变得更重要<br>4、凭着对各种函数图形到的了解，以及对数据形状的了解，通过选择不同的特征，可以得到更好的模型<br><img src="/img/wuenda3/wuenda3-10.png" alt></p>
-<h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><p>一种求θ的解析解法，一次性求解θ的最优值，无需迭代<br><img src="/img/wuenda3/wuenda3-11.png" alt><br><img src="/img/wuenda3/wuenda3-12.png" alt><br><img src="/img/wuenda3/wuenda3-13.png" alt><br>使用正规方程，不需要进行特征放缩</p>
-<p>正规方程与梯度下降的优缺点：<br><img src="/img/wuenda3/wuenda3-14.png" alt><br>当n较小时，选择正规方程；当n较大时，选择梯度下降，因为正规方程中求取逆矩阵的时间复杂度太高<br>正规方程不适合用于更复杂的学习算法中</p>
-<h4 id="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><a href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）" class="headerlink" title="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"></a>正规方程中X’X不可逆的情况（X’为X的转置矩阵）</h4><p>1、多余的特征（线性相关）<br>e.g.在预测房屋价格时，x1为房屋的面积（平方米），x2为房屋的面积（平方英尺），那么x1和x2之间存在一个线性关系，这时的特征矩阵X’X不可逆<br>2、特征太多（e.g.m≤n）<br>可以删除某些特征，或正则化</p>
+        <h3 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h3><p>问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目<br>目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异<br>方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型<br>效果：在6个真实数据集上的性能优于其他推荐方法</p>
+<a id="more"></a>
+
+<h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><p>研究表明，用户看中朋友对内容的发现和讨论意见，在线访问社交网络可以强化这种现象<br>矩阵分解方法不能利用这些信息，他能推断出你可能喜欢的物品是因为这个物品符合你的偏好，但是不能推断出你朋友喜欢且你也可能感兴趣的物品<br>本文提出基于贝叶斯矩阵分解的SPF（social Poisson factorization）方法，可以在社交层面反映用户消费的商品<br>SPF假设有两个信号驱动用户点击：对项目的潜在偏好和朋友的潜在影响<br>SPF推测每个用户的偏好和影响，向用户推荐即符合用户偏好又被其朋友点击过的项目</p>
+<h4 id="Related-Work："><a href="#Related-Work：" class="headerlink" title="Related Work："></a>Related Work：</h4><p>过去研究的一些缺陷：<br>    1、假设用户影响（也称信任）是可以直接获取的，但除了是/否这样的二进制信任信息之外，其他的信任信息用户是很难输入的<br>    2、假设信任是从网络结构中传播或计算得到的，忽略了用户活动，这可以反应用户对网络某些部分的信任<br>    3、通过计算用户之间的相似程度来计算信任，<strong>会使一般意义上的偏好相似度和用户影响的概念混淆</strong>，比如：两个拥有相同兴趣偏好的用户可能各自阅读同一本书，但彼此之间没有交集<br>    4、将社交信息纳入协同过滤方法中，与矩阵分解方法相比，缺乏可解释性<br>    5、探索了传统的矩阵分解方法如何利用社交关系，例如许多模型分解了user-item数据和user-user网络，使相连用户的潜在偏好更接近彼此，反映出朋友有着相似的喜好<br>    <strong>e.g. 如果用户喜欢某个项目只是因为他许多朋友也喜欢，这完全超出了他通常的喜好</strong></p>
+<h4 id="本文思路："><a href="#本文思路：" class="headerlink" title="本文思路："></a>本文思路：</h4><p>寻找不同偏好的朋友（均衡朋友的影响），辅助向用户推荐不符合他通常喜好的物品。根据社交网络调整朋友的总体喜好，不允许用户仍然享受这种异常项目（朋友喜欢导致超出用户的通常喜好）的可能性</p>
+<p>*注1：用户影响，即信任，是当两个用户是朋友有互动的前提下的，而通过偏好相似度计算得出的信任，很可能使非朋友的两个用户之间存在信任关系<br>*注2：假设用户可能喜欢某个项目，喜欢的程度是A；该用户的朋友也喜欢该项目，考虑到朋友的影响，再结合本身的喜好，导致得出该用户对该项目的喜欢程度是B；结果其实B是高于A的</p>
+<h3 id="SOCIAL-POISSON-FACTORIZATION"><a href="#SOCIAL-POISSON-FACTORIZATION" class="headerlink" title="SOCIAL POISSON FACTORIZATION"></a>SOCIAL POISSON FACTORIZATION</h3><p>1、利用潜在用户偏好和潜在项目属性，捕捉用户的活动模式<br>2、估计用户受到朋友可见点击（朋友喜好）的影响有多大<br>3、推荐有影响力的朋友点击的项目，即使他们不符合矩阵分解得出的用户偏好</p>
+<h4 id="Background-Poisson-factorization"><a href="#Background-Poisson-factorization" class="headerlink" title="Background: Poisson factorization"></a>Background: Poisson factorization</h4><p>泊松矩阵分解，即将通常的矩阵分解方法中的高斯分布换成泊松分布</p>
+<h4 id="Social-Poisson-factorization"><a href="#Social-Poisson-factorization" class="headerlink" title="Social Poisson factorization"></a>Social Poisson factorization</h4><p>SPF的思想：用户喜欢一个item有两个原因：用户的喜好和item的属性相符合（泊松矩阵分解/其他矩阵分解的思想）；用户有喜欢这个item的朋友，或者他的许多朋友都喜欢这个item<br>在PF（泊松矩阵分解）中，每个用户有一个潜在喜好的向量。但每个用户又有一个对每个朋友影响力的向量。一个用户是否喜欢某个item取决于她潜在的喜好和item潜在的属性，也取决于对她有影响的朋友是否点击了它</p>
+<h4 id="Model-specification（模型设定）"><a href="#Model-specification（模型设定）" class="headerlink" title="Model specification（模型设定）"></a>Model specification（模型设定）</h4><ul>
+<li>可用数据是用户行为和社交网络</li>
+<li>行为数据是系数矩阵R，其中r_ui 是用户u点击项目i的次数</li>
+<li>社交网络通过邻居集合表示：N(u)是连接到用户u的其他用户的索引集合</li>
+<li>隐藏变量是<strong>每个用户的非负偏好k维向量θ_u，每个item的非负属性k维向量β_i，每个邻居的非负影响τ_uv</strong></li>
+<li>τ_uv 表示用户u多大程度上受到用户v点击的影响</li>
+</ul>
+<p>给定矩阵R的联合分布：<br><img src="/img/SPFmodel/SPFmodel1.jpg" alt><br><img src="/img/SPFmodel/SPFmodel2.png" alt></p>
+<h4 id="Forming-recommendations-with-SPF（通过SPF形成推荐）"><a href="#Forming-recommendations-with-SPF（通过SPF形成推荐）" class="headerlink" title="Forming recommendations with SPF（通过SPF形成推荐）"></a>Forming recommendations with SPF（通过SPF形成推荐）</h4><p><img src="/img/SPFmodel/SPFmodel3.jpg" alt></p>
+<h4 id="Learning-the-hidden-variables-with-variational-methods（用变分方法学习隐变量）"><a href="#Learning-the-hidden-variables-with-variational-methods（用变分方法学习隐变量）" class="headerlink" title="Learning the hidden variables with variational methods（用变分方法学习隐变量）"></a>Learning the hidden variables with variational methods（用变分方法学习隐变量）</h4><p>在给定了点击数据和社交网络的条件下，我们的目的是计算用户偏好、项目属性和潜在影响的后验分布<br>对于许多贝叶斯模型，SPF的精确后验分布是很难计算的<br>变分方法被广泛用于统计机器学习来适应复杂的贝叶斯模型<br>本文提出了基于变分方法的近似推理算法，通过这个算法，可以在非常大的数据集上计算近似后验期望</p>
+<p>变分推理通过解决最优化问题逼近后验<br>1、在隐变量上定义自由参数化分布，将其参数拟合为近似后验分布<br>2、使用Kullback-Leibler散度来度量“近似度”，是一种对分部间距离的不对称度量<br>3、用拟合的变分布替代后验分布<br><img src="/img/SPFmodel/SPFmodel4.jpg" alt></p>
+<h3 id="EMPIRICAL-STUDY（实验研究）"><a href="#EMPIRICAL-STUDY（实验研究）" class="headerlink" title="EMPIRICAL STUDY（实验研究）"></a>EMPIRICAL STUDY（实验研究）</h3><ul>
+<li>将SPF与五种涉及推荐中的社交网络的方法，和两种传统的矩阵分解方法，进行了比较</li>
+<li>在6个真实数据集上，我们的方法优于以上所有方法</li>
+<li>展示了如何利用SPF对数据进行挖掘，并从潜在因素和社会影响两个方面对数据进行了表征</li>
+<li>评估了对潜在因素数量的敏感性，并讨论了如何在先验分布上设置超参数</li>
+</ul>
+<h4 id="数据集、方法和度量"><a href="#数据集、方法和度量" class="headerlink" title="数据集、方法和度量"></a>数据集、方法和度量</h4><p>6个数据集：<br>1、Ciao (ciao.co.uk)：具有潜在社交网络的消费者评论网站，7K用户和98K项目的DVD评分和信任值<br>2、Epinions (epinions.com) ：消费者评论网站，用户在网站上对商品进行评分，并将用户标记为可信赖的，包含39K用户和131K项目<br>3、Flixster (flixster.com)：社交电影评论网站，我们将评分二值化，阈值设置在3或以上，从而得到132 K用户和42K项目<br>4、Douban (douban.com)：一家中国社交网站，记录音乐、电影和书籍的评分，包含129K用户和57K项目<br>5、Etsy (etsy.com)：一个手工制品和古董以及艺术品和工艺品的市场，用户可以互相关注，并将项目标记为收藏，这些数据由Etsy直接提供，筛选出了那些至少收藏了10项，并且至少有25%的项目与他们的朋友有共同之处的用户，我们省略了少于5个收藏的项目，包含40K用户和5.2M项目<br>6、Social Reader：一家大型媒体公司的数据集，在流行的在线社交网络上部署了一个阅读应用，数据包含一个社交网络和一个文章点击表，我们分析了2012年4月2日-6日的数据，仅包括在此期间至少阅读了3篇文章的用户，包含122K用户和6K项目</p>
+<p>下表概述了6个数据集的属性<br><img src="/img/SPFmodel/SPFmodel5.png" alt><br>预处理：<br>对于隐式数据，非泊松模型要求我们对0进行子采样，以便区分项目；在这些情况下，我们随机抽样负示例，使每个用户都具有相同的正面和负面评分。请注意，基于泊松的模型隐式地分析了整个矩阵，而不需要支付分析零的计算成本<br>对于每个数据集，我们删除了用户没有共同项的网络连接。请注意，这对SPF和比较模型都有好处(虽然SPF可以了解邻居的相对影响)<br>将数据分为三组：约10%的用户数据用于推理后测试中（approximately 10% of 1000 users’ data），1%的用户数据用来评估推理的收敛性，其余的用于训练。一个例外是Ciao，我们使用了10%的用户数据进行测试（10% of all users’ data）</p>
+<p>比较方法：<br>与以下几个模型进行比较：RSTE，TrustSVD，SocialMF，SoRec，TrustMF，以及概率高斯矩阵分解（PMF，广泛使用的推荐方法），对于每一个模型，采用最佳参数设置，与LibRec网站上发布的示例拟合<br>SPF有两个部分：泊松分解分量和社会分量，因此将这两部分单独比较：泊松分解(PF)和社会因素分解(SF)<br>比较两个标准，随机订购项目和根据普遍受欢迎程度订购项目</p>
+<p>度量（NCRR）：<br>对于每个用户，分别预测被搁置（held-out）项目的点击量，和真正未点击项目的点击量，并通过他们的期望值进行排名，好的模型应将搁置的项目排在前面<br><img src="/img/SPFmodel/SPFmodel6.jpg" alt></p>
+<p>下图为实验结果<br><img src="/img/SPFmodel/SPFmodel7.png" alt></p>
+<h4 id="Performance-and-exploration（性能与探索）"><a href="#Performance-and-exploration（性能与探索）" class="headerlink" title="Performance and exploration（性能与探索）"></a>Performance and exploration（性能与探索）</h4><p>性能：<br>各模型表现如图3所示，本文提出的SPF在所有6个数据集上的表现都优于其他模型，除了在Etsy上，纯社会因素分解(SF)表现最好。此外，基于流行度排序的表现良好，这突出了社会因素分解的重要性，只有SPF的表现一直优于它<br>在Ciao数据集上测量运行时，以了解相关的计算成本。下图显示了所有方法在K的不同值下的运行时，泊松模型在运行时方面是平均的<br><img src="/img/SPFmodel/SPFmodel8.png" alt><br>在Ciao和Epinionis数据集上，将SPF、SF和PF的性能看做每个用户的度的函数；结果如下图所示。所有的模型在高度的用户上都表现得更好，大概是因为他们的活动度更高。SPF的性能优于SF，因为它在大量的低度的用户上有优势<br><img src="/img/SPFmodel/SPFmodel9.png" alt></p>
+<p>Interpretability（可解释性）：<br>使用辅助变量将每个推荐归因于朋友或一般偏好，然后使用这些属性来探索数据<br>下图显示了在Ciao和Epinions数据集上，社会归因（与一般偏好归因相对）的比例如何随着用户度的变化而变化，观察到，Epinions将更大部分的行为归因于社会影响，并受用户度的控制<br><img src="/img/SPFmodel/SPFmodel10.png" alt><br>下图展示了社会影响与用户入度间的函数关系，在Epinions数据集上，高入度的用户比低入度的用户的社会影响更低<br><img src="/img/SPFmodel/SPFmodel11.png" alt></p>
+<h4 id="实验细节"><a href="#实验细节" class="headerlink" title="实验细节"></a>实验细节</h4><p>潜在因子k值的选择：所有的矩阵分解模型，包括SPF，都要求选择用于表示用户和项目的潜在因子K的值，我们评估了Ciao数据集对K的敏感性，下图展示了K从1到500的平均NCRR，SPF在K=40时表现最佳，但对K敏感性低于其他一些方法（如PF）<br><img src="/img/SPFmodel/SPFmodel12.png" alt><br>超参数：必须将超参数设置为潜在变量的γ先验， γ通过形状和速率参数化，将其设置为0.3，用于潜在偏好和属性的先验。 将先前用户影响的超参数设置为（2,5），为了鼓励模型通过社会影响来探索解释。 在一项试点研究中，我们发现该模型对这些设置不敏感。</p>
+<p>在冷启动的情况下，我们知道用户的社交网络，但不知道他的点击项目，执行SPF相当于执行SF，SPF在这种冷启动的场景下比其他模型（本文提到的几个模型）表现都好</p>
+<h3 id="DISCUSSION"><a href="#DISCUSSION" class="headerlink" title="DISCUSSION"></a>DISCUSSION</h3><p>本文提出社会泊松分解（SPF），一种贝叶斯模型，结合了用户对其朋友潜在影响的项目的潜在偏好，我们证明，SPF即使在有噪声的社会网络上，也能改善推荐<br>SPF有以下特性：<br>1、它揭示了社交网络中用户之间存在的潜在影响，使我们能够分析社会动态。<br>2、它提供了可解释的意外发现的来源（？？？）<br>3、它具有可扩展的算法，适用于大数据集<br>我们的模型没有考虑到时间（当两个相连的用户都享受一个项目时，其中一个可能首先使用它）</p>
+<h3 id="论文原文"><a href="#论文原文" class="headerlink" title="论文原文"></a>论文原文</h3><p><a href="/download/paper/SPFmodel.pdf">A Probabilistic Model for Using Social Networks in Personalized Item Recommendation</a></p>
 
       
     </div>
@@ -437,9 +452,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+            <a href="/tags/推荐系统/" rel="tag"># 推荐系统</a>
           
-            <a href="/tags/吴恩达机器学习课程/" rel="tag"># 吴恩达机器学习课程</a>
+            <a href="/tags/RecSys2015/" rel="tag"># RecSys2015</a>
           
         </div>
       
@@ -452,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/25/吴恩达机器学习课程笔记（二）-单变量线性回归/" rel="next" title="吴恩达机器学习课程笔记（二）-单变量线性回归">
-                <i class="fa fa-chevron-left"></i> 吴恩达机器学习课程笔记（二）-单变量线性回归
+              <a href="/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/" rel="next" title="吴恩达机器学习课程笔记（三）-多变量线性回归">
+                <i class="fa fa-chevron-left"></i> 吴恩达机器学习课程笔记（三）-多变量线性回归
               </a>
             
           </div>
@@ -461,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/" rel="prev" title="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
-                A Probabilistic Model for Using Social Networks in Personalized Item Recommendation <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征和多项式回归"><span class="nav-number">6.</span> <span class="nav-text">特征和多项式回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程"><span class="nav-number">7.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><span class="nav-number">8.</span> <span class="nav-text">正规方程中X’X不可逆的情况（X’为X的转置矩阵）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">INTRODUCTION</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Related-Work："><span class="nav-number">2.1.</span> <span class="nav-text">Related Work：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#本文思路："><span class="nav-number">2.2.</span> <span class="nav-text">本文思路：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOCIAL-POISSON-FACTORIZATION"><span class="nav-number">3.</span> <span class="nav-text">SOCIAL POISSON FACTORIZATION</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Background-Poisson-factorization"><span class="nav-number">3.1.</span> <span class="nav-text">Background: Poisson factorization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Social-Poisson-factorization"><span class="nav-number">3.2.</span> <span class="nav-text">Social Poisson factorization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-specification（模型设定）"><span class="nav-number">3.3.</span> <span class="nav-text">Model specification（模型设定）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Forming-recommendations-with-SPF（通过SPF形成推荐）"><span class="nav-number">3.4.</span> <span class="nav-text">Forming recommendations with SPF（通过SPF形成推荐）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Learning-the-hidden-variables-with-variational-methods（用变分方法学习隐变量）"><span class="nav-number">3.5.</span> <span class="nav-text">Learning the hidden variables with variational methods（用变分方法学习隐变量）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EMPIRICAL-STUDY（实验研究）"><span class="nav-number">4.</span> <span class="nav-text">EMPIRICAL STUDY（实验研究）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据集、方法和度量"><span class="nav-number">4.1.</span> <span class="nav-text">数据集、方法和度量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Performance-and-exploration（性能与探索）"><span class="nav-number">4.2.</span> <span class="nav-text">Performance and exploration（性能与探索）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验细节"><span class="nav-number">4.3.</span> <span class="nav-text">实验细节</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DISCUSSION"><span class="nav-number">5.</span> <span class="nav-text">DISCUSSION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#论文原文"><span class="nav-number">6.</span> <span class="nav-text">论文原文</span></a></li></ol></div>
             
 
           </div>

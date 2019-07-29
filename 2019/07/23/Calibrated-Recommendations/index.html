@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://yoursite.com/img/CalibratedRecommendations/CalibratedRecommendations8.jpg">
 <meta property="og:image" content="http://yoursite.com/img/CalibratedRecommendations/CalibratedRecommendations9.png">
 <meta property="og:image" content="http://yoursite.com/img/CalibratedRecommendations/CalibratedRecommendations10.png">
-<meta property="og:updated_time" content="2019-07-26T08:30:19.632Z">
+<meta property="og:updated_time" content="2019-07-29T07:58:06.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Calibrated Recommendations">
 <meta name="twitter:description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致：       1. 用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄       2. 当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新">
@@ -410,6 +410,7 @@
 <h4 id="公平性（Fairness）："><a href="#公平性（Fairness）：" class="headerlink" title="公平性（Fairness）："></a>公平性（Fairness）：</h4><p>本篇文章中不考虑人之间的公平性，而是用户兴趣之间的公平性，也就是用正确的比例关系反应出来<br>为什么本篇文章认为校准标准（calibration criteria）在公平性中尤其重要：<br>      校准、等可能性、等机会不能同时满足，除非两种情况：机器学习做出完美预测（在现实世界中不可能）；不同组有相同的基本比率，即分类标签比例相同，通常在真实世界中也不可能出现。假设用户播放电影中70%是“浪漫类”，30%是“动作类”，那么这两种类型的基础比率很明显不同，两种类型电影的预测分数也会不同，因此，等可能性、等机会这样的公平性标准不能立即起适用</p>
 <h3 id="EXPERIMENTS"><a href="#EXPERIMENTS" class="headerlink" title="EXPERIMENTS"></a>EXPERIMENTS</h3><p><img src="/img/CalibratedRecommendations/CalibratedRecommendations11.jpg" alt><br><img src="/img/CalibratedRecommendations/CalibratedRecommendations6.png" alt><br><img src="/img/CalibratedRecommendations/CalibratedRecommendations7.png" alt><br><img src="/img/CalibratedRecommendations/CalibratedRecommendations8.jpg" alt><br><img src="/img/CalibratedRecommendations/CalibratedRecommendations9.png" alt><br>上述图标也反映了，经过校准后的推荐列表中的推荐项仍然是用户感兴趣领域的电影，因此有必要进行扩展校准（extended calibration probability），将用户兴趣之外的电影也加入推荐当中<br><img src="/img/CalibratedRecommendations/CalibratedRecommendations10.png" alt><br>计算推荐列表中50部电影的类型概率和用户播放历史的类型概率之间的差异，然后对所有用户求平均值，区分差值的正负值<br>上图中，所有用户播放历史的类型概率的平均值是基准点，平均差值的正负决定了线段的长度，如果是完美推荐，那么线段长度应该为0。如果下面的线段比上方的线段长，那么这种类型电影的推荐与用户兴趣相比是过少的；如果上下一样长，那么这种类型电影的推荐在所有测试用户上的平均推荐比例是正确的（此外，上下方线段的长度还暗示了与每个用户兴趣比例的平均差距），要明确，推荐应该为每个用户都进行标准化，因此期望较小的线段长度<br>Documentary、IMAX、Musical、Western是under-represented（最下端接近0）<br>Action、Adventure、Crime、Mystery、Sci-Fi是over-represented（上端比下端长）<br>上图采用λ=0.99的校准度</p>
 <h3 id="CONCLUSION"><a href="#CONCLUSION" class="headerlink" title="CONCLUSION"></a>CONCLUSION</h3><p>本文是基于用户的角度，未来的研究工作将基于item的角度，比如一个item的推荐频率是否是另一个item的两倍，那这个 item很可能被选中（consume）的次数也是两倍的</p>
+<h3 id="论文原文"><a href="#论文原文" class="headerlink" title="论文原文"></a>论文原文</h3><p><a href="/download/paper/CalibratedRecommendations.pdf">Calibrated Recommendations</a></p>
 
       
     </div>
@@ -533,7 +534,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -555,7 +556,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -604,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MOTIVATING-EXAMPLE"><span class="nav-number">3.</span> <span class="nav-text">MOTIVATING EXAMPLE</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类别不均衡："><span class="nav-number">3.1.</span> <span class="nav-text">类别不均衡：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#考虑电影概率："><span class="nav-number">3.2.</span> <span class="nav-text">考虑电影概率：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Latent-Dirichlet-Allocation（LDA）："><span class="nav-number">3.3.</span> <span class="nav-text">Latent Dirichlet Allocation（LDA）：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CALIBRATION-METRICS（校准度量）"><span class="nav-number">4.</span> <span class="nav-text">CALIBRATION METRICS（校准度量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CALIBRATION-APPROACHES（校准方法）"><span class="nav-number">5.</span> <span class="nav-text">CALIBRATION APPROACHES（校准方法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RELATED-CONCEPTS"><span class="nav-number">6.</span> <span class="nav-text">RELATED CONCEPTS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多样性（Diversity）："><span class="nav-number">6.1.</span> <span class="nav-text">多样性（Diversity）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公平性（Fairness）："><span class="nav-number">6.2.</span> <span class="nav-text">公平性（Fairness）：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPERIMENTS"><span class="nav-number">7.</span> <span class="nav-text">EXPERIMENTS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCLUSION"><span class="nav-number">8.</span> <span class="nav-text">CONCLUSION</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">INTRODUCTION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MOTIVATING-EXAMPLE"><span class="nav-number">3.</span> <span class="nav-text">MOTIVATING EXAMPLE</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#类别不均衡："><span class="nav-number">3.1.</span> <span class="nav-text">类别不均衡：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#考虑电影概率："><span class="nav-number">3.2.</span> <span class="nav-text">考虑电影概率：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Latent-Dirichlet-Allocation（LDA）："><span class="nav-number">3.3.</span> <span class="nav-text">Latent Dirichlet Allocation（LDA）：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CALIBRATION-METRICS（校准度量）"><span class="nav-number">4.</span> <span class="nav-text">CALIBRATION METRICS（校准度量）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CALIBRATION-APPROACHES（校准方法）"><span class="nav-number">5.</span> <span class="nav-text">CALIBRATION APPROACHES（校准方法）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RELATED-CONCEPTS"><span class="nav-number">6.</span> <span class="nav-text">RELATED CONCEPTS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#多样性（Diversity）："><span class="nav-number">6.1.</span> <span class="nav-text">多样性（Diversity）：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#公平性（Fairness）："><span class="nav-number">6.2.</span> <span class="nav-text">公平性（Fairness）：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPERIMENTS"><span class="nav-number">7.</span> <span class="nav-text">EXPERIMENTS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCLUSION"><span class="nav-number">8.</span> <span class="nav-text">CONCLUSION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#论文原文"><span class="nav-number">9.</span> <span class="nav-text">论文原文</span></a></li></ol></div>
             
 
           </div>
