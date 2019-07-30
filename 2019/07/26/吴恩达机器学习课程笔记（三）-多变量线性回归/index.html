@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-12.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-13.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda3/wuenda3-14.png">
-<meta property="og:updated_time" content="2019-07-27T04:47:54.242Z">
+<meta property="og:updated_time" content="2019-07-30T07:59:14.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（三）-多变量线性回归">
 <meta name="twitter:description" content="本节课内容：1、多变量线性回归的Hypothesis公式、参数、代价函数。2、特征缩放、归一化处理、以及学习率α值的选取。3、特征的选取和多项式回归。4、另外一种得到θ最优解的方法-正规方程，以及正规方程中X’X不可逆的情况和解决方法。 多变量线性回归">
@@ -420,6 +420,7 @@
 <h4 id="正规方程"><a href="#正规方程" class="headerlink" title="正规方程"></a>正规方程</h4><p>一种求θ的解析解法，一次性求解θ的最优值，无需迭代<br><img src="/img/wuenda3/wuenda3-11.png" alt><br><img src="/img/wuenda3/wuenda3-12.png" alt><br><img src="/img/wuenda3/wuenda3-13.png" alt><br>使用正规方程，不需要进行特征放缩</p>
 <p>正规方程与梯度下降的优缺点：<br><img src="/img/wuenda3/wuenda3-14.png" alt><br>当n较小时，选择正规方程；当n较大时，选择梯度下降，因为正规方程中求取逆矩阵的时间复杂度太高<br>正规方程不适合用于更复杂的学习算法中</p>
 <h4 id="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><a href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）" class="headerlink" title="正规方程中X’X不可逆的情况（X’为X的转置矩阵）"></a>正规方程中X’X不可逆的情况（X’为X的转置矩阵）</h4><p>1、多余的特征（线性相关）<br>e.g.在预测房屋价格时，x1为房屋的面积（平方米），x2为房屋的面积（平方英尺），那么x1和x2之间存在一个线性关系，这时的特征矩阵X’X不可逆<br>2、特征太多（e.g.m≤n）<br>可以删除某些特征，或正则化</p>
+<h4 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h4><p><a href="/download/wuenda/Lecture3.pptx">课程原版PPT-Linear Algebra review (optional)</a><br><a href="/download/wuenda/Lecture4.pptx">课程原版PPT-Linear Regression with multiple variables</a></p>
 
       
     </div>
@@ -543,7 +544,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -614,7 +615,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征和多项式回归"><span class="nav-number">6.</span> <span class="nav-text">特征和多项式回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程"><span class="nav-number">7.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><span class="nav-number">8.</span> <span class="nav-text">正规方程中X’X不可逆的情况（X’为X的转置矩阵）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#多变量线性回归"><span class="nav-number">1.</span> <span class="nav-text">多变量线性回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征缩放（Feature-Scaling）"><span class="nav-number">2.</span> <span class="nav-text">特征缩放（Feature Scaling）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#归一化处理"><span class="nav-number">3.</span> <span class="nav-text">归一化处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将归一化和特征放缩相结合"><span class="nav-number">4.</span> <span class="nav-text">将归一化和特征放缩相结合</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数曲线"><span class="nav-number">5.</span> <span class="nav-text">代价函数曲线</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#特征和多项式回归"><span class="nav-number">6.</span> <span class="nav-text">特征和多项式回归</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程"><span class="nav-number">7.</span> <span class="nav-text">正规方程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正规方程中X’X不可逆的情况（X’为X的转置矩阵）"><span class="nav-number">8.</span> <span class="nav-text">正规方程中X’X不可逆的情况（X’为X的转置矩阵）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#课程资料"><span class="nav-number">9.</span> <span class="nav-text">课程资料</span></a></li></ol></div>
             
 
           </div>
