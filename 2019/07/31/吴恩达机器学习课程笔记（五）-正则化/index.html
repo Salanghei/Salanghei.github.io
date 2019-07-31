@@ -79,32 +79,28 @@
 
 
 
-<meta name="description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta name="description" content="本节课内容：1、介绍什么是欠拟合和过拟合2、介绍过拟合问题的解决方法——正则化3、介绍线性回归和逻辑回归中，正则化的应用">
 <meta name="keywords" content="机器学习,吴恩达机器学习课程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
-<meta property="og:url" content="http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/index.html">
+<meta property="og:title" content="吴恩达机器学习课程笔记（五）-正则化">
+<meta property="og:url" content="http://yoursite.com/2019/07/31/吴恩达机器学习课程笔记（五）-正则化/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta property="og:description" content="本节课内容：1、介绍什么是欠拟合和过拟合2、介绍过拟合问题的解决方法——正则化3、介绍线性回归和逻辑回归中，正则化的应用">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-1.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-2.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-3.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-4.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-5.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-6.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-7.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-8.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-9.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-10.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-11.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-12.png">
-<meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-13.png">
-<meta property="og:updated_time" content="2019-07-30T07:59:32.010Z">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-1.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-2.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-3.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-4.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-5.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-6.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-7.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-8.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda5/wuenda5-9.png">
+<meta property="og:updated_time" content="2019-07-31T08:42:20.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
-<meta name="twitter:description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
-<meta name="twitter:image" content="http://yoursite.com/img/wuenda4/wuenda4-1.png">
+<meta name="twitter:title" content="吴恩达机器学习课程笔记（五）-正则化">
+<meta name="twitter:description" content="本节课内容：1、介绍什么是欠拟合和过拟合2、介绍过拟合问题的解决方法——正则化3、介绍线性回归和逻辑回归中，正则化的应用">
+<meta name="twitter:image" content="http://yoursite.com/img/wuenda5/wuenda5-1.png">
 
 
 
@@ -134,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/31/吴恩达机器学习课程笔记（五）-正则化/">
 
 
 
 
 
-  <title>吴恩达机器学习课程笔记（四）-逻辑回归 | ZHAOYANGのBlog</title>
+  <title>吴恩达机器学习课程笔记（五）-正则化 | ZHAOYANGのBlog</title>
   
 
 
@@ -309,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/31/吴恩达机器学习课程笔记（五）-正则化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZhaoYang">
@@ -326,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（四）-逻辑回归</h1>
+          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（五）-正则化</h1>
         
 
         <div class="post-meta">
@@ -338,8 +334,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-30T15:30:28+08:00">
-                2019-07-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-31T16:29:48+08:00">
+                2019-07-31
               </time>
             
 
@@ -398,20 +394,17 @@
       
 
       
-        <p>本节内容：<br>1、介绍分类问题，并用逻辑回归解决分类问题<br>2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值<br>3、介绍高级优化方法，及其在octave中的实现<br>4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想</p>
+        <p>本节课内容：<br>1、介绍什么是欠拟合和过拟合<br>2、介绍过拟合问题的解决方法——正则化<br>3、介绍线性回归和逻辑回归中，正则化的应用</p>
 <a id="more"></a>
-<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>y的取值是离散的<br>二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别，但一般来说，负类表示没有某样东西</p>
-<p>给定一个分类问题的训练集（如下图所示），如果用线性回归的方法对数据进行拟合，会得到一个分界点，其左侧预测为0，右侧预测为1，在这个数据集上，线性回归的结果似乎是可行的<br><img src="/img/wuenda4/wuenda4-1.png" alt><br>假设数据集改变，如下图所示，此时，如果再用线性回归来拟合数据，会得到一条新的直线，分界点也会随之改变，其左侧预测为0，与原数据不相符<br><img src="/img/wuenda4/wuenda4-2.png" alt><br>分类问题中（此节讨论二分类问题），y的取值为0和1，但线性回归的预测结果可能是远大于1，或远小于0<br>因此，将线性回归用于分类问题中是不合理的</p>
-<p>逻辑回归：<br>预测值一直介于0,1之间<br>分类算法</p>
-<h4 id="假设陈述"><a href="#假设陈述" class="headerlink" title="假设陈述"></a>假设陈述</h4><p><img src="/img/wuenda4/wuenda4-3.png" alt><br>解释：h(x)的输出是，对于一个输入x，y=1的概率估计<br><img src="/img/wuenda4/wuenda4-4.png" alt></p>
-<h4 id="决策界限"><a href="#决策界限" class="headerlink" title="决策界限"></a>决策界限</h4><p>当θ^T x≥0时，预测y=1；当θ^T x&lt;0时，预测y=0<br><img src="/img/wuenda4/wuenda4-5.png" alt><br>e.g.假设给定一个数据集，得出一个拟合好的逻辑回归函数，如下图所示<br>当-3+x1+x2≥0时，预测y=1；当-3+x1+x2&lt;0时，预测y=0<br>-3+x1+x2=0这条直线叫做决策边界<br><img src="/img/wuenda4/wuenda4-6.png" alt><br>决策边界是假设函数（hypothesis）的属性，取决于其参数，不是数据集的属性</p>
-<p>非线性决策边界<br>e.g.假设给定一个数据集，得出一个拟合好的逻辑回归函数，如下图所示<br><img src="/img/wuenda4/wuenda4-7.png" alt></p>
-<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p><img src="/img/wuenda4/wuenda4-8.png" alt><br>如果使用线性回归中的平方函数定义代价函数，得到的代价函数是非凸的（non-convex），因为h(x)是非线性的，这样就会有多个局部最优解，使用梯度下降法，无法保证得到全局最优解<br><img src="/img/wuenda4/wuenda4-9.png" alt><br>因此需要另找一个不同的代价函数，它是凸函数，使我们可以使用很好的算法，如梯度下降，能保证找到全局最小值</p>
-<p>逻辑回归的代价函数<br><img src="/img/wuenda4/wuenda4-10.png" alt></p>
-<h4 id="简化代价函数与梯度下降"><a href="#简化代价函数与梯度下降" class="headerlink" title="简化代价函数与梯度下降"></a>简化代价函数与梯度下降</h4><p><img src="/img/wuenda4/wuenda4-11.png" alt><br>逻辑回归的梯度下降规则，与线性回归的梯度下降规则，几乎一摸一样，但由于假设函数不同，其与线性回归的梯度下降是两个完全不同的东西<br><img src="/img/wuenda4/wuenda4-12.png" alt></p>
-<h4 id="高级优化"><a href="#高级优化" class="headerlink" title="高级优化"></a>高级优化</h4><p>介绍一些高级优化算法和高级优化概念，这些方法与梯度下降相比，能大大提高逻辑回归运行的速度，使算法更加适合解决大型的机器学习问题<br>其他优化算法：共轭梯度（Conjugate gradient），BFGS，L-BFGS<br>优点：<br>1、不需要手动选择α的值：这些算法给出计算导数项和代价函数的方法，可以理解为这些算法有一个智能内循环（clever inner-loop）， 称为线搜索算法，它可以自动尝试不同的学习率α并自动选择一个好的学习率α，甚至可以为每次迭代选择不同的学习率<br>2、收敛得远远快于梯度下降：<br>缺点：更复杂</p>
-<h4 id="多元分类：一对多"><a href="#多元分类：一对多" class="headerlink" title="多元分类：一对多"></a>多元分类：一对多</h4><p>一对多（一对余）的分类思想<br>假设给定一个训练集（如下图所示），其中包含三个类别，我们要做的是将这个训练集转化为三个独立的二分类问题，得到三个假设函数（分类器），分别输出y=i时的概率估计<br><img src="/img/wuenda4/wuenda4-13.png" alt><br>最后为了做出预测，给出一个新的输入值x，在三个分类器上运行，然后选择h最大的类别<br>也就是选择出三个中可信度最高、效果最好的分类器，无论i值是多少，都能得到一个最高的概率值，预测y就是那个i值</p>
-<h4 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h4><p><a href="/download/wuenda/Lecture6.pptx">课程原版PPT-Logistic Regression</a></p>
+
+<h4 id="过拟合问题"><a href="#过拟合问题" class="headerlink" title="过拟合问题"></a>过拟合问题</h4><p>以估计房屋价格的问题为例，给定一些数据（如下图所示），随着size的增大，房屋的价格是趋于稳定的<br>如果用直线来拟合数据（左图），和这样的趋势不相符，所以不能很好的拟合训练数据，这个问题称为欠拟合（underfit），或称算法具有高偏差（high bias）<br>如果用二次函数拟合数据（中间图），拟合效果很好<br>另一种极端情况（右图），拟合一个四阶多项式，这似乎很好的拟合了数据集，因为图像经过了所有的数据点，但这是一条扭曲的曲线，不停的上下波动，我们不认为这是一个预测房价的好模型，这个问题称为过拟合（overfit），或称算法具有高方差（high variance）<br>过拟合（Overfitting）：过拟合问题会在变量过多的时候出现，这时训练出的假设函数（hypothesis）能很好的拟合训练集（代价函数可能非常接近0），它千方百计的拟合训练数据集，导致无法泛化到新的样本中<br>泛化：指一个假设模型应用到新样本的能力<br><img src="/img/wuenda5/wuenda5-1.png" alt><br>同样的问题也存在于逻辑回归中<br><img src="/img/wuenda5/wuenda5-2.png" alt><br>解决过拟合问题<br>当我们使用一维或二维数据时，可以通过绘制出假设模型的图像来研究问题。但实际应用中，机器学习问题需要很多变量，这不仅仅是选择多项式阶次的问题，当我们有很多特征变量时，绘图会变得更难，通过数据可视化来决定哪些特征变量也会更难<br>如果有很多特征变量，而只有非常少的训练数据时，就会出现过拟合问题</p>
+<p>有两个办法解决问题：<br>1、减少选取变量的数量：<br>    - 人工检查变量清单，并决定哪些变量更重要，哪些特征应该保留，哪些应该舍去<br>    - 模型选择算法，自动选择哪些变量保留，哪些舍弃<br>缺点：舍弃一些特征变量的同时，也舍弃了关于问题的一些信息<br>2、正则化：<br>    - 保留所有特征变量，但减少量级或参数θ_j 的大小<br>    - 当有许多特征变量，且每个特征变量都对预测y值有影响时 ，效果很好</p>
+<h4 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h4><p>向代价函数中加入惩罚项，使得θ_3，θ_4 都非常小（如下图所示）<br><img src="/img/wuenda5/wuenda5-3.png" alt><br><strong>正则化：</strong>如果参数值较小，意味着更简单的假设模型（越平滑），更不容易出现过拟合问题</p>
+<p>e.g.假设给定一个数据集中有很多特征变量（m个），我们并不知道那个参数对应高阶项，对于m个特征，我们也很难选出其中哪个变量是相关度较低的，也就是有n个参数θ，很难选出哪些参数来缩小它的值，我们要做的就是修改代价函数来缩小所有参数（没有对θ_0 添加惩罚项，这是约定俗成的，实际上无论从θ_0 开始，还是θ_1 开始，对结果影响都不大）<br>λ为正则化参数，作用是控制两个不同目标之间的平衡关系。第一个目标与目标函数的第一项有关，即更好的拟合训练数据；第二个目标是保持参数尽量小，与目标函数第二项（正则化项）有关<br><img src="/img/wuenda5/wuenda5-4.png" alt><br>在正则化线性回归中，如果正则化参数λ被设置的太大，结果就是对参数的惩罚程度太大，会导致参数都接近于0，相当于把假设函数的全部项都忽略掉了，最后假设模型只剩下h(x)=θ_0，这就导致欠拟合<br>因此，为了让正则化起到效果，要选择更合适的正则化参数λ<br><img src="/img/wuenda5/wuenda5-5.png" alt></p>
+<h4 id="线性回归的正则化"><a href="#线性回归的正则化" class="headerlink" title="线性回归的正则化"></a>线性回归的正则化</h4><p><strong>梯度下降</strong><br>将θ_0 单独分离出来（正则化从θ_1 开始）<br>在正则化的梯度下降中，每一次迭代，θ_j 都会乘一个比1略小的数，也就是θ_j 每次迭代都会缩小一点点，然后进行和之前一样的更新操作<br><img src="/img/wuenda5/wuenda5-6.png" alt><br><strong>正规方程</strong><br><img src="/img/wuenda5/wuenda5-7.png" alt><br>对于X’X矩阵是否可逆的问题：在正规方程的正则化中，只要λ是严格大于0的，就可以确信公式中括号内的矩阵一定是可逆矩阵，因此正则化还可以解决X’X出现不可逆的问题</p>
+<h4 id="逻辑回归的正则化"><a href="#逻辑回归的正则化" class="headerlink" title="逻辑回归的正则化"></a>逻辑回归的正则化</h4><p><img src="/img/wuenda5/wuenda5-8.png" alt><br><img src="/img/wuenda5/wuenda5-9.png" alt></p>
+<h4 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h4><p><a href="/download/wuenda/Lecture7.pptx">课程原版PPT-Regularization</a><br><a href="/download/ex2/ex2.pdf">练习内容和相关说明</a><br><a href="/download/ex2/ex2data1.txt">相关数据1</a>，<a href="/download/ex2/ex2data2.txt">相关数据2</a></p>
+<p>python代码实现<br><a href="/download/ex2/1.logistic_regression_v1.ipynb">1.logistic_regression_v1.ipynb</a><br><a href="/download/ex2/ML-Exercise2.ipynb">ML-Exercise2.ipynb</a></p>
 
       
     </div>
@@ -444,8 +437,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/" rel="next" title="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
-                <i class="fa fa-chevron-left"></i> A Probabilistic Model for Using Social Networks in Personalized Item Recommendation
+              <a href="/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/" rel="next" title="吴恩达机器学习课程笔记（四）-逻辑回归">
+                <i class="fa fa-chevron-left"></i> 吴恩达机器学习课程笔记（四）-逻辑回归
               </a>
             
           </div>
@@ -453,10 +446,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/31/吴恩达机器学习课程笔记（五）-正则化/" rel="prev" title="吴恩达机器学习课程笔记（五）-正则化">
-                吴恩达机器学习课程笔记（五）-正则化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -606,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#假设陈述"><span class="nav-number">2.</span> <span class="nav-text">假设陈述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#决策界限"><span class="nav-number">3.</span> <span class="nav-text">决策界限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数"><span class="nav-number">4.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#简化代价函数与梯度下降"><span class="nav-number">5.</span> <span class="nav-text">简化代价函数与梯度下降</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#高级优化"><span class="nav-number">6.</span> <span class="nav-text">高级优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多元分类：一对多"><span class="nav-number">7.</span> <span class="nav-text">多元分类：一对多</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#课程资料"><span class="nav-number">8.</span> <span class="nav-text">课程资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#过拟合问题"><span class="nav-number">1.</span> <span class="nav-text">过拟合问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数"><span class="nav-number">2.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线性回归的正则化"><span class="nav-number">3.</span> <span class="nav-text">线性回归的正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑回归的正则化"><span class="nav-number">4.</span> <span class="nav-text">逻辑回归的正则化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#课程资料"><span class="nav-number">5.</span> <span class="nav-text">课程资料</span></a></li></ol></div>
             
 
           </div>
