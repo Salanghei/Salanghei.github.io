@@ -90,7 +90,9 @@
 <meta property="og:image" content="http://yoursite.com/img/wuenda7/wuenda7-1.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda7/wuenda7-2.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda7/wuenda7-3.png">
-<meta property="og:updated_time" content="2019-09-05T03:15:14.930Z">
+<meta property="og:image" content="http://yoursite.com/img/wuenda7/wuenda7-4.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda7/wuenda7-5.png">
+<meta property="og:updated_time" content="2019-09-06T11:31:28.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（七）-神经网络参数的反向传播算法">
 <meta name="twitter:description" content="本节课内容：1、神经网络的代价函数，及求代价函数中对应每个参数的偏导数的反向传播算法">
@@ -395,7 +397,9 @@
 <h4 id="反向传播算法"><a href="#反向传播算法" class="headerlink" title="反向传播算法"></a>反向传播算法</h4><p>前向传播算法使我们可以计算神经网络中每一个神经元的激活值，为了计算导数项，要采用反向传播算法<br>反向传播算法从直观上讲，对于每一个神经元，计算δ_j^((l))，即第l层第j个节点的激活值的误差<br>以下图中的4层神经网络为例，对于每一个输出单元，计算δ项，所以第四层第j个单元的δ等于这个单元的激活值减去训练样本里的真实值，也可以看成假设的输出值与训练样本y值的差<br>下一步要计算神经网络中的前几层的误差项δ，这里不计算δ^((1))，因为第一层是输入层，表示在训练集中观察到的，不存在误差<br><img src="/img/wuenda7/wuenda7-2.png" alt></p>
 <p>反向传播算法，是从输出层开始计算δ项，然后返回上一层计算第三层隐藏层的δ项，再往前计算δ^((2))，这类似于把输出层的误差反向传播给了第三层，然后再传到第二层，这就是反向传播的意思<br>可以简单地证明（忽略正则项），代价函数的偏导数是激活值和δ项的乘积<br>反向传播算法可以快速计算出所有参数的偏导数项</p>
 <p>反向传播算法的实现：<br>假设有m个样本的训练集：<br>1、设置下标为Δ_ij^((l)) 的初始值为0，其会被用来计算J(Θ)对应Θ_ij^((l)) 的偏导数项<br>2、遍历训练集<br>   2.1 利用正向传播计算每层神经节点的激活值<br>   2.2 计算最后一层输出值与训练集中y值的误差δ^((L))<br>   2.3 运用反向传播算法，计算δ^((L−1)) 、δ^((L−2))… δ^((2))，不计算δ^((1))，因为不需要对输入层考虑误差项<br>   2.4 通过累加，计算偏导数项Δ_ij^((l))<br>3、计算公式的D值，如下图所示<br>计算出D值后，它正好就是代价函数关于每个参数的偏导数，然后就可以使用梯度下降或者其他高级优化算法<br><img src="/img/wuenda7/wuenda7-3.png" alt></p>
-
+<h4 id="理解反向传播"><a href="#理解反向传播" class="headerlink" title="理解反向传播"></a>理解反向传播</h4><h5 id="前向传播过程："><a href="#前向传播过程：" class="headerlink" title="前向传播过程："></a>前向传播过程：</h5><p>假设有一个如下图的神经网络，通过前向传播计算每一层中各个神经节点的z值和a值（激活值，输入层中样本原始值即激活值），Θ值为由前一层的神经节点指向后一层的神经节点的箭头的权值<br>z值的计算方法为前一层a值的加权和，权重为相应Θ值<br><img src="/img/wuenda7/wuenda7-4.png" alt></p>
+<h5 id="反向传播做了什么？"><a href="#反向传播做了什么？" class="headerlink" title="反向传播做了什么？"></a>反向传播做了什么？</h5><p>考虑只有一个输出单元，忽略正则项，这时y^(i)为实数，下图中J(Θ)公式中蓝线的部分对应一个样本点(x^(i), y^(i))的代价值计算，即cost(i)的计算，可以将复杂的的公式简单理解为方差，表示神经网络输出值与实际观测值y^(i)的接近程度<br><img src="/img/wuenda7/wuenda7-5.png" alt></p>
+<h5 id="反向传播过程："><a href="#反向传播过程：" class="headerlink" title="反向传播过程："></a>反向传播过程：</h5>
       
     </div>
     
@@ -585,7 +589,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数"><span class="nav-number">1.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向传播算法"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#代价函数"><span class="nav-number">1.</span> <span class="nav-text">代价函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反向传播算法"><span class="nav-number">2.</span> <span class="nav-text">反向传播算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#理解反向传播"><span class="nav-number">3.</span> <span class="nav-text">理解反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前向传播过程："><span class="nav-number">3.1.</span> <span class="nav-text">前向传播过程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反向传播做了什么？"><span class="nav-number">3.2.</span> <span class="nav-text">反向传播做了什么？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反向传播过程："><span class="nav-number">3.3.</span> <span class="nav-text">反向传播过程：</span></a></li></ol></li></ol></div>
             
 
           </div>
