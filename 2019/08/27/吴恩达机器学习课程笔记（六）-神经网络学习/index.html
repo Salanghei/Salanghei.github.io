@@ -102,7 +102,7 @@
 <meta property="og:image" content="http://yoursite.com/img/wuenda6/wuenda6-13.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda6/wuenda6-14.png">
 <meta property="og:image" content="http://yoursite.com/download/ex3/%E5%90%91%E9%87%8F%E5%8C%96%E6%A0%87%E7%AD%BE.png">
-<meta property="og:updated_time" content="2019-08-27T09:00:43.940Z">
+<meta property="og:updated_time" content="2019-09-10T09:40:06.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（六）-神经网络学习">
 <meta name="twitter:description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类">
@@ -411,7 +411,7 @@
 <h4 id="例子与直觉理解（一）"><a href="#例子与直觉理解（一）" class="headerlink" title="例子与直觉理解（一）"></a>例子与直觉理解（一）</h4><p>神经网络中的单个神经元用来计算逻辑函数<br>下图中左侧为右侧问题的简化版，是XNOR运算的训练集<br><img src="/img/wuenda6/wuenda6-10.png" alt><br>要构建神经网络拟合XNOR运算，要先从比较简单的能够拟合AND运算、OR运算和NOT运算的神经网络入手，下图是AND运算的神经网络<br><img src="/img/wuenda6/wuenda6-11.png" alt></p>
 <h4 id="例子与直觉理解（二）"><a href="#例子与直觉理解（二）" class="headerlink" title="例子与直觉理解（二）"></a>例子与直觉理解（二）</h4><p><img src="/img/wuenda6/wuenda6-12.png" alt><br>将输入放在输入层，中间放一个隐藏层用来计算一些关于输入的略微复杂的功能，然后再继续加一层用来计算一个更复杂的非线性函数<br>当神经网络有许多层，在第二层中有一些关于输入的相对简单的函数，第三层又在此基础上计算更加复杂的方程，再往后的层次计算的函数越来越复杂</p>
 <h4 id="多元分类"><a href="#多元分类" class="headerlink" title="多元分类"></a>多元分类</h4><p>如下图所示的神经网络要来识别图片中的物体，在输出层中，4个分类器每个都将识别图片中的物体是否是四种分类中的一种，即四输出单元的神经网络<br><img src="/img/wuenda6/wuenda6-13.png" alt><br>之前我们用整数y作为输出的分类标签，现在用向量y^(i)作为输出结果，y^(i)的值取决于对应的图像x^(i)，因此，一个训练样本由一组(x^(i), y^(i))组成，其中x^(i)是四种物体其中一种的图像，y^(i)是结果向量中的一个，我们要找到一些方法让神经网络输出一些数值，输出值h(x^(i))等于y^(i)，并且h(x^(i))与y^(i)在本例子中都是四维向量，分别代表不同的类别<br><img src="/img/wuenda6/wuenda6-14.png" alt></p>
-<h4 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h4><p><a href="/download/wuenda/Lecture8.pptx">课程原版PPT-Neural Networks: Representation</a><br><a href="/download/ex3/ex3.pdf">练习内容和相关说明</a><br><a href="/download/ex3/ex3data1">相关数据ex3data1</a>，<a href="/download/ex3/ex3weights">相关数据ex3weights</a></p>
+<h4 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h4><p><a href="/download/wuenda/Lecture8.pptx">课程原版PPT-Neural Networks: Representation</a><br><a href="/download/ex3/ex3.pdf">练习内容和相关说明</a><br><a href="/download/ex3/ex3data1.mat">相关数据ex3data1</a>，<a href="/download/ex3/ex3weights.mat">相关数据ex3weights</a></p>
 <p>python代码实现<br><a href="/download/ex3/1.neural_network.ipynb">1.neural_network.ipynb</a><br><a href="/download/ex3/ML-Exercise3.ipynb">ML-Exercise3.ipynb</a></p>
 <p>向量化标签<br><img src="/download/ex3/%E5%90%91%E9%87%8F%E5%8C%96%E6%A0%87%E7%AD%BE.png" alt="向量化标签"></p>
 
