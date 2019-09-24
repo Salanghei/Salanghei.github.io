@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang>
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta name="description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
 <meta name="keywords" content="机器学习,吴恩达机器学习课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
-<meta property="og:locale" content="default">
+<meta property="og:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-1.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-2.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-3.png">
@@ -100,10 +100,10 @@
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-11.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-12.png">
 <meta property="og:image" content="http://yoursite.com/img/wuenda4/wuenda4-13.png">
-<meta property="og:updated_time" content="2019-07-30T07:59:32.010Z">
+<meta property="og:updated_time" content="2019-09-24T11:45:27.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
-<meta name="twitter:description" content="本节内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta name="twitter:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
 <meta name="twitter:image" content="http://yoursite.com/img/wuenda4/wuenda4-1.png">
 
 
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Gemini',
     version: '5.1.4',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
@@ -120,7 +120,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -152,7 +152,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            Home
+            首页
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
             
-            About
+            关于
           </a>
         </li>
       
@@ -220,7 +220,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -230,7 +230,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -240,7 +240,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -253,7 +253,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
-            Search
+            搜索
           </a>
         </li>
       
@@ -272,7 +272,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -336,9 +336,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-30T15:30:28+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-30T15:30:28+08:00">
                 2019-07-30
               </time>
             
@@ -357,7 +357,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -398,7 +398,7 @@
       
 
       
-        <p>本节内容：<br>1、介绍分类问题，并用逻辑回归解决分类问题<br>2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值<br>3、介绍高级优化方法，及其在octave中的实现<br>4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想</p>
+        <p>本节课内容：<br>1、介绍分类问题，并用逻辑回归解决分类问题<br>2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值<br>3、介绍高级优化方法，及其在octave中的实现<br>4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想</p>
 <a id="more"></a>
 <h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>y的取值是离散的<br>二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别，但一般来说，负类表示没有某样东西</p>
 <p>给定一个分类问题的训练集（如下图所示），如果用线性回归的方法对数据进行拟合，会得到一个分界点，其左侧预测为0，右侧预测为1，在这个数据集上，线性回归的结果似乎是可行的<br><img src="/img/wuenda4/wuenda4-1.png" alt><br>假设数据集改变，如下图所示，此时，如果再用线性回归来拟合数据，会得到一条新的直线，分界点也会随之改变，其左侧预测为0，与原数据不相符<br><img src="/img/wuenda4/wuenda4-2.png" alt><br>分类问题中（此节讨论二分类问题），y的取值为0和1，但线性回归的预测结果可能是远大于1，或远小于0<br>因此，将线性回归用于分类问题中是不合理的</p>
@@ -423,6 +423,24 @@
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/" title="吴恩达机器学习课程笔记（四）-逻辑回归">http://yoursite.com/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -510,10 +528,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -535,8 +553,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -547,7 +565,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">4</span>
-                  <span class="site-state-item-name">categories</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
@@ -558,7 +576,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">9</span>
-                  <span class="site-state-item-name">tags</span>
+                  <span class="site-state-item-name">标签</span>
                 </a>
               </div>
             
@@ -636,7 +654,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -644,7 +662,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 

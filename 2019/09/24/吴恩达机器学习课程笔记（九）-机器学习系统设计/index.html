@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="机器学习,吴恩达机器学习课程,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本节课内容：1、解决机器学习问题的大致步骤2、使用误差分析来确定优化学习算法的方向3、介绍查准率、召回率和F值的概念、定义及其意义4、机器学习问题在什么情况下可以通过大量数据来提升算法性能">
+<meta name="keywords" content="机器学习,吴恩达机器学习课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴恩达机器学习课程笔记（九）-机器学习系统设计">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/index.html">
+<meta property="og:site_name" content="ZHAOYANGのBlog">
+<meta property="og:description" content="本节课内容：1、解决机器学习问题的大致步骤2、使用误差分析来确定优化学习算法的方向3、介绍查准率、召回率和F值的概念、定义及其意义4、机器学习问题在什么情况下可以通过大量数据来提升算法性能">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-1.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-2.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-3.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-4.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-5.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-6.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-7.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-8.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-9.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-10.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda9/wuenda9-11.png">
+<meta property="og:updated_time" content="2019-09-24T11:54:16.976Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="吴恩达机器学习课程笔记（九）-机器学习系统设计">
+<meta name="twitter:description" content="本节课内容：1、解决机器学习问题的大致步骤2、使用误差分析来确定优化学习算法的方向3、介绍查准率、召回率和F值的概念、定义及其意义4、机器学习问题在什么情况下可以通过大量数据来提升算法性能">
+<meta name="twitter:image" content="http://yoursite.com/img/wuenda9/wuenda9-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/">
+
+
+
+
+
+  <title>吴恩达机器学习课程笔记（九）-机器学习系统设计 | ZHAOYANGのBlog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZHAOYANGのBlog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Notes and Experiences</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（九）-机器学习系统设计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T19:25:25+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本节课内容：<br>1、解决机器学习问题的大致步骤<br>2、使用误差分析来确定优化学习算法的方向<br>3、介绍查准率、召回率和F值的概念、定义及其意义<br>4、机器学习问题在什么情况下可以通过大量数据来提升算法性能</p>
+<a id="more"></a>
+
+<h3 id="确定执行的优先级"><a href="#确定执行的优先级" class="headerlink" title="确定执行的优先级"></a>确定执行的优先级</h3><p>以垃圾邮件分类为例描述解决问题的过程<br>为了应用监督学习，首先想到的是如何来表示邮件的特征向量x，通过特征向量x和分类标签y，我们就可以训练一个分类器，比如使用逻辑回归的方法，这里有一种选择邮件特征向量的方法<br>我们提出一个可能含有100个单词的列表，通过这些单词来区分垃圾邮件或非垃圾邮件，假如有一封邮件，我们可以将这封邮件的各个片段编码成如下图的一个特征向量，先将找出的100个单词按照字典序排序（也可以不排序），当邮件中包含某个单词时，该单词出现在特征向量中的位置上置1，否则置0，最后我们可以得到100维的特征向量<br>实际工作中的普遍做法是挑选出出现频率最多的n个单词，n一般在10000到50000之间<br><img src="/img/wuenda9/wuenda9-1.png" alt><br>如何在有限的时间内，让你的垃圾邮件分类器具有高精准度和低错误率？<br>1、收集大量数据<br>2、用更复杂的特征描述邮件，比如将发件人的信息包括其中<br>3、关注邮件的主体部分，构建更复杂的特征，比如单词原型和其变型是否要看做同一个单词、字母的大小写、标点符号等<br>4、设计更复杂的检测邮件中出现的故意拼写错误<br><img src="/img/wuenda9/wuenda9-2.png" alt></p>
+<h3 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h3><p>如果你 准备从事研发机器学习产品，或者开发机器学习应用，通常来说最好的方法不是建立一个很复杂的，有许多复杂特征的系统，而是通过一个简单的算法来快速实现它，然后通过交叉验证来测试数据，之后就能绘制相应的学习曲线，通过绘制学习曲线预计检验误差，来找出你的算法是否存在高方差或者高偏差问题，或者一些其他问题，在做出这些分析后，来决定是否使用更多的数据或者特征等等<br>这种方法在你刚刚开始解决机器学习问题的时候，能起到很好的作用，因为你不能预知是需要更多的特征，还是需要更多的数据，或者别的东西<br><strong>这种思想告诉我们，我们应当用实际的证据来指导我们的决策，来决定把时间花在哪，而不是凭直觉</strong><br>除了绘制学习曲线，误差分析也是很有意义的事，比如当实现垃圾邮件分类器的时候，我们经常会观察交叉验证集的情况，然后看一看那些被算法错误分类的邮件，看看这些经常被错误分类的邮件有什么共同的特征和规律，这个过程就会启发你设计怎样的新特征，或者告诉你现在的系统有什么优点和缺点，然后指导你想出办法解决</p>
+<h4 id="以垃圾邮件分类分类器为例"><a href="#以垃圾邮件分类分类器为例" class="headerlink" title="以垃圾邮件分类分类器为例"></a>以垃圾邮件分类分类器为例</h4><p>假设你在做一个垃圾邮件分类器，然后在你的交叉验证集中有500个样本，假设该例子中算法有很高的错误率，它错误地分类了100个交叉验证样本<br>现在要做的就是手动核查这100个错误，然后手工为他们分类，同时要考虑这些邮件是什么类型的邮件，有什么线索或特征能够帮助算法正确分类。假设数出了不同类别的邮件数量如下图所示，会发现这个算法在判断盗号邮件（steal password）时总是表现的很差，这说明你应该花更多的时间仔细研究这类邮件，看看是否可以想到更好的特征来为他们正确分类<br>与此同时，还应该做的是看看有什么线索或额外的特征，能帮助算法识别这种邮件。假设能够帮我们更好的进行分类的方法或特征，是检查故意拼写错误和奇怪的邮件来源，以及垃圾邮件特有的标点方式，与之前一样，手工检查这些邮件并统计各类型数量，发现很多垃圾邮件都以奇怪的标点方式 ，这就是一个很明显的信号，说明这值得你花时间去构造更复杂的基于标点符号的特征<br><img src="/img/wuenda9/wuenda9-3.png" alt><br>因此这样的误差分析，是一种手动的检查算法所出现的失误的过程，它能引导你走向最有成效的道路<br>我们真正要做的是找出这种算法最难以分类的样本，对于不同的学习算法而言，对他们造成困难的样本总是相似的，<strong>通过一个简单粗暴的算法实现，你可以很快找到算法的不足所在，和难以处理的样本类型，然后把精力集中在他们身上</strong></p>
+<h4 id="改进学习算法"><a href="#改进学习算法" class="headerlink" title="改进学习算法"></a>改进学习算法</h4><p>在改进算法时的一个技巧是，保证自己对学习算法有一种数值估计的方法，也就是当你改进学习算法时，如果你的算法能够返回一个数值评价指标来估计算法的执行效果，将会很有帮助，这个数字能够告诉你，你的学习算法效果有多好<br>假如我们正在决定是否应该将单词的原型和变型看做同一个单词，这样做的一种方法是只看一个单词中的前几个字母，在自然语言处理中，这种方法是通过一种词干提取软件来实现的，但这种词干提取软件只会简单的检查单词的前几个字母，这可能有坏处，比如可能会把universe和university看成一个单词。因此，当你决定要不要使用这种方法来进行垃圾邮件分类，就很难做出抉择，特别是，即使误差分析也可能无法帮助你决定提取词干到底是不是一个好主意，此时最好的方法就是用最快的方式尝试使用一下这个方法，然后看它是否能起到效果，通过数值方法来评估算法的效果将会非常有用。最容易想到的方法就是通过交叉验证，在使用和不使用词干提取时，各自的错误率来估计算法的效果<br>对于这个特定的问题这个单一规则的数值评价指标就叫做交叉验证错误率，在之后，这种带有数值评价指标的例子还需要进行一些其他的处理<br>另一个是否要区分大小写的例子与之类似<br><img src="/img/wuenda9/wuenda9-4.png" alt><br>因此当你要改进你的学习算法时，你总要尝试很多新主意和新版本的算法，如果每次你使用新方法，都手动的去检测这些例子，看看他们表现的好不好，会很难让你做出决定，但通过单一规则的数值评价指标，你可以观察误差率是变大还是变小了，你可以用它更快的实践你的新想法，它能直接告诉你，你的想法能提高还是降低学习算法的表现，大大加速进程<br>此外，强烈推荐在交叉验证集上做误差分析，而不是测试集，如果在测试集上做误差分析，从数学的角度来讲是不合适的</p>
+<h3 id="不对称性分类的误差评估"><a href="#不对称性分类的误差评估" class="headerlink" title="不对称性分类的误差评估"></a>不对称性分类的误差评估</h3><p>前面的课程中，我们提到了误差分析，以及设定误差度量值的重要性，有了算法的评估和误差度量值，有一件重要的事情要注意，就是使用一个合适的误差度量值，这有时会对于你的机器学习算法造成非常微妙的影响，这就是偏斜类问题<br>以之前的癌症分类为例，我们拥有内科病人的特征变量，我们想知道他们是否患有癌症，这就像恶性与良性肿瘤的分类问题，我们训练逻辑回归模型，假设用测试集检验了这个分类模型，并且发现只有1%的 错误率，看起来是非常不错的效果，但是假如我们发现在测试集中只有0.5%的患者真正得了癌症，因此在我们的筛选程序里，只有0.5%的患者得了癌症，因此1%的错误率就不再显得这么好了<br>举个具体例子，图中代码忽略了输入值x，它总y总等于0，于是它总是预测没有人得癌症，那么这个算法实际上只有0.5%的错误率，这甚至比我们之前得到的1%的错误率还要好<br>这种情况发生在正例和负例的比率非常接近于一个极端情况，在这个例子中，正样本的数量与负样本的数量相比非常非常少，我们把这种情况叫做偏斜类<br><img src="/img/wuenda9/wuenda9-5.png" alt><br>在这种情况下，使用分类误差或分类精确度来作为评估度量，可能会产生如下问题：<br>假设有一个算法它的精确度是99.2%，假设对这个算法做出了一点改动，现在得到了99.5%的精确度，这到底是不是算法的一个提升呢？用某个实数作为评估度量值的一个好处是，它 可以帮我们迅速决定我们是否需要对算法做出一些改进，将精确度从99.2%提升到99.5%，但我们的改进到底是有用的还是说我们只是把代码替换成例如总是预测y=0这样的东西，因此如果有一个偏斜类，用分类精确度并不能很好的衡量算法</p>
+<p>当我们遇到偏斜类时，我们希望有一个不同的误差度量值，或者不同的评估度量值，其中一种评估度量值叫做查准率（Precision）和召回率（Recall）</p>
+<p>假设我们正在用测试集来评估一个分类模型，对于测试集中的样本，每个测试样本都会等于0或1（假设这是一个二分问题），我们的学习 算法要做的是做出值的预测，且算法会对测试集中的每个实例做出预测，预测值也是0或1，基于这些值我们绘制一个2X2的表格，如下图所示<br>如果实际值为1预测值也是1，那么我们把这个样本叫做真阳性（True positive）；如果实际值为0预测值也为0，那么这个称为真阴性（True negative）；如果预测值为1但实际值为0，将其称为假阳性（False positive）；如果预测值为0但实际值为1，则将其称为假阴性（False negative）</p>
+<p>接下来计算查准率和召回率：<br><strong>查准率（Precision）：对于所有我们的预测，患有癌症的病人，有多大比率的病人是真正患有癌症的，即真阳性的样本数，除以所有预测为阳性（值为1）的样本数。查准率越高越好</strong><br><strong>召回率（Recall）：对于测试集或者交叉验证集中确实得了癌症的病人，有多大比率我们正确预测了他们得了癌症，即真阳性的样本数量，除以实际为阳性的样本数量。召回率越高越好</strong><br><img src="/img/wuenda9/wuenda9-6.png" alt><br>通过计算查准率和召回率，我们能更好的知道分类模型到底好不好。具体来说，如果我们有一个算法总是预测y=0，即总是预测没有人得癌症，那么这个分类模型的召回率为0<br>最后需要记住，在查准率和召回率的定义中，我们总是习惯性的用y=1表示出现的比较少的类</p>
+<h3 id="查准率和召回率的权衡"><a href="#查准率和召回率的权衡" class="headerlink" title="查准率和召回率的权衡"></a>查准率和召回率的权衡</h3><p>查准率和召回率作为遇到偏斜类问题的评估度量值，在很多应用中，我们希望能够保证查准率和召回率的相对平衡<br>我们继续用癌症分类的例子，假设用逻辑回归模型训练了数据，输出在0-1之间的概率值，我们可以根据结果计算查准率和召回率</p>
+<h4 id="情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症"><a href="#情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症" class="headerlink" title="情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症"></a>情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症</h4><p>修改算法，不再将临界值设为0.5，可能设为0.7（或更高），这样他有大于等于70%得癌症的概率，如果这样做，那么你的回归模型会有较高的查准率，因为所有预测得了癌症的病人，又比较高的可能性他们真的得了癌症，与之相反，这个回归模型会有较低的召回率。如果将临界值再增大，查准率会继续提高，而召回率会继续降低</p>
+<h4 id="情况二：假设我们希望避免漏掉患有癌症的病人"><a href="#情况二：假设我们希望避免漏掉患有癌症的病人" class="headerlink" title="情况二：假设我们希望避免漏掉患有癌症的病人"></a>情况二：假设我们希望避免漏掉患有癌症的病人</h4><p>这种情况下，我们不再设置高的临界值，而是将临界值降低，比如0.3，这样，我们会得到一个较高召回率的模型，因为确实患有癌症的人有很大一部分被我们正确预测出来，但我们会得到较低的查准率，因为我们预测患有癌症的病人比例越大，就有较大比例的人其实没有患癌症而被预测为患有癌症</p>
+<p>对于大多数回归模型，要权衡查准率和召回率，当你改变临界值的时候，可以画出曲线来权衡查准率和召回率，此外查准率和召回率的曲线可以是各种不同的形状，这取决于回归模型的具体算法<br><img src="/img/wuenda9/wuenda9-7.png" alt></p>
+<h4 id="有没有办法自动选取临界值？"><a href="#有没有办法自动选取临界值？" class="headerlink" title="有没有办法自动选取临界值？"></a>有没有办法自动选取临界值？</h4><p>更广泛的说，如果我们有不同的算法，我们如何比较不同的查准率和召回率？假设我们有三个不同的学习算法，或者这三个不同的学习曲线是相同的模型但临界值不同，我们怎样决定哪一个算法是最好的？</p>
+<p>第一种方法是计算一下查准率和召回率的平均值，看看哪个模型有较高的均值，但这可能并不是一个很好的解决办法。因为像我们之前的例子一样，如果我们的回归模型总是预测y=1，可能得到非常高的召回率，而非常低的查准率；相反的，如果我们的模型总是预测y=0，会得到非常高的查准率，而非常低的召回率。他们中的任何一个都不是好模型，我们可以通过非常低的查准率或非常低的召回率，来判断这不是一个好模型，但如果只使用均值，图中算法3是最高的，即使可以通过使用总是预测y=1这样的方法也可以得到，但这并不是一个好模型，因此均值不是评估算法的好方法</p>
+<p>另一种结合查准率和召回率的不同方式叫做F值，也叫做F1值，它会考虑一部分查准率和召回率的均值，但它会给查准率和召回率中较低的值更高的权重，F值的分子是查准率和召回率的乘积，因此如果查准率或召回率等于0，F值也会等于0，可以看出F值结合了查准率和召回率，但如果F值较大，那么查准率和召回率都必须较大<br><img src="/img/wuenda9/wuenda9-8.png" alt></p>
+<h3 id="机器学习数据"><a href="#机器学习数据" class="headerlink" title="机器学习数据"></a>机器学习数据</h3><p>考虑一个问题，如何在易混淆的词之间进行分类，如下图所示的例子，把诸如这样的机器学习问题当做一类监督学习问题并尝试将其分类，什么样的词在一个英文句子特定的位置才是最合适的，假设选取如下四种分类算法，改变训练集的大小，并将这些学习算法用于不同大小的训练数据集中，右侧的折线图就是得到的结果，趋势非常明显，随着数据集的增大，这些算法的性能也都对应的增强了<br>已经有一系列不同的研究显示了类似的结果，这些结果表明，许多不同的学习算法有时倾向于依赖一些细节，并表现出相当相似的性能，但真正能提高性能的是你能够给予一个算法大量的训练数据，像这样的结果引起了在机器学习中的常用说法“并不是拥有最好的算法的人能成功，而是拥有最多数据的人”<br><img src="/img/wuenda9/wuenda9-9.png" alt><br>那么这种情况什么时候是真，什么时候是假呢？<br>假如有这样一些假设，在这些假设下有大量我们人为有用的训练集，我们假设在我们的机器学习问题中，特征x包含了足够的信息，这些信息可以帮助我们用来准确的预测y<br>举一个反例，设想一个预测房屋价格的问题，房子只有大小信息，没有其他特征，如房子的地理位置、房间数量、装修情况、房子新旧等其他信息，然而这些都会影响房子的价格，不仅仅是房子的大小，因此如果只知道房子的大小，是很难预测它的价格的，这个例子中特征x就没有包含足够的信息<br><img src="/img/wuenda9/wuenda9-10.png" alt><br>假设特征x包含足够的信息用来预测y值，假设使用需要大量参数的学习算法，也许是有很多特征值的逻辑回归或线性回归，或有许多隐藏单元的神经网络，这些都是强大的学习算法，它们有很多参数，这些参数可以拟合非常复杂的函数，因此将这些算法想象成低偏差算法，如果我们在训练集上运行这些算法，它将很好的拟合训练集，训练误差就会很低<br>现在假设我们使用了非常非常大的训练集，这种情况下，尽管我们希望有很多参数，但如果训练集比参数的数量更多，那么这些算法就不太可能会过拟合，也就是训练误差可能接近测试误差<br>将上述两个结果结合起来，即训练误差很低，以及训练误差接近于测试误差，可以得到测试误差也会很小</p>
+<p>另一种考虑这个问题的方式是，为了有一个高性能的学习算法，我们希望它不要有高的偏差和方差，<strong>偏差问题我们通过确保有一个具有很多参数的学习算法来保证，并通过用非常大的训练集来保证没有高方差问题</strong>，将这两个条件放在一起，我们最终可以得到一个低偏差和低方差的学习算法<br> 从根本上来说，特征值有足够的信息量是一个关键的假设<br> <img src="/img/wuenda9/wuenda9-11.png" alt><br><strong>总结：如果你有大量的数据，而且你训练了一种带有很多参数的学习算法，那么这将会是一个很好的方式来得到一个高性能的学习算法，最关键的在于特征x给出了足够的信息量来预测y值</strong></p>
+<h3 id="课程资料"><a href="#课程资料" class="headerlink" title="课程资料"></a>课程资料</h3><p><a href="/download/wuenda/Lecture11.pptx">课程原版PPT-Machine learning system design</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/" title="吴恩达机器学习课程笔记（九）-机器学习系统设计">http://yoursite.com/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/吴恩达机器学习课程/" rel="tag"># 吴恩达机器学习课程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/18/吴恩达机器学习课程笔记（八）-应用机器学习的建议/" rel="next" title="吴恩达机器学习课程笔记（八）-应用机器学习的建议">
+                <i class="fa fa-chevron-left"></i> 吴恩达机器学习课程笔记（八）-应用机器学习的建议
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/img/avatar.png" alt="ZhaoYang">
+            
+              <p class="site-author-name" itemprop="name">ZhaoYang</p>
+              <p class="site-description motion-element" itemprop="description">Notes and Experiences</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Salanghei" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhaoyang.hit2015@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#确定执行的优先级"><span class="nav-number">1.</span> <span class="nav-text">确定执行的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差分析"><span class="nav-number">2.</span> <span class="nav-text">误差分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以垃圾邮件分类分类器为例"><span class="nav-number">2.1.</span> <span class="nav-text">以垃圾邮件分类分类器为例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改进学习算法"><span class="nav-number">2.2.</span> <span class="nav-text">改进学习算法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不对称性分类的误差评估"><span class="nav-number">3.</span> <span class="nav-text">不对称性分类的误差评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查准率和召回率的权衡"><span class="nav-number">4.</span> <span class="nav-text">查准率和召回率的权衡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症"><span class="nav-number">4.1.</span> <span class="nav-text">情况一：假设只有在我们非常确信的情况下，才预测一个病人得了癌症</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#情况二：假设我们希望避免漏掉患有癌症的病人"><span class="nav-number">4.2.</span> <span class="nav-text">情况二：假设我们希望避免漏掉患有癌症的病人</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有没有办法自动选取临界值？"><span class="nav-number">4.3.</span> <span class="nav-text">有没有办法自动选取临界值？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习数据"><span class="nav-number">5.</span> <span class="nav-text">机器学习数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#课程资料"><span class="nav-number">6.</span> <span class="nav-text">课程资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZhaoYang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
