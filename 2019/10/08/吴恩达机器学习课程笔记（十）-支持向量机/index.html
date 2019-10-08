@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="机器学习,吴恩达机器学习课程,">
 
 
 
@@ -79,16 +79,27 @@
 
 
 
-<meta name="description" content="Notes and Experiences">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZHAOYANGのBlog">
-<meta property="og:url" content="http://yoursite.com/categories/产品经理/index.html">
+<meta name="description" content="本节课内容：1、从逻辑回归引出支持向量机的原理2、从直观上理解大间隔">
+<meta name="keywords" content="机器学习,吴恩达机器学习课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴恩达机器学习课程笔记（十）-支持向量机">
+<meta property="og:url" content="http://yoursite.com/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="Notes and Experiences">
+<meta property="og:description" content="本节课内容：1、从逻辑回归引出支持向量机的原理2、从直观上理解大间隔">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-1.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-2.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-3.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-4.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-5.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-6.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-7.png">
+<meta property="og:image" content="http://yoursite.com/img/wuenda10/wuenda10-8.png">
+<meta property="og:updated_time" content="2019-10-08T11:03:03.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZHAOYANGのBlog">
-<meta name="twitter:description" content="Notes and Experiences">
+<meta name="twitter:title" content="吴恩达机器学习课程笔记（十）-支持向量机">
+<meta name="twitter:description" content="本节课内容：1、从逻辑回归引出支持向量机的原理2、从直观上理解大间隔">
+<meta name="twitter:image" content="http://yoursite.com/img/wuenda10/wuenda10-1.png">
 
 
 
@@ -118,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/产品经理/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/">
 
 
 
 
 
-  <title>分类: 产品经理 | ZHAOYANGのBlog</title>
+  <title>吴恩达机器学习课程笔记（十）-支持向量机 | ZHAOYANGのBlog</title>
   
 
 
@@ -143,7 +154,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,53 +290,202 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>产品经理<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/26/Soul产品分析报告/" itemprop="url">
-              
-                <span itemprop="name">Soul产品分析报告</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">吴恩达机器学习课程笔记（十）-支持向量机</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-26T17:11:03+08:00" content="2018-07-26">
-          07-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T18:57:50+08:00">
+                2019-10-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本节课内容：<br>1、从逻辑回归引出支持向量机的原理<br>2、从直观上理解大间隔</p>
+<a id="more"></a>
+<h3 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h3><p>我们从逻辑回归开始，看看如何做一些小小的改动来得到一个支持向量机，在逻辑回归中，我们已经熟悉假设函数以及sigmoid激活函数，如果我们有一个样本，其中y=1，我们希望h(x)尽可能接近1，因为我们想尽可能正确的将样本分类，如果h(x)≈1，就意味着z远大于0， 同样，对于另一个y=0的样本，我们希望h(x)趋近于0，就意味着z远小于0<br><img src="/img/wuenda10/wuenda10-1.png" alt><br>如果观察逻辑回归的代价函数，会发现每个样本（x,y）都会为总的代价函数增加这样一项，如下图蓝色箭头所示，如果将整个假设函数的定义带入其中，得到的就是每个样本对总体函数的具体贡献<br>现在考虑两种情况，一个是y=1的情况，一个是y=0的情况。在y=1的情况中，代价函数只有第一项起作用，如果绘制得到的代价函数与z的关系，会得到如图一的一条曲线，当z很大时，函数所对应的值会变得很小，也就是说它对代价函数的影响很小，这也就解释了为什么逻辑回归在看见y=1的样本时会将z设成一个很大的值，因为它在代价函数中的对应这一项的值很小<br>我们取z=1的点，绘制出新的代价函数曲线，在z=1点的右侧都是平的，代价函数值为0，左侧是与逻辑回归的代价函数曲线的趋势相似的一条直线，如图中粉色线，这就是当y=1时，我们要用到的代价函数cost_1，不难想象它和逻辑回归的效果很相似，事实上这会使支持向量机拥有计算上的优势，并使之后的优化问题变得简单，更容易解决<br>以同样的方法可以得到y=0时的新的代价函数曲线cost_0，如下图中的图二所示<br><img src="/img/wuenda10/wuenda10-2.png" alt><br>对于支持向量机而言，我们实际要做的是将代价函数J(θ)中相应的位置替换为cost_1(z)和cost_0(z)，如下图所示<br>支持向量机中的一些东西的写法会略有不同，比如代价函数的参数会稍微有些不同，首先我们要去掉1/m这一项，因为在使用支持向量机和逻辑回归时，人们遵循的惯例略有不同，同样能得到θ的最优解<br>在逻辑回归中，我们的目标函数有两项，首先是训练样本的代价函数，其次是正则化项，要平衡这两项（A+λB），我们要做的是通过设定不同的正则化参数λ，以便能够权衡在多大程度上去适应训练集。对于SVM（支持向量机）而言，按照惯例我们会用一个不同的参数c，最小化cA+B，这只是一种不同的控制权衡的方式，或者说是一种不同的参数设置方法<br>最终我们得到了支持向量机的总体优化目标，如图中粉色箭头所示，当最小化这个函数时，就得到了SVM学习得到的参数<br><img src="/img/wuenda10/wuenda10-3.png" alt><br>最后与逻辑回归不同的是，支持向量机并不会输出概率，相对的，我们得到的是通过优化这个代价函数得到一个参数θ，而支持向量机所做的是直接的预测，预测y=0或y=1，如果z≥0，那么假设函数就会输出1，反之会输出0<br><img src="/img/wuenda10/wuenda10-4.png" alt></p>
+<h3 id="直观上对大间隔的理解"><a href="#直观上对大间隔的理解" class="headerlink" title="直观上对大间隔的理解"></a>直观上对大间隔的理解</h3><p>下图显示了支持向量机的代价函数，左侧的图为关于z的代价函数cost_1(z)的曲线，用于正样本，而右边是关于z的代价函数cost_0(z)的曲线，由于负样本。想象一些如何使这些代价函数变的更小，如果你有一个正样本，那么仅当z≥1时，有cost_1(z)=0；反之，若y=0，只有当z≤-1时，有cost_0(z)=0<br>这就相当于在支持向量机中构建了一个安全间距<br><img src="/img/wuenda10/wuenda10-5.png" alt><br>接下来考虑一种情况，我们常把常数c设成一个非常大的值，当最小化优化目标的时候，我们将迫切希望能找到一个值使得第一项等于0，要怎么做才能使第一项等于0？<br>当有一个y=1的训练样本，如果要使第一项为0，那么要找到一个θ值使得θ^T x^((i) )≥1，同样的当有一个y=0的训练样本，如果要使第一项为0，那么要找到一个θ值使得θ^T x^((i) )≤−1。因此如果把优化问题看作是通过选择参数来使第一项等于0，那么优化问题就变成了下面这样，如图中蓝色字所示<br><img src="/img/wuenda10/wuenda10-6.png" alt><br>也就是说当解决这个优化问题的时候，会得到一个很有趣的决策边界<br>观察下图的数据集，其中有正样本和负样本，这些数据线性可分，SVM会选择图中黑色的直线作为边界，显然它比粉色和绿色的直线要好得多，能更好的分开正样本和负样本，从数学的角度说，这条黑色的边界拥有更大的距离，也就是，黑色的线和训练样本的最小距离要更大一些，这个距离被称为支持向量机的间距，这使支持向量机具有鲁棒性，因为它在分离数据时会尽量用最大的间距去分离，因此支持向量机有时被称为大间距分类器<br><img src="/img/wuenda10/wuenda10-7.png" alt><br>现在的大间距分类器是在常数c被设的非常大的情况下得出的，给定这样一个数据集，也许我们会选择如图中黑色直线这样的一条决策边界，用大间距来分开正样本和负样本，现在SVM实际上要比这个大间距的视图更加复杂，尤其是它对异常点会很敏感，我们加进去一个额外的正样本，为了将样本用大间距分开，最后学习得到的可能是如图中粉色线这样的一条决策边界，着这样一个异常点的影响下，只因为这一个样本就将决策边界从黑色的线变为了红色的线，这是c被设的非常大的情况，但如果c比较小，最后得到的还会是这条黑线，甚至当数据不是线性可分的时，SVM依然能够正确的分类<br><img src="/img/wuenda10/wuenda10-8.png" alt></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/" title="吴恩达机器学习课程笔记（十）-支持向量机">http://yoursite.com/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+            <a href="/tags/吴恩达机器学习课程/" rel="tag"># 吴恩达机器学习课程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/27/Angular：判断ng-repeat循环结束，监听DOM渲染完成/" rel="next" title="Angular：判断ng-repeat循环结束，监听DOM渲染完成">
+                <i class="fa fa-chevron-left"></i> Angular：判断ng-repeat循环结束，监听DOM渲染完成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -333,6 +493,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -353,8 +520,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -432,6 +608,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化目标"><span class="nav-number">1.</span> <span class="nav-text">优化目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直观上对大间隔的理解"><span class="nav-number">2.</span> <span class="nav-text">直观上对大间隔的理解</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -572,6 +764,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
