@@ -89,7 +89,9 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/ProvidingExplanation/1.png">
 <meta property="og:image" content="http://salanghei.github.io/img/ProvidingExplanation/2.png">
-<meta property="og:updated_time" content="2019-10-17T08:21:44.641Z">
+<meta property="og:image" content="http://salanghei.github.io/img/ProvidingExplanation/3.png">
+<meta property="og:image" content="http://salanghei.github.io/img/ProvidingExplanation/4.png">
+<meta property="og:updated_time" content="2019-10-18T09:01:16.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Providing Explanation for Recommendations in Reciprocal Environments">
 <meta name="twitter:description" content="介绍互惠环境（REs，Reciprocal Environments）：在推荐时需要综合考虑推荐接收用户的偏好和被推荐用户的偏好，像求职类、约会类的应用，这类的平台或应用称为互惠环境互惠推荐系统（RRSs，Reciprocal Recommender Systems）：在互惠环境中为用户找到合适的匹配，称为互惠推荐系统已经有研究工作证实，同时考虑双方的偏好的推荐方法，比只考虑推荐接收用户的偏好的推">
@@ -412,7 +414,9 @@
 <h3 id="实验研究"><a href="#实验研究" class="headerlink" title="实验研究"></a>实验研究</h3><p>本文设计了3个实验，其中2个实验在模拟环境中进行，1个实验在真实环境中进行</p>
 <h4 id="MATCHMAKER模拟环境（简称MM）"><a href="#MATCHMAKER模拟环境（简称MM）" class="headerlink" title="MATCHMAKER模拟环境（简称MM）"></a>MATCHMAKER模拟环境（简称MM）</h4><p>在MM环境中，用户可以看到他人的基本信息，并与他人通过消息沟通<br>为了使MM中的用户基本信息尽可能真实，我们使用真实在线约会网站中的属性，但是这里的基本信息不包含用户的历史消息和偏好<br>信息收集：招募121位参与者，其中63名男性，58名女性，年龄在18到35岁之间（平均23.3岁），每个参与者都是单身的异性恋者。参与者首先进入MM系统，填写基本信息，然后看从真实网站中获取到的用户基本资料，并向他们 觉得合适的用户发送虚构的消息，在这个阶段，每个参与者都要至少看30分个人资料，并向至少10个人发送消息，目的是有充分的的数据来评估他们的偏好，最后平均每个参与者查看了50.72分个人资料（s.d.=30.99），向11.92个用户发送了消息（s.d.=3.96），由于没有遵从指示，有3名参与者的数据被删除</p>
 <h4 id="选择解释方法"><a href="#选择解释方法" class="headerlink" title="选择解释方法"></a>选择解释方法</h4><p>我们返回最能解释为什么推荐的人是合适的k个属性来作为解释，为避免信息过载，限制k为3<br>实验两个解释方法：1）Transparent；2）Correlation-based</p>
-<p><strong>Transparent解释方法由RECON提供</strong><br>为了向x解释推荐y的原因，该算法返回y的k个属性，在用户x所有发过消息的用户中，用户y的这k个属性表现得最突出<br><img src="/img/ProvidingExplanation/2.png" alt></p>
+<p><strong>Transparent解释方法由RECON提供</strong><br>为了向x解释推荐y的原因，该算法返回y的k个属性，在用户x所有发过消息的用户中，用户y的这k个属性表现得最突出<br>Transparent解释方法的算法如下图所示<br><img src="/img/ProvidingExplanation/2.png" alt></p>
+<p><strong>correlation-based解释方法受机器学习中关联特征选择方法的启发产生</strong><br>估计某用户的特征值v_a和用户x会向该用户发送消息的可能性之间的关联<br>对于用户x，定义I={i}为用户x查看过的用户集合，M_x(i)表示在用户集合I中x向哪些用户发送了消息，S_(x,v_a)(i)表示在用户集合I中哪些用户属性a的值为v_a<br><img src="/img/ProvidingExplanation/3.png" alt><br>correlation-based解释方法的算法如下图所示<br><img src="/img/ProvidingExplanation/4.png" alt></p>
+<p><strong>两个解释方法的区别</strong><br>使用example2.1的例子：Bob查看过25个人的资料，其中“从不吸烟”的人有18个，“身材苗条”的人有4个，而Bob向6个从不吸烟的用户，以及4个身材苗条的用户发送了消息。假设k=1，Transparent算法会将“从不吸烟”作为解释而不是“身材苗条”，因为Bob向“从不吸烟”的用户发送的消息更多；Bob向1/3的“从未吸烟”的人发了消息，向全部“身材苗条”的人发了消息，correlation-based算法会将“身材苗条”作为解释</p>
 
       
     </div>
