@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="Notes and Experiences">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZHAOYANGのBlog">
-<meta property="og:url" content="http://salanghei.github.io/archives/2019/07/index.html">
+<meta name="description" content="修饰成员变量修饰类的属性，让其成为类的成员属性在创建对象时，非static变量保存在堆中，每个对象独立存在，非static变量有各自的取值，不会相互影响；而static变量则保存在静态存储区，只有在第一次创建某个类的对象时会初始化，后期创建该类的其他对象时不会重新初始化，所有对象共享一个static变量，作用相当于全局变量">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="static用法理解">
+<meta property="og:url" content="http://salanghei.github.io/2019/10/28/static用法理解/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="Notes and Experiences">
+<meta property="og:description" content="修饰成员变量修饰类的属性，让其成为类的成员属性在创建对象时，非static变量保存在堆中，每个对象独立存在，非static变量有各自的取值，不会相互影响；而static变量则保存在静态存储区，只有在第一次创建某个类的对象时会初始化，后期创建该类的其他对象时不会重新初始化，所有对象共享一个static变量，作用相当于全局变量">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://salanghei.github.io/img/java/java-static.png">
+<meta property="og:updated_time" content="2019-10-28T06:48:55.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZHAOYANGのBlog">
-<meta name="twitter:description" content="Notes and Experiences">
+<meta name="twitter:title" content="static用法理解">
+<meta name="twitter:description" content="修饰成员变量修饰类的属性，让其成为类的成员属性在创建对象时，非static变量保存在堆中，每个对象独立存在，非static变量有各自的取值，不会相互影响；而static变量则保存在静态存储区，只有在第一次创建某个类的对象时会初始化，后期创建该类的其他对象时不会重新初始化，所有对象共享一个static变量，作用相当于全局变量">
+<meta name="twitter:image" content="http://salanghei.github.io/img/java/java-static.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://salanghei.github.io/archives/2019/07/">
+  <link rel="canonical" href="http://salanghei.github.io/2019/10/28/static用法理解/">
 
 
 
 
 
-  <title>归档 | ZHAOYANGのBlog</title>
+  <title>static用法理解 | ZHAOYANGのBlog</title>
   
 
 
@@ -143,7 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,282 +283,224 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/10/28/static用法理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">static用法理解</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-28T14:41:27+08:00">
+                2019-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 23 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/28/static用法理解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/static用法理解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/31/吴恩达机器学习课程笔记（五）-正则化/" itemprop="url">
-              
-                <span itemprop="name">吴恩达机器学习课程笔记（五）-正则化</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-31T16:29:48+08:00" content="2019-07-31">
-          07-31
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/" itemprop="url">
-              
-                <span itemprop="name">吴恩达机器学习课程笔记（四）-逻辑回归</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-30T15:30:28+08:00" content="2019-07-30">
-          07-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/" itemprop="url">
-              
-                <span itemprop="name">A Probabilistic Model for Using Social Networks in Personalized Item Recommendation</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-29T15:31:41+08:00" content="2019-07-29">
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h4 id="修饰成员变量"><a href="#修饰成员变量" class="headerlink" title="修饰成员变量"></a>修饰成员变量</h4><p>修饰类的属性，让其成为类的成员属性<br>在创建对象时，非static变量保存在堆中，每个对象独立存在，非static变量有各自的取值，不会相互影响；而static变量则保存在静态存储区，只有在第一次创建某个类的对象时会初始化，后期创建该类的其他对象时不会重新初始化，所有对象共享一个static变量，作用相当于全局变量<br><img src="/img/java/java-static.png" alt></p>
+<a id="more"></a>
 
-        
-        
+<h4 id="修饰成员方法"><a href="#修饰成员方法" class="headerlink" title="修饰成员方法"></a>修饰成员方法</h4><p>修饰类的方法，让其成为类的成员方法<br>相比于修饰成员变量，修饰成员方法对于数据的存储没有多大变化，其最大的作用是，不需要创建对象就可以调用类中的方法，即使用“类名.方法名”的方式操作方法，避免了先要new出对象的繁琐和资源消耗<br>但static方法中不能使用非static变量和方法</p>
+<h4 id="静态块"><a href="#静态块" class="headerlink" title="静态块"></a>静态块</h4><p>当初始化static修饰的变量时，可以将它们统一放在一个以static开始，用花括号包裹起来的块状语句中，使程序更规整（需理解对象的初始化过程）</p>
+<h4 id="静态导包"><a href="#静态导包" class="headerlink" title="静态导包"></a>静态导包</h4><p>不同于非static导入，采用static导入包后，在不与当前类的方法名冲突的情况下，无需使用“类名.方法名”的方法去调用类方法了，直接可以采用”方法名”去调用类方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">/* PrintHelper.java文件 */</span><br><span class="line">package com.dotgua.study;</span><br><span class="line">public class PrintHelper &#123;</span><br><span class="line">    public static void print(Object o) &#123;</span><br><span class="line">        System.out.println(o);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* App.java文件 */</span><br><span class="line">import static com.dotgua.study.PrintHelper.*;</span><br><span class="line">public class App &#123;</span><br><span class="line">    public static void main( String[] args ) &#123;</span><br><span class="line">        print(&quot;Hello World!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    /**Output</span><br><span class="line">     * Hello World!</span><br><span class="line">     *///~</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/26/吴恩达机器学习课程笔记（三）-多变量线性回归/" itemprop="url">
-              
-                <span itemprop="name">吴恩达机器学习课程笔记（三）-多变量线性回归</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-26T15:25:42+08:00" content="2019-07-26">
-          07-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><p>static的特点：</p>
+<ol>
+<li>随着类的加载而被加载</li>
+<li>优先于对象存在</li>
+<li>被所有对象共享</li>
+</ol>
+<p>static的生命周期：</p>
+<ol>
+<li>类变量周期生命最长，随着类的消失而消失</li>
+<li>实例变量生命周期比类变量短，它是随着对象的消失而消失</li>
+</ol>
+<p>static方法：</p>
+<ol>
+<li>静态的方法只能访问静态的成员</li>
+<li>非静态得方法即能访问静态得成员(成员变量，成员方法)又能访问非静态得成员</li>
+<li>局部变量不能被static修饰</li>
+<li>静态得方法中是不可以定义this、super关键字的，因为静态优先于对象存在</li>
+</ol>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a href="https://blog.csdn.net/shixuelanghe/article/details/80448261" target="_blank" rel="noopener">java中static用法理解</a></p>
+<p>《Java编程思想》</p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/25/吴恩达机器学习课程笔记（二）-单变量线性回归/" itemprop="url">
-              
-                <span itemprop="name">吴恩达机器学习课程笔记（二）-单变量线性回归</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-25T10:15:52+08:00" content="2019-07-25">
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/25/吴恩达机器学习课程-初识机器学习/" itemprop="url">
-              
-                <span itemprop="name">吴恩达机器学习课程笔记（一）-初识机器学习</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-25T10:08:35+08:00" content="2019-07-25">
-          07-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/23/Calibrated-Recommendations/" itemprop="url">
-              
-                <span itemprop="name">Calibrated Recommendations</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-23T17:08:28+08:00" content="2019-07-23">
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://salanghei.github.io/2019/10/28/static用法理解/" title="static用法理解">http://salanghei.github.io/2019/10/28/static用法理解/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/28/《Java编程思想》读书笔记（一）/" rel="next" title="《Java编程思想》读书笔记（一）">
+                <i class="fa fa-chevron-left"></i> 《Java编程思想》读书笔记（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -562,6 +508,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -582,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,6 +623,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#修饰成员变量"><span class="nav-number">1.</span> <span class="nav-text">修饰成员变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修饰成员方法"><span class="nav-number">2.</span> <span class="nav-text">修饰成员方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态块"><span class="nav-number">3.</span> <span class="nav-text">静态块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态导包"><span class="nav-number">4.</span> <span class="nav-text">静态导包</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">6.</span> <span class="nav-text">参考文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -801,6 +779,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
