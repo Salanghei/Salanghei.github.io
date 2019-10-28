@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致：       1. 用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄       2. 当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新">
+<meta name="description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致： 1、用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄 2、当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤 校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新排序算法 INTRODUC">
 <meta name="keywords" content="推荐系统,RecSys2018">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Calibrated Recommendations">
 <meta property="og:url" content="http://salanghei.github.io/2019/07/23/Calibrated-Recommendations/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致：       1. 用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄       2. 当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新">
+<meta property="og:description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致： 1、用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄 2、当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤 校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新排序算法 INTRODUC">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations1.jpg">
 <meta property="og:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations2.jpg">
@@ -98,10 +98,10 @@
 <meta property="og:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations8.jpg">
 <meta property="og:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations9.png">
 <meta property="og:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations10.png">
-<meta property="og:updated_time" content="2019-07-29T07:58:06.071Z">
+<meta property="og:updated_time" content="2019-10-28T06:59:58.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Calibrated Recommendations">
-<meta name="twitter:description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致：       1. 用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄       2. 当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新">
+<meta name="twitter:description" content="Abstract校准（calibration），在机器学习公平性的背景下被重新重视保证准确率的推荐，很容易导致： 1、用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄 2、当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤 校准推荐（calibrated recommendations）可以避免这个问题贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新排序算法 INTRODUC">
 <meta name="twitter:image" content="http://salanghei.github.io/img/CalibratedRecommendations/CalibratedRecommendations1.jpg">
 
 
@@ -406,9 +406,13 @@
       
 
       
-        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>校准（calibration），在机器学习公平性的背景下被重新重视<br>保证准确率的推荐，很容易导致：<br>       1. 用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄<br>       2. 当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤<br>校准推荐（calibrated recommendations）可以避免这个问题<br>贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新排序算法</p>
-<a id="more"></a>
+        <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>校准（calibration），在机器学习公平性的背景下被重新重视<br>保证准确率的推荐，很容易导致：</p>
+<p>1、用户的次要兴趣被主要兴趣挤出，使得推荐结果的领域逐渐趋向狭窄</p>
+<p>2、当多个用户使用同一账号时，不活跃的用户的兴趣会被排挤</p>
+<p>校准推荐（calibrated recommendations）可以避免这个问题<br>贡献：概述量化标准度的度量指标，后处理推荐系统输出的重新排序算法</p>
 <h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><p>校准（calibrated）：各个类别的预测比例与数据中的实际比例一致<br>校准推荐（calibrated recommendations）：推荐列表能够反应用户的各种兴趣比例<br>校准的多样性：不同于项目之间最小相似性意义上的多样性，和推荐项的冗余</p>
+<a id="more"></a>
+
 <h3 id="MOTIVATING-EXAMPLE"><a href="#MOTIVATING-EXAMPLE" class="headerlink" title="MOTIVATING EXAMPLE"></a>MOTIVATING EXAMPLE</h3><p>离线数据集：由用户-项-交互历史数据组成，将其分为训练集和测试集<br>目的：保证最高准确度的情况下，在测试集中预测用户的交互项</p>
 <p>假设：一个用户播放了70部“浪漫类”电影，和30部“动作类”电影<br>          电影类别互斥<br>目的：生成一个包含10部电影的推荐列表</p>
 <h4 id="类别不均衡："><a href="#类别不均衡：" class="headerlink" title="类别不均衡："></a>类别不均衡：</h4><p>最极端情况：只知道用户对电影类别的喜好，没有任何其他电影的信息<br>为达到最高准确度，会100%为用户推荐“浪漫类”的电影，此时准确率为70%<br>如果随机为用户推荐电影，70%的概率推荐“浪漫类”，30%的概率推荐“动作类”，准确率只有<br>0.7 · 70% + 0.3 · 30% = 58%<br>因此，在保证准确性的前提下：<br>      1. 在推荐结果中，用户的主要兴趣领域会被放大，而有轻微兴趣的领域会被排挤出去<br>      2. 推荐结果是存在偏向的，偏向于用户的主要兴趣领域<br>反过来说，为提高平衡性，或者校准推荐，会降低推荐的准确性</p>

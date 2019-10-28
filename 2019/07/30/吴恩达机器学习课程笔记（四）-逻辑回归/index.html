@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta name="description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想 分类y的取值是离散的二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别">
 <meta name="keywords" content="机器学习,吴恩达机器学习课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
 <meta property="og:url" content="http://salanghei.github.io/2019/07/30/吴恩达机器学习课程笔记（四）-逻辑回归/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta property="og:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想 分类y的取值是离散的二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-1.png">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-2.png">
@@ -100,10 +100,10 @@
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-11.png">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-12.png">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-13.png">
-<meta property="og:updated_time" content="2019-09-24T11:45:27.113Z">
+<meta property="og:updated_time" content="2019-10-28T06:56:57.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（四）-逻辑回归">
-<meta name="twitter:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想">
+<meta name="twitter:description" content="本节课内容：1、介绍分类问题，并用逻辑回归解决分类问题2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值3、介绍高级优化方法，及其在octave中的实现4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想 分类y的取值是离散的二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别">
 <meta name="twitter:image" content="http://salanghei.github.io/img/wuenda4/wuenda4-1.png">
 
 
@@ -409,9 +409,11 @@
 
       
         <p>本节课内容：<br>1、介绍分类问题，并用逻辑回归解决分类问题<br>2、介绍逻辑回归的决策边界，假设函数（hypothesis），代价函数，以及用梯度下降法求解最优θ值<br>3、介绍高级优化方法，及其在octave中的实现<br>4、介绍多分类问题（一对多，一对余），以及解决多分类问题的基本思想</p>
-<a id="more"></a>
 <h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>y的取值是离散的<br>二分类问题中，yϵ{0,1}，0表示“负类”，1表示“正类”，在两个类别中，哪个是正类哪个是负类并没有什么区别，但一般来说，负类表示没有某样东西</p>
-<p>给定一个分类问题的训练集（如下图所示），如果用线性回归的方法对数据进行拟合，会得到一个分界点，其左侧预测为0，右侧预测为1，在这个数据集上，线性回归的结果似乎是可行的<br><img src="/img/wuenda4/wuenda4-1.png" alt><br>假设数据集改变，如下图所示，此时，如果再用线性回归来拟合数据，会得到一条新的直线，分界点也会随之改变，其左侧预测为0，与原数据不相符<br><img src="/img/wuenda4/wuenda4-2.png" alt><br>分类问题中（此节讨论二分类问题），y的取值为0和1，但线性回归的预测结果可能是远大于1，或远小于0<br>因此，将线性回归用于分类问题中是不合理的</p>
+<p>给定一个分类问题的训练集（如下图所示），如果用线性回归的方法对数据进行拟合，会得到一个分界点，其左侧预测为0，右侧预测为1，在这个数据集上，线性回归的结果似乎是可行的<br><img src="/img/wuenda4/wuenda4-1.png" alt></p>
+<a id="more"></a>
+
+<p>假设数据集改变，如下图所示，此时，如果再用线性回归来拟合数据，会得到一条新的直线，分界点也会随之改变，其左侧预测为0，与原数据不相符<br><img src="/img/wuenda4/wuenda4-2.png" alt><br>分类问题中（此节讨论二分类问题），y的取值为0和1，但线性回归的预测结果可能是远大于1，或远小于0<br>因此，将线性回归用于分类问题中是不合理的</p>
 <p>逻辑回归：<br>预测值一直介于0,1之间<br>分类算法</p>
 <h4 id="假设陈述"><a href="#假设陈述" class="headerlink" title="假设陈述"></a>假设陈述</h4><p><img src="/img/wuenda4/wuenda4-3.png" alt><br>解释：h(x)的输出是，对于一个输入x，y=1的概率估计<br><img src="/img/wuenda4/wuenda4-4.png" alt></p>
 <h4 id="决策界限"><a href="#决策界限" class="headerlink" title="决策界限"></a>决策界限</h4><p>当θ^T x≥0时，预测y=1；当θ^T x&lt;0时，预测y=0<br><img src="/img/wuenda4/wuenda4-5.png" alt><br>e.g.假设给定一个数据集，得出一个拟合好的逻辑回归函数，如下图所示<br>当-3+x1+x2≥0时，预测y=1；当-3+x1+x2&lt;0时，预测y=0<br>-3+x1+x2=0这条直线叫做决策边界<br><img src="/img/wuenda4/wuenda4-6.png" alt><br>决策边界是假设函数（hypothesis）的属性，取决于其参数，不是数据集的属性</p>

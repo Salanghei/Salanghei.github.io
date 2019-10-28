@@ -880,6 +880,7 @@
       
         
           <p>本节课内容：<br>1、从逻辑回归引出支持向量机的原理<br>2、从直观上理解大间隔，及其数学原理<br>3、SVM核函数的定义、使用、含义、选择<br>4、探究逻辑回归和SVM算法的使用情景</p>
+<h3 id="优化目标"><a href="#优化目标" class="headerlink" title="优化目标"></a>优化目标</h3><p>我们从逻辑回归开始，看看如何做一些小小的改动来得到一个支持向量机，在逻辑回归中，我们已经熟悉假设函数以及sigmoid激活函数，如果我们有一个样本，其中y=1，我们希望h(x)尽可能接近1，因为我们想尽可能正确的将样本分类，如果h(x)≈1，就意味着z远大于0， 同样，对于另一个y=0的样本，我们希望h(x)趋近于0，就意味着z远小于0<br><img src="/img/wuenda10/wuenda10-1.png" alt></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/10/08/吴恩达机器学习课程笔记（十）-支持向量机/#more" rel="contents">
@@ -1036,6 +1037,11 @@
       
         
           <h4 id="方法一：自定义指令，监听ng-repeat状态"><a href="#方法一：自定义指令，监听ng-repeat状态" class="headerlink" title="方法一：自定义指令，监听ng-repeat状态"></a>方法一：自定义指令，监听ng-repeat状态</h4><p><strong>本方法只适用于ng-repeat遍历的数据内容不变的情况</strong><br>如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件</p>
+<p>html部分代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li ng-repeat=&quot;item in data track by $index&quot; repeat-finish&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js部分代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&quot;mainApp&quot;).directive(&apos;repeatFinish&apos;, [function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        restrict: &apos;A&apos;,</span><br><span class="line">        link: function (scope, element, attr) &#123;</span><br><span class="line">            if(scope.$last === true) &#123;</span><br><span class="line">                // ng-repeat循环完成后要做的事情</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/09/27/Angular：判断ng-repeat循环结束，监听DOM渲染完成/#more" rel="contents">
@@ -1192,6 +1198,7 @@
       
         
           <p>本节课内容：<br>1、解决机器学习问题的大致步骤<br>2、使用误差分析来确定优化学习算法的方向<br>3、介绍查准率、召回率和F值的概念、定义及其意义<br>4、机器学习问题在什么情况下可以通过大量数据来提升算法性能</p>
+<h3 id="确定执行的优先级"><a href="#确定执行的优先级" class="headerlink" title="确定执行的优先级"></a>确定执行的优先级</h3><p>以垃圾邮件分类为例描述解决问题的过程<br>为了应用监督学习，首先想到的是如何来表示邮件的特征向量x，通过特征向量x和分类标签y，我们就可以训练一个分类器，比如使用逻辑回归的方法，这里有一种选择邮件特征向量的方法<br>我们提出一个可能含有100个单词的列表，通过这些单词来区分垃圾邮件或非垃圾邮件，假如有一封邮件，我们可以将这封邮件的各个片段编码成如下图的一个特征向量，先将找出的100个单词按照字典序排序（也可以不排序），当邮件中包含某个单词时，该单词出现在特征向量中的位置上置1，否则置0，最后我们可以得到100维的特征向量</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/#more" rel="contents">

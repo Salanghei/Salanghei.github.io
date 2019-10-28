@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件">
+<meta name="description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件 html部分代码： 123&amp;lt;ul&amp;gt;    &amp;lt;li">
 <meta name="keywords" content="Angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Angular：判断ng-repeat循环结束，监听DOM渲染完成">
 <meta property="og:url" content="http://salanghei.github.io/2019/09/27/Angular：判断ng-repeat循环结束，监听DOM渲染完成/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件">
+<meta property="og:description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件 html部分代码： 123&amp;lt;ul&amp;gt;    &amp;lt;li">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-27T12:50:22.305Z">
+<meta property="og:updated_time" content="2019-10-28T06:58:27.340Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Angular：判断ng-repeat循环结束，监听DOM渲染完成">
-<meta name="twitter:description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件">
+<meta name="twitter:description" content="方法一：自定义指令，监听ng-repeat状态本方法只适用于ng-repeat遍历的数据内容不变的情况如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件 html部分代码： 123&amp;lt;ul&amp;gt;    &amp;lt;li">
 
 
 
@@ -395,12 +395,13 @@
 
       
         <h4 id="方法一：自定义指令，监听ng-repeat状态"><a href="#方法一：自定义指令，监听ng-repeat状态" class="headerlink" title="方法一：自定义指令，监听ng-repeat状态"></a>方法一：自定义指令，监听ng-repeat状态</h4><p><strong>本方法只适用于ng-repeat遍历的数据内容不变的情况</strong><br>如果数据内容改变，使用此方法会出bug：假设列表A包含3项内容，列表B中包含4项内容，当数据从A列表切换到B列表时，会触发link方法，但当数据从B列表切换到A列表时，则不会触发。也就是数据列表中的项由多变少时不会触发link事件</p>
-<a id="more"></a>
 <p>html部分代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li ng-repeat=&quot;item in data track by $index&quot; repeat-finish&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
 
 <p>js部分代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">angular.module(&quot;mainApp&quot;).directive(&apos;repeatFinish&apos;, [function () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">        restrict: &apos;A&apos;,</span><br><span class="line">        link: function (scope, element, attr) &#123;</span><br><span class="line">            if(scope.$last === true) &#123;</span><br><span class="line">                // ng-repeat循环完成后要做的事情</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h4 id="方法二：使用-timeout"><a href="#方法二：使用-timeout" class="headerlink" title="方法二：使用$timeout"></a>方法二：使用$timeout</h4><p><strong>本方法可以用于ng-repeat遍历的数据内容改变的情况</strong><br>$timeout是angular为了能自动触发脏检测而封装的方法，是异步的<br>将你需要执行的方法放在$timeout中，它就会等到所有的dom渲染完成以及同步逻辑跑完后执行</p>
 <p>html部分代码：</p>

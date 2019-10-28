@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类">
+<meta name="description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类 非线性假设给定如图所示的数据集，我们可以构造包含许多非线性项的逻辑回归函数，当多项式数量足够多时，就可以分开正样本和负样本的假设。当只有两个特征时，可以将x1,x2的所有组合都包含进多项式中，但大多数机器学习问题的特征远不止两项（e.g. n=100），这时，如果要多项式中包含所有">
 <meta name="keywords" content="机器学习,吴恩达机器学习课程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="吴恩达机器学习课程笔记（六）-神经网络学习">
 <meta property="og:url" content="http://salanghei.github.io/2019/08/27/吴恩达机器学习课程笔记（六）-神经网络学习/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类">
+<meta property="og:description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类 非线性假设给定如图所示的数据集，我们可以构造包含许多非线性项的逻辑回归函数，当多项式数量足够多时，就可以分开正样本和负样本的假设。当只有两个特征时，可以将x1,x2的所有组合都包含进多项式中，但大多数机器学习问题的特征远不止两项（e.g. n=100），这时，如果要多项式中包含所有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda6/wuenda6-1.png">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda6/wuenda6-2.png">
@@ -102,10 +102,10 @@
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda6/wuenda6-13.png">
 <meta property="og:image" content="http://salanghei.github.io/img/wuenda6/wuenda6-14.png">
 <meta property="og:image" content="http://salanghei.github.io/download/ex3/%E5%90%91%E9%87%8F%E5%8C%96%E6%A0%87%E7%AD%BE.png">
-<meta property="og:updated_time" content="2019-09-10T09:40:06.894Z">
+<meta property="og:updated_time" content="2019-10-28T06:55:58.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="吴恩达机器学习课程笔记（六）-神经网络学习">
-<meta name="twitter:description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类">
+<meta name="twitter:description" content="本节课内容：1、介绍非线性假设，逻辑回归方法的局限性2、讲解神经网络的来源、理念、模型3、简单介绍神经网络的多元分类 非线性假设给定如图所示的数据集，我们可以构造包含许多非线性项的逻辑回归函数，当多项式数量足够多时，就可以分开正样本和负样本的假设。当只有两个特征时，可以将x1,x2的所有组合都包含进多项式中，但大多数机器学习问题的特征远不止两项（e.g. n=100），这时，如果要多项式中包含所有">
 <meta name="twitter:image" content="http://salanghei.github.io/img/wuenda6/wuenda6-1.png">
 
 
@@ -411,9 +411,10 @@
 
       
         <p>本节课内容：<br>1、介绍非线性假设，逻辑回归方法的局限性<br>2、讲解神经网络的来源、理念、模型<br>3、简单介绍神经网络的多元分类</p>
+<h4 id="非线性假设"><a href="#非线性假设" class="headerlink" title="非线性假设"></a>非线性假设</h4><p>给定如图所示的数据集，我们可以构造包含许多非线性项的逻辑回归函数，当多项式数量足够多时，就可以分开正样本和负样本的假设。当只有两个特征时，可以将x1,x2的所有组合都包含进多项式中，但大多数机器学习问题的特征远不止两项（e.g. n=100），这时，如果要多项式中包含所有的项，即使只包含二次项，最终也会有很多项。<br>因此要包含所有的二次项，并不是一个好方法，由于包含的项数太多，最终可能导致过拟合问题，而且处理这么多项也存在运算量过大的问题。<br>当然也可以取二次项的子集，如只包含平方项，项的数量会明显减少，但最终不会得到理想的结果，因为忽略了太多相关项</p>
 <a id="more"></a>
 
-<h4 id="非线性假设"><a href="#非线性假设" class="headerlink" title="非线性假设"></a>非线性假设</h4><p>给定如图所示的数据集，我们可以构造包含许多非线性项的逻辑回归函数，当多项式数量足够多时，就可以分开正样本和负样本的假设。当只有两个特征时，可以将x1,x2的所有组合都包含进多项式中，但大多数机器学习问题的特征远不止两项（e.g. n=100），这时，如果要多项式中包含所有的项，即使只包含二次项，最终也会有很多项。<br>因此要包含所有的二次项，并不是一个好方法，由于包含的项数太多，最终可能导致过拟合问题，而且处理这么多项也存在运算量过大的问题。<br>当然也可以取二次项的子集，如只包含平方项，项的数量会明显减少，但最终不会得到理想的结果，因为忽略了太多相关项<br><img src="/img/wuenda6/wuenda6-1.png" alt><br>e.g. 在计算机视觉中，每个像素点看作一个特征，假设一个50x50的灰度图片，就包含2500个特征（如果是RGB图片则包含7500个特征），如果用逻辑回归，那么多项式中要包含3百万个项<br><img src="/img/wuenda6/wuenda6-2.png" alt></p>
+<p><img src="/img/wuenda6/wuenda6-1.png" alt><br>e.g. 在计算机视觉中，每个像素点看作一个特征，假设一个50x50的灰度图片，就包含2500个特征（如果是RGB图片则包含7500个特征），如果用逻辑回归，那么多项式中要包含3百万个项<br><img src="/img/wuenda6/wuenda6-2.png" alt></p>
 <h4 id="神经元与大脑"><a href="#神经元与大脑" class="headerlink" title="神经元与大脑"></a>神经元与大脑</h4><p>神经网络：起源：人们想尝试设计出模仿大脑的算法，它的理念是如果我们要建立学习系统，要去模仿我们所认识的最神奇的学习机器，人类的大脑<br>神经网络兴起于20世纪八九十年代，应用的非常广泛，但由于各种原因，90年代的后期就应用的很少了，但最近神经网络又再度兴起，原因之一是神经网络的计算量较大，近些年计算机的运行速度变快，才足以运行大规模的神经网络</p>
 <p>神经重接实验：如果有一块脑组织可以处理光、声或触觉信号，那么也许存在一种学习算法，可以同时处理视觉、听觉和触觉，而不是需要运行上千个不同的程序，或者上千个不同的算法来做这些，也许我们需要做的就是找出一些近似的或实际的大脑学习算法，然后实现它，让大脑自己学习如何处理这些不同类型的数据</p>
 <h4 id="模型展示（一）"><a href="#模型展示（一）" class="headerlink" title="模型展示（一）"></a>模型展示（一）</h4><p>大脑中的神经细胞<br><img src="/img/wuenda6/wuenda6-3.png" alt><br>在一个人工神经网络里，我们使用一个很简单的模型来模拟神经元的工作，我们将神经元模拟成一个逻辑单元（图中黄色圆圈），通过输入通道传递给它一些信息，然后神经元做一些计算，再通过输出通道输出计算结果<br>x_0称为偏置单元或偏置神经元，非线性函数g(z)称为激活函数，θ称为模型参数或权重<br><img src="/img/wuenda6/wuenda6-4.png" alt><br>神经网络是一组神经元连接在一起的集合<br>神经网络的第一层称为输入层，在这一层输入特征；最后一层称为输出层，这一层输出最终计算结果；中间第二层称为隐藏层，隐藏层的值在训练集中是看不到的，神经网络可以有不止一个隐藏层，实际上任何非输入层和非输出层都成为隐藏层<br><img src="/img/wuenda6/wuenda6-5.png" alt><br>在神经网络中，a_i^((j)) 表示第j层第i个神经元或单元的激活项，激活项是指由一个具体神经元计算并输出的值<br>一般地，如果一个神经网络，在第j层有s_j个单元，在第j+1层有s_(j+1)个单元，Θ^((j)) 即控制第j层到第j+1层映射的矩阵，它的纬度为s_(j+1)*(s_j+1)<br><img src="/img/wuenda6/wuenda6-6.png" alt><br>总结：神经网络定义了函数h，从输入x到输出y的映射，这些假设被参数化，记做Θ，因此只要改变Θ就能得到不同的假设</p>

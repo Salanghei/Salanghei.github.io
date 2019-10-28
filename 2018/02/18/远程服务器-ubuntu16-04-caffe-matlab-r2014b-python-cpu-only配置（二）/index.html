@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZHAOYANGのBlog">
 <meta property="og:description" content="配置Caffe+Matlab+Python（CPU-ONLY） 本文参考文章：ubuntu16.04, Matlab2016b caffe编译安装：https://www.cnblogs.com/haoliuhust/p/7738920.html官方安装文档：http://caffe.berkeleyvision.org/installation.htmlUbuntu16.04安装Caffe(CP">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-26T08:28:02.619Z">
+<meta property="og:updated_time" content="2019-10-28T06:57:36.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(二)">
 <meta name="twitter:description" content="配置Caffe+Matlab+Python（CPU-ONLY） 本文参考文章：ubuntu16.04, Matlab2016b caffe编译安装：https://www.cnblogs.com/haoliuhust/p/7738920.html官方安装文档：http://caffe.berkeleyvision.org/installation.htmlUbuntu16.04安装Caffe(CP">
@@ -396,13 +396,13 @@
       
         <p>配置Caffe+Matlab+Python（CPU-ONLY）</p>
 <p>本文参考文章：<br>ubuntu16.04, Matlab2016b caffe编译安装：<a href="https://www.cnblogs.com/haoliuhust/p/7738920.html" target="_blank" rel="noopener">https://www.cnblogs.com/haoliuhust/p/7738920.html</a><br>官方安装文档：<a href="http://caffe.berkeleyvision.org/installation.html" target="_blank" rel="noopener">http://caffe.berkeleyvision.org/installation.html</a><br>Ubuntu16.04安装Caffe(CPU Only)：<a href="http://blog.csdn.net/muzilinxi90/article/details/53673184" target="_blank" rel="noopener">http://blog.csdn.net/muzilinxi90/article/details/53673184</a></p>
-<a id="more"></a>
-<hr>
 <h4 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt update</span><br><span class="line">$ sudo apt search openblas</span><br><span class="line">$ sudo apt install libopenblas-dev</span><br><span class="line">$ sudo update-alternatives --config libblas.so.3</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler</span><br><span class="line">$ sudo apt-get install --no-install-recommends libboost-all-dev</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>此外还要安装git，cmake</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install git</span><br><span class="line">$ sudo apt-get install cmake</span><br></pre></td></tr></table></figure>

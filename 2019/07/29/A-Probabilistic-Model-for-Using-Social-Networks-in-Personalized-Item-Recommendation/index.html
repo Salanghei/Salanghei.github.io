@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
+<meta name="description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法 INTRODUCTION">
 <meta name="keywords" content="推荐系统,RecSys2015">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
 <meta property="og:url" content="http://salanghei.github.io/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
+<meta property="og:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法 INTRODUCTION">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel1.jpg">
 <meta property="og:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel2.png">
@@ -99,10 +99,10 @@
 <meta property="og:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel10.png">
 <meta property="og:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel11.png">
 <meta property="og:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel12.png">
-<meta property="og:updated_time" content="2019-07-29T08:11:17.644Z">
+<meta property="og:updated_time" content="2019-10-28T06:58:14.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Probabilistic Model for Using Social Networks in Personalized Item Recommendation">
-<meta name="twitter:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法">
+<meta name="twitter:description" content="ABSTRACT问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型效果：在6个真实数据集上的性能优于其他推荐方法 INTRODUCTION">
 <meta name="twitter:image" content="http://salanghei.github.io/img/SPFmodel/SPFmodel1.jpg">
 
 
@@ -408,9 +408,9 @@
 
       
         <h3 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h3><p>问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目<br>目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异<br>方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型<br>效果：在6个真实数据集上的性能优于其他推荐方法</p>
+<h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><p>研究表明，用户看中朋友对内容的发现和讨论意见，在线访问社交网络可以强化这种现象<br>矩阵分解方法不能利用这些信息，他能推断出你可能喜欢的物品是因为这个物品符合你的偏好，但是不能推断出你朋友喜欢且你也可能感兴趣的物品<br>本文提出基于贝叶斯矩阵分解的SPF（social Poisson factorization）方法，可以在社交层面反映用户消费的商品<br>SPF假设有两个信号驱动用户点击：对项目的潜在偏好和朋友的潜在影响<br>SPF推测每个用户的偏好和影响，向用户推荐即符合用户偏好又被其朋友点击过的项目</p>
 <a id="more"></a>
 
-<h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><p>研究表明，用户看中朋友对内容的发现和讨论意见，在线访问社交网络可以强化这种现象<br>矩阵分解方法不能利用这些信息，他能推断出你可能喜欢的物品是因为这个物品符合你的偏好，但是不能推断出你朋友喜欢且你也可能感兴趣的物品<br>本文提出基于贝叶斯矩阵分解的SPF（social Poisson factorization）方法，可以在社交层面反映用户消费的商品<br>SPF假设有两个信号驱动用户点击：对项目的潜在偏好和朋友的潜在影响<br>SPF推测每个用户的偏好和影响，向用户推荐即符合用户偏好又被其朋友点击过的项目</p>
 <h4 id="Related-Work："><a href="#Related-Work：" class="headerlink" title="Related Work："></a>Related Work：</h4><p>过去研究的一些缺陷：<br>    1、假设用户影响（也称信任）是可以直接获取的，但除了是/否这样的二进制信任信息之外，其他的信任信息用户是很难输入的<br>    2、假设信任是从网络结构中传播或计算得到的，忽略了用户活动，这可以反应用户对网络某些部分的信任<br>    3、通过计算用户之间的相似程度来计算信任，<strong>会使一般意义上的偏好相似度和用户影响的概念混淆</strong>，比如：两个拥有相同兴趣偏好的用户可能各自阅读同一本书，但彼此之间没有交集<br>    4、将社交信息纳入协同过滤方法中，与矩阵分解方法相比，缺乏可解释性<br>    5、探索了传统的矩阵分解方法如何利用社交关系，例如许多模型分解了user-item数据和user-user网络，使相连用户的潜在偏好更接近彼此，反映出朋友有着相似的喜好<br>    <strong>e.g. 如果用户喜欢某个项目只是因为他许多朋友也喜欢，这完全超出了他通常的喜好</strong></p>
 <h4 id="本文思路："><a href="#本文思路：" class="headerlink" title="本文思路："></a>本文思路：</h4><p>寻找不同偏好的朋友（均衡朋友的影响），辅助向用户推荐不符合他通常喜好的物品。根据社交网络调整朋友的总体喜好，不允许用户仍然享受这种异常项目（朋友喜欢导致超出用户的通常喜好）的可能性</p>
 <p>*注1：用户影响，即信任，是当两个用户是朋友有互动的前提下的，而通过偏好相似度计算得出的信任，很可能使非朋友的两个用户之间存在信任关系<br>*注2：假设用户可能喜欢某个项目，喜欢的程度是A；该用户的朋友也喜欢该项目，考虑到朋友的影响，再结合本身的喜好，导致得出该用户对该项目的喜欢程度是B；结果其实B是高于A的</p>
