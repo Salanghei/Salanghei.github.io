@@ -294,6 +294,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/" itemprop="url">吴恩达机器学习课程笔记（九）-机器学习系统设计</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T19:25:25+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>本节课内容：<br>1、解决机器学习问题的大致步骤<br>2、使用误差分析来确定优化学习算法的方向<br>3、介绍查准率、召回率和F值的概念、定义及其意义<br>4、机器学习问题在什么情况下可以通过大量数据来提升算法性能</p>
+<h3 id="确定执行的优先级"><a href="#确定执行的优先级" class="headerlink" title="确定执行的优先级"></a>确定执行的优先级</h3><p>以垃圾邮件分类为例描述解决问题的过程<br>为了应用监督学习，首先想到的是如何来表示邮件的特征向量x，通过特征向量x和分类标签y，我们就可以训练一个分类器，比如使用逻辑回归的方法，这里有一种选择邮件特征向量的方法<br>我们提出一个可能含有100个单词的列表，通过这些单词来区分垃圾邮件或非垃圾邮件，假如有一封邮件，我们可以将这封邮件的各个片段编码成如下图的一个特征向量，先将找出的100个单词按照字典序排序（也可以不排序），当邮件中包含某个单词时，该单词出现在特征向量中的位置上置1，否则置0，最后我们可以得到100维的特征向量</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/24/吴恩达机器学习课程笔记（九）-机器学习系统设计/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/09/18/吴恩达机器学习课程笔记（八）-应用机器学习的建议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1068,163 +1225,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhaoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZHAOYANGのBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/" itemprop="url">A Probabilistic Model for Using Social Networks in Personalized Item Recommendation</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T15:31:41+08:00">
-                2019-07-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/论文笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">论文笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h3><p>问题：传统的基于偏好的推荐没有考虑到用户的社交方面，一个值得信赖的朋友可能会指出我们一个与我们的典型偏好不符的有趣项目<br>目的：缩小基于偏好的推荐和基于社会关系的推荐之间的差异<br>方法：SPF（social Poisson factorization，社会关系矩阵泊松分解），一种将社交网络信息纳入传统分解方法的概率模型<br>效果：在6个真实数据集上的性能优于其他推荐方法</p>
-<h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><p>研究表明，用户看中朋友对内容的发现和讨论意见，在线访问社交网络可以强化这种现象<br>矩阵分解方法不能利用这些信息，他能推断出你可能喜欢的物品是因为这个物品符合你的偏好，但是不能推断出你朋友喜欢且你也可能感兴趣的物品<br>本文提出基于贝叶斯矩阵分解的SPF（social Poisson factorization）方法，可以在社交层面反映用户消费的商品<br>SPF假设有两个信号驱动用户点击：对项目的潜在偏好和朋友的潜在影响<br>SPF推测每个用户的偏好和影响，向用户推荐即符合用户偏好又被其朋友点击过的项目</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/07/29/A-Probabilistic-Model-for-Using-Social-Networks-in-Personalized-Item-Recommendation/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1277,7 +1277,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
