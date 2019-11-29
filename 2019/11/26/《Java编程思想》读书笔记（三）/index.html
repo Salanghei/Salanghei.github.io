@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 7.1 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
+<meta name="description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Java编程思想》读书笔记（三）">
 <meta property="og:url" content="http://salanghei.github.io/2019/11/26/《Java编程思想》读书笔记（三）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 7.1 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
+<meta property="og:description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-29T07:39:30.010Z">
+<meta property="og:updated_time" content="2019-11-29T07:44:14.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Java编程思想》读书笔记（三）">
-<meta name="twitter:description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 7.1 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
+<meta name="twitter:description" content="第七章 多形性面向对象的程序设计语言的基本特征：数据抽象、继承、多形性 上溯造型 取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方  从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小   如果能不顾衍生类，只让自己的代码和基础类打交道，省下来的工作量将是难以估计的">
 
 
 
@@ -395,7 +395,7 @@
 
       
         <h3 id="第七章-多形性"><a href="#第七章-多形性" class="headerlink" title="第七章 多形性"></a><strong>第七章</strong> <strong>多形性</strong></h3><p>面向对象的程序设计语言的基本特征：数据抽象、继承、多形性</p>
-<h4 id="7-1-上溯造型"><a href="#7-1-上溯造型" class="headerlink" title="7.1 上溯造型"></a><strong>7.1</strong> <strong>上溯造型</strong></h4><ol>
+<h4 id="上溯造型"><a href="#上溯造型" class="headerlink" title="上溯造型"></a><strong>上溯造型</strong></h4><ol>
 <li><p>取得一个对象句柄，并将其作为基础类型句柄使用的行为叫做“上溯造型”，因为继承树的画法是基础类位于最上方</p>
 </li>
 <li><p>从衍生类到基础类的上溯造型可能“缩小”接口，但不可能变得比基础类还要小 </p>
@@ -409,15 +409,15 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//: Music.java </span></span><br><span class="line"><span class="comment">// Inheritance &amp; upcasting</span></span><br><span class="line"><span class="keyword">package</span> c07;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Note</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Note</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123; value = val; &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Note middleC = <span class="keyword">new</span> Note(<span class="number">0</span>), </span><br><span class="line">        cSharp = <span class="keyword">new</span> Note(<span class="number">1</span>), cFlat = <span class="keyword">new</span> Note(<span class="number">2</span>);</span><br><span class="line">&#125; <span class="comment">// Etc.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Instrument</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(Note n)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Instrument.play()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Wind objects are instruments</span></span><br><span class="line"><span class="comment">// because they have the same interface:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Wind</span> <span class="keyword">extends</span> <span class="title">Instrument</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Redefine interface method:</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">(Note n)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Wind.play()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Music</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">tune</span><span class="params">(Instrument i)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        i.play(Note.middleC);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Wind flute = <span class="keyword">new</span> Wind();</span><br><span class="line">        tune(flute); <span class="comment">// Upcasting</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="comment">///:~</span></span><br></pre></td></tr></table></figure>
 
 <p>示例中，Music.tune()接收一个Instrument句柄，也接收从Instrument衍生出来的所有东西。如果让tune()简单地取得一个Wind句柄，将其作为自己的自变量使用，似乎会更加简单、直观得多，但如果这样做，每当增加一个衍生类时，就要再次为这个新衍生类构造一个tune()函数。</p>
-<h4 id="7-2-深入理解"><a href="#7-2-深入理解" class="headerlink" title="7.2 深入理解"></a><strong>7.2</strong> <strong>深入理解</strong></h4><ol>
+<h4 id="深入理解"><a href="#深入理解" class="headerlink" title="深入理解"></a><strong>深入理解</strong></h4><ol>
 <li>对于上述的示例，假设Instrument有不止一个衍生类，比如Wind、Brass、String等，编译器怎样才能知道Instrment指向的是一个Wind而不是Brass或String，这里涉及到“绑定”</li>
 <li>将一个方法调用同一个方法主体连接到一起就称为“绑定”（Binding）</li>
 <li>“早期绑定”：在程序运行以前执行绑定；“后期绑定”：绑定在运行期间进行，以对象的类型为基础，也叫做“动态绑定”或“运行期绑定”</li>
 <li>Java中绑定的所有方法都采用后期绑定技术，除非一个方法已被声明成final（防止其他人覆盖方法；“关闭”动态绑定）</li>
 </ol>
-<h4 id="7-3-覆盖（override）与过载（overload）"><a href="#7-3-覆盖（override）与过载（overload）" class="headerlink" title="7.3 覆盖（override）与过载（overload）"></a><strong>7.3</strong> 覆盖（override）与过载（overload）</h4><p>重写，也称为覆盖，是指派生类重写了基础类的方法；</p>
+<h4 id="覆盖（override）与过载（overload）"><a href="#覆盖（override）与过载（overload）" class="headerlink" title="覆盖（override）与过载（overload）"></a>覆盖（override）与过载（overload）</h4><p>重写，也称为覆盖，是指派生类重写了基础类的方法；</p>
 <p>重载，指一个类里面的方法名相同但是参数列表不同，编译器可以根据不同的参数来调用不同的方法实现重载</p>
-<h4 id="7-4-抽象类和抽象方法"><a href="#7-4-抽象类和抽象方法" class="headerlink" title="7.4 抽象类和抽象方法"></a><strong>7.4</strong> <strong>抽象类和抽象方法</strong></h4><ol>
+<h4 id="抽象类和抽象方法"><a href="#抽象类和抽象方法" class="headerlink" title="抽象类和抽象方法"></a><strong>抽象类和抽象方法</strong></h4><ol>
 <li>“抽象方法”属于一种不完整的方法，只含有一个声明，没有方法主体</li>
 <li>包含了抽象方法的一个类叫做“抽象类”。如果一个类包含了一个或多个抽象方法，类就必须指定成abstract</li>
 <li>抽象类的意图是为从它衍生出去的 所有类都创建一个通用接口</li>
@@ -425,7 +425,7 @@
 <li>即使不包括任何abstract      方法，亦可将一个类声明成“抽象类”。如果一个类没必要拥有任何抽象方法，而且我们想禁止那个类的所有实例</li>
 <li>使一个类抽象以后，并不会强迫我们将它的所有方法都同时变成抽象</li>
 </ol>
-<h4 id="7-5-接口"><a href="#7-5-接口" class="headerlink" title="7.5 接口"></a><strong>7.5</strong> <strong>接口</strong></h4><ol>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a><strong>接口</strong></h4><ol>
 <li><p>接口（interface），可将其想象为一个“纯”抽象类，它允许创建者规定一个类的基本形式：方法名、自变量列表以及返回类型，但不规定方法主体</p>
 </li>
 <li><p>为了生成与一个特定的接口（或一组接口）相符的类，要使用      implements（实现）关键字，除此之外，其他工作都与继承极为相似</p>
@@ -451,7 +451,7 @@
 <li><p>接口中定义的字段会自动具有 static      和final 属性。虽然是final的，但可初始化成非常数表达式；由于字段是static的，所以它们会在首次装载类之后、以及首次访问任何字段之前获得初始化。字段并不是接口的一部分，而是保存在那个接口的static存储区域中</p>
 </li>
 </ol>
-<h4 id="7-6-内部类"><a href="#7-6-内部类" class="headerlink" title="7.6 内部类"></a><strong>7.6</strong> <strong>内部类</strong></h4><ol>
+<h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a><strong>内部类</strong></h4><ol>
 <li><p>若想在除外部类非 static 方法内部之外的任何地方生成内部类的一个对象，必须将那个对象的类型设为“外部类名.内部类名”</p>
 </li>
 <li><p>由于内部类随后可完全进入不可见或不可用状态——对任何人都将如此，所以我们可以非常方便地隐藏实施细节。我们得到的全部回报就是一个基础类或者接口的句柄，而且甚至有可能不知道准确的类型</p>
@@ -517,7 +517,7 @@
 <p>WithInner.class</p>
 </li>
 </ol>
-<h4 id="7-7-构建器和多形性"><a href="#7-7-构建器和多形性" class="headerlink" title="7.7 构建器和多形性"></a>7.7 <strong>构建器和多形性</strong></h4><ol>
+<h4 id="构建器和多形性"><a href="#构建器和多形性" class="headerlink" title="构建器和多形性"></a><strong>构建器和多形性</strong></h4><ol>
 <li><p>基础类的构建器肯定在一个衍生类的构建器中调用，且逐渐向上链接，使每个类使用的构建器都能得到调用</p>
 </li>
 <li><p>对于一个复杂的对象，构建器的调用遵照如下顺序：</p>
@@ -530,7 +530,7 @@
 <li><p>设计构建器时的规则：用尽可能简单的方法使对象进入就绪状态；如果可能，避免调用任何方法。在构建器内唯一安全的调用是final方法和private方法，因为这些方法不会被覆盖</p>
 </li>
 </ol>
-<h4 id="7-8-通过继承进行设计"><a href="#7-8-通过继承进行设计" class="headerlink" title="7.8 通过继承进行设计"></a><strong>7.8</strong> <strong>通过继承进行设计</strong></h4><ol>
+<h4 id="通过继承进行设计"><a href="#通过继承进行设计" class="headerlink" title="通过继承进行设计"></a><strong>通过继承进行设计</strong></h4><ol>
 <li><p>用继承表达行为间的差异，用成员变量表达状态的变化</p>
 </li>
 <li><p>纯继承与扩展：只有在基础类或接口中已建立的方法，才可以在衍生类中被覆盖，即衍生类与基础类拥有同样的接口，使用时无需知道子类的任何额外信息</p>
@@ -748,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第七章-多形性"><span class="nav-number">1.</span> <span class="nav-text">第七章 多形性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-上溯造型"><span class="nav-number">1.1.</span> <span class="nav-text">7.1 上溯造型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-2-深入理解"><span class="nav-number">1.2.</span> <span class="nav-text">7.2 深入理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-3-覆盖（override）与过载（overload）"><span class="nav-number">1.3.</span> <span class="nav-text">7.3 覆盖（override）与过载（overload）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-4-抽象类和抽象方法"><span class="nav-number">1.4.</span> <span class="nav-text">7.4 抽象类和抽象方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-5-接口"><span class="nav-number">1.5.</span> <span class="nav-text">7.5 接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-6-内部类"><span class="nav-number">1.6.</span> <span class="nav-text">7.6 内部类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-7-构建器和多形性"><span class="nav-number">1.7.</span> <span class="nav-text">7.7 构建器和多形性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-8-通过继承进行设计"><span class="nav-number">1.8.</span> <span class="nav-text">7.8 通过继承进行设计</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第七章-多形性"><span class="nav-number">1.</span> <span class="nav-text">第七章 多形性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#上溯造型"><span class="nav-number">1.1.</span> <span class="nav-text">上溯造型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#深入理解"><span class="nav-number">1.2.</span> <span class="nav-text">深入理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖（override）与过载（overload）"><span class="nav-number">1.3.</span> <span class="nav-text">覆盖（override）与过载（overload）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象类和抽象方法"><span class="nav-number">1.4.</span> <span class="nav-text">抽象类和抽象方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口"><span class="nav-number">1.5.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内部类"><span class="nav-number">1.6.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建器和多形性"><span class="nav-number">1.7.</span> <span class="nav-text">构建器和多形性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过继承进行设计"><span class="nav-number">1.8.</span> <span class="nav-text">通过继承进行设计</span></a></li></ol></li></ol></div>
             
 
           </div>
