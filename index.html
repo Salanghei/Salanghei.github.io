@@ -294,6 +294,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/12/02/《Java编程思想》读书笔记（四）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/02/《Java编程思想》读书笔记（四）/" itemprop="url">《Java编程思想》读书笔记（四）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-02T18:28:39+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/02/《Java编程思想》读书笔记（四）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/02/《Java编程思想》读书笔记（四）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="第八章-对象的容纳"><a href="#第八章-对象的容纳" class="headerlink" title="第八章 对象的容纳"></a><strong>第八章</strong> <strong>对象的容纳</strong></h3><h4 id="8-1-数组"><a href="#8-1-数组" class="headerlink" title="8.1 数组"></a><strong>8.1</strong> 数组</h4><ol>
+<li>对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值</li>
+<li>对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型）</li>
+<li>数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中</li>
+</ol>
+<h4 id="8-2-集合"><a href="#8-2-集合" class="headerlink" title="8.2 集合"></a><strong>8.2</strong> <strong>集合</strong></h4><ol>
+<li><p>集合实际容纳的是类型为Object的一些对象句柄</p>
+<p>（1）将一个对象句柄置入集合时，由于类型信息会被抛弃，所以任何类型的对象都可以进入集合中</p>
+<p>（2）由于类型信息不复存在，所以集合能肯定的唯一事情就是自己容纳的是指向一个对象的句柄，正式使用集合中的对象前，必须对其进行造型，使其具有正确的类型</p>
+</li>
+<li><p>如果编译器期待的是一个String类型的对象，但实际没有给出String类型的对象，则会自动调用toString()方法，这个方法能生成满足要求的String对象</p>
+</li>
+<li><p>可以创建一个新类，只接受指定类型的对象</p>
+</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/12/02/《Java编程思想》读书笔记（四）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/11/26/《Java编程思想》读书笔记（三）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1092,175 +1262,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/10/28/《Java编程思想》读书笔记（一）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ZhaoYang">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/img/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ZHAOYANGのBlog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/28/《Java编程思想》读书笔记（一）/" itemprop="url">《Java编程思想》读书笔记（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-28T13:47:57+08:00">
-                2019-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/10/28/《Java编程思想》读书笔记（一）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/28/《Java编程思想》读书笔记（一）/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="第二章-一切都是对象"><a href="#第二章-一切都是对象" class="headerlink" title="第二章 一切都是对象"></a>第二章 一切都是对象</h3><h4 id="用句柄操纵对象"><a href="#用句柄操纵对象" class="headerlink" title="用句柄操纵对象"></a>用句柄操纵对象</h4><p>尽管将一切都“看作”对象，但操纵的标识符实际是指向一个对象的“句柄”（Handle）</p>
-<h4 id="所有对象都必须创建"><a href="#所有对象都必须创建" class="headerlink" title="所有对象都必须创建"></a>所有对象都必须创建</h4><ol>
-<li>字符串的特殊初始化方式：用加引号的文字初始化</li>
-<li>数据的保存位置：<ul>
-<li>寄存器（处理器内部）：最快的保存区域，根据需要由编译器分配</li>
-<li>堆栈（RAM中，随机访问存储器）：创建程序时，Java 编译器必须准确地知道堆栈内保存的所有数据的“长度”以及“存在时间”，有些 Java 数据要保存在堆栈里——特别是对象句柄，但Java 对象并不放到其中</li>
-<li>堆（RAM中）：保存Java对象，比堆栈更灵活，但在堆里分配存储空间时会花掉更长的时间</li>
-<li>静态存储（RAM中）：指“位于固定位置”，可用static 关键字指出一个对象的特定元素是静态的，但 Java 对象本身永远都不会置入静态存储空间</li>
-<li>常数存储：直接置于代码内部，有的常数需要严格地保护，所以可考虑将它们置入只读存储器（ROM）</li>
-<li>非RAM存储器：“流式对象”和“固定对象”（磁盘中）</li>
-</ul>
-</li>
-<li>主要类型：置于堆栈中，更高效的存取</li>
-<li>Java数组：安全性，保证被初始化，而且不可在它的范围之外访问<br>对象数组：实际创建的是一个句柄数组。而且每个句柄都会自动初始化成一个特殊值，并带有自己的<br>关键字：null（空）<br>主类型数组：将数组的内存划分成零
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/28/《Java编程思想》读书笔记（一）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ol></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1313,7 +1314,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
