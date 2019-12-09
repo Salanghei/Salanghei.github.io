@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Notes and Experiences">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZHAOYANGのBlog">
-<meta property="og:url" content="http://salanghei.github.io/archives/2018/02/index.html">
+<meta name="description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Java编程思想》读书笔记（五）">
+<meta property="og:url" content="http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="Notes and Experiences">
+<meta property="og:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-09T14:42:15.371Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZHAOYANGのBlog">
-<meta name="twitter:description" content="Notes and Experiences">
+<meta name="twitter:title" content="《Java编程思想》读书笔记（五）">
+<meta name="twitter:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://salanghei.github.io/archives/2018/02/">
+  <link rel="canonical" href="http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/">
 
 
 
 
 
-  <title>归档 | ZHAOYANGのBlog</title>
+  <title>《Java编程思想》读书笔记（五） | ZHAOYANGのBlog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,142 +281,238 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">《Java编程思想》读书笔记（五）</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T22:29:20+08:00">
+                2019-12-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 29 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/09/《Java编程思想》读书笔记（五）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/09/《Java编程思想》读书笔记（五）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-18T17:14:50+08:00" content="2018-02-18">
-          02-18
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（二）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(二)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-18T16:38:29+08:00" content="2018-02-18">
-          02-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/11/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（一）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-11T21:04:12+08:00" content="2018-02-11">
-          02-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
+      
+        <h3 id="第九章-违例差错控制"><a href="#第九章-违例差错控制" class="headerlink" title="第九章 违例差错控制"></a><strong>第九章</strong> <strong>违例差错控制</strong></h3><h4 id="基本违例"><a href="#基本违例" class="headerlink" title="基本违例"></a>基本违例</h4><ol>
+<li>产生一个违例时，发生的几件事情：<ul>
+<li>按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建 </li>
+<li>停止当前执行路径，从当前环境中释放违例对象的句柄 </li>
+<li>违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行</li>
+</ul>
+</li>
+<li>违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续</li>
+<li>在所有标准违例中，存在两个构建器：默认构建器，需一个字符串作为自变量的构建器</li>
+<li>throw通过“掷”出一个违例，从原来的作用域中退出，但会先返回一个值，再退出方法或作用域；返回于一个恰当的“违例控制器”，距离违例“掷 ”出的地方可能相当遥远——在调用堆栈中要低上许多级</li>
+</ol>
+<a id="more"></a>
+
+<h4 id="违例的捕获"><a href="#违例的捕获" class="headerlink" title="违例的捕获"></a>违例的捕获</h4><ol>
+<li><p>如果在一个方法执行过程中发生违例，又不想直接throw离开方法，就设计一个特殊的代码块，用它来catch违例，即try块</p>
+</li>
+<li><p>生成的违例必须在某个地方终止，即违例控制器或违例控制模块，针对每种想捕获的违例类型，都必须有相应的违例控制器</p>
+</li>
+<li><p>控制器必须“紧接”try块后面，若“掷”出一个违例，违例控制机制会搜寻自变量与违例类型相符的第一个控制器，进入到那个catch从句中，只有相符的catch从句才会得到执行（与switch语句不同，switch在每个case后都需一个break命令，防止误执行其他语句）</p>
+</li>
+<li><p>中断：只要“掷”出一个违例，就表明没有办法补救错误，无法返回违例发生的地方</p>
+<p>恢复：违例得到控制后仍想继续执行，此时违例更想一个方法调用</p>
+</li>
+<li><p>通过捕获基础类违例类型Exception可捕获所有类型的违例，在实际使用中最好将其置于控制器表的末尾，防止跟随其后的任何特殊违例控制器失效</p>
+</li>
+<li><p>在catch块中重新“掷”出违例，会导致违例进入更高一级环境的违例控制器中。如果只是简单的重新掷出当前违例，其有关的信息会与违例起源地对应，而不是与重新掷出它的地点对应；如果调用fillInStackTrace()后再掷出，会将当前堆栈信息填充到原来的违例对象中，即违例对象的相关信息会与重新掷出的地点对应</p>
+</li>
+<li><p>fillInStackTrace()会生成一个Throwable对象句柄（Throwable是Exception的一个基础类），所以Throwable类必须在违例规格中出现</p>
+</li>
+<li><p>从一个已捕获的违例中重新掷出一个不同的违例，与原违例起源地有关的信息会全部丢失，留下的是与新的throw有关的信息</p>
+</li>
+</ol>
+<h4 id="标准Java违例"><a href="#标准Java违例" class="headerlink" title="标准Java违例"></a>标准Java违例</h4><ol>
+<li>Throwable包含两种常规类型：<ul>
+<li>Error：编译期和系统错误，一般不必特意捕获他们</li>
+<li>Exception：从任何Java标准库的类方法中掷出的基本类型</li>
+</ul>
+</li>
+<li>RuntimeException用于指出编程中的错误，几乎永远不必专门捕获，它在默认情况下会自动得到处理，可选择掷出一部分RuntimeException</li>
+<li>假如一个RuntimeException获得到达main()的所有途径，同时不被捕获，那么当程序退出时，会为那个违例调用printStackTrace()</li>
+</ol>
+<h4 id="创建自己的违例"><a href="#创建自己的违例" class="headerlink" title="创建自己的违例"></a>创建自己的违例</h4><p>创建自己的违例，必须从一个现有的违例类型继承</p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/" title="《Java编程思想》读书笔记（五）">http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/02/《Java编程思想》读书笔记（四）/" rel="next" title="《Java编程思想》读书笔记（四）">
+                <i class="fa fa-chevron-left"></i> 《Java编程思想》读书笔记（四）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -422,6 +520,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -442,8 +547,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -521,6 +635,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第九章-违例差错控制"><span class="nav-number">1.</span> <span class="nav-text">第九章 违例差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本违例"><span class="nav-number">1.1.</span> <span class="nav-text">基本违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#违例的捕获"><span class="nav-number">1.2.</span> <span class="nav-text">违例的捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准Java违例"><span class="nav-number">1.3.</span> <span class="nav-text">标准Java违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建自己的违例"><span class="nav-number">1.4.</span> <span class="nav-text">创建自己的违例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -661,6 +791,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
