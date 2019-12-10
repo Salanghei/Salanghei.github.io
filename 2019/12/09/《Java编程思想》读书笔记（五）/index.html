@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
+<meta name="description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情：  按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建   停止当前执行路径，从当前环境中释放违例对象的句柄   违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行    违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续  在所有标准违例中，存在两个构建器">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Java编程思想》读书笔记（五）">
 <meta property="og:url" content="http://salanghei.github.io/2019/12/09/《Java编程思想》读书笔记（五）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
+<meta property="og:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情：  按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建   停止当前执行路径，从当前环境中释放违例对象的句柄   违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行    违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续  在所有标准违例中，存在两个构建器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-09T14:42:15.371Z">
+<meta property="og:updated_time" content="2019-12-10T09:10:50.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Java编程思想》读书笔记（五）">
-<meta name="twitter:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情： 按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建  停止当前执行路径，从当前环境中释放违例对象的句柄  违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行   违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续 在所有标准违例中，存在两个构建器：默认构建">
+<meta name="twitter:description" content="第九章 违例差错控制基本违例 产生一个违例时，发生的几件事情：  按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建   停止当前执行路径，从当前环境中释放违例对象的句柄   违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行    违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续  在所有标准违例中，存在两个构建器">
 
 
 
@@ -395,15 +395,22 @@
 
       
         <h3 id="第九章-违例差错控制"><a href="#第九章-违例差错控制" class="headerlink" title="第九章 违例差错控制"></a><strong>第九章</strong> <strong>违例差错控制</strong></h3><h4 id="基本违例"><a href="#基本违例" class="headerlink" title="基本违例"></a>基本违例</h4><ol>
-<li>产生一个违例时，发生的几件事情：<ul>
-<li>按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建 </li>
-<li>停止当前执行路径，从当前环境中释放违例对象的句柄 </li>
-<li>违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行</li>
+<li><p>产生一个违例时，发生的几件事情：</p>
+<ul>
+<li><p>按照与创建Java对象一样的方法创建违例对象：在内存“堆”中，使用new创建 </p>
+</li>
+<li><p>停止当前执行路径，从当前环境中释放违例对象的句柄 </p>
+</li>
+<li><p>违例控制器接管一切，并开始查找一个恰当的地方（违例控制器），用于继续程序的执行</p>
+</li>
 </ul>
 </li>
-<li>违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续</li>
-<li>在所有标准违例中，存在两个构建器：默认构建器，需一个字符串作为自变量的构建器</li>
-<li>throw通过“掷”出一个违例，从原来的作用域中退出，但会先返回一个值，再退出方法或作用域；返回于一个恰当的“违例控制器”，距离违例“掷 ”出的地方可能相当遥远——在调用堆栈中要低上许多级</li>
+<li><p>违例控制器的职责是从问题中恢复，使程序要么尝试另一条执行路径，要么简单地继续</p>
+</li>
+<li><p>在所有标准违例中，存在两个构建器：默认构建器，需一个字符串作为自变量的构建器</p>
+</li>
+<li><p>throw通过“掷”出一个违例，从原来的作用域中退出，但会先返回一个值，再退出方法或作用域；返回于一个恰当的“违例控制器”，距离违例“掷 ”出的地方可能相当遥远——在调用堆栈中要低上许多级</p>
+</li>
 </ol>
 <a id="more"></a>
 
@@ -436,6 +443,32 @@
 <li>假如一个RuntimeException获得到达main()的所有途径，同时不被捕获，那么当程序退出时，会为那个违例调用printStackTrace()</li>
 </ol>
 <h4 id="创建自己的违例"><a href="#创建自己的违例" class="headerlink" title="创建自己的违例"></a>创建自己的违例</h4><p>创建自己的违例，必须从一个现有的违例类型继承</p>
+<h4 id="违例的限制"><a href="#违例的限制" class="headerlink" title="违例的限制"></a>违例的限制</h4><p>原书示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception1</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception2</span> <span class="keyword">extends</span> <span class="title">Exception1</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception3</span> <span class="keyword">extends</span> <span class="title">Exception1</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception4</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception5</span> <span class="keyword">extends</span> <span class="title">Exception4</span> </span>&#123;&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exception6</span> <span class="keyword">extends</span> <span class="title">Exception2</span> </span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 基础类</span></span><br><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Inning</span> </span>&#123;    </span><br><span class="line">    Inning() <span class="keyword">throws</span> Exception1 &#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">event</span> <span class="params">()</span> <span class="keyword">throws</span> Exception1 </span>&#123;</span><br><span class="line">        <span class="comment">// 实际不抛出任何异常</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">atBat</span><span class="params">()</span> <span class="keyword">throws</span> Exception2, Exception3</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span> </span>&#123;&#125; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 接口</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Storm</span> </span>&#123;    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">event</span><span class="params">()</span> <span class="keyword">throws</span> Exception5</span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rainHard</span><span class="params">()</span> <span class="keyword">throws</span> Exception5</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 继承基础类并实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StormyInning</span> <span class="keyword">extends</span> <span class="title">Inning</span> <span class="keyword">implements</span> <span class="title">Storm</span> </span>&#123; </span><br><span class="line">    <span class="comment">// 可以为构造器添加新违例，但必须处理基础构造器的违例（这里Exception1是必须要处理的）</span></span><br><span class="line">    StormyInning() <span class="keyword">throws</span> Exception1, Exception5 &#123;&#125;</span><br><span class="line">    StormyInning(String s) <span class="keyword">throws</span> Exception1, Exception2 &#123;&#125;</span><br><span class="line">    <span class="comment">// 常规方法必须符合基类</span></span><br><span class="line">    <span class="comment">// 编译错误，因为基类没有违例</span></span><br><span class="line">    ！<span class="function"><span class="keyword">void</span> <span class="title">walk</span><span class="params">()</span> <span class="keyword">throws</span> Exception6 </span>&#123;&#125; </span><br><span class="line">    <span class="comment">// 接口不能向基类中的现有方法添加异常</span></span><br><span class="line">    <span class="comment">// 编译错误，基类中event()方法没有抛出Exception5违例（即使接口中有）</span></span><br><span class="line">    ！<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">event</span><span class="params">()</span> <span class="keyword">throws</span> Exception5 </span>&#123;&#125;</span><br><span class="line">    <span class="comment">// 如果该方法基类中没有，那么可以添加新违例：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rainHard</span><span class="params">()</span> <span class="keyword">throws</span> Exception5 </span>&#123;&#125;</span><br><span class="line">    <span class="comment">// 即使基类中抛出违例，现有类中也可以不抛出：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">event</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="comment">// 重写的方法会抛出继承的异常：</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">atBat</span><span class="params">()</span> <span class="keyword">throws</span> Exception6 </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 派生版本中不会触发Exception3</span></span><br><span class="line">            <span class="comment">// 明确操作一个StormyInning对象，编译器会强迫我们只捕获特定于那个类的违例</span></span><br><span class="line">            StormyInning si = <span class="keyword">new</span> StormyInning();</span><br><span class="line">            si.atBat();</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception6 e) &#123;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception5 e) &#123;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception1 e) &#123;&#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//上溯造型必须捕获方法的基类版本中的异常：</span></span><br><span class="line">            Inning i = <span class="keyword">new</span> StormyInning();</span><br><span class="line">            i.atBat();</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception3 e) &#123;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception2 e) &#123;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception5 e) &#123;</span><br><span class="line">        &#125; <span class="keyword">catch</span>(Exception1 e) &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="用finally清除"><a href="#用finally清除" class="headerlink" title="用finally清除"></a>用finally清除</h4><p>完整的违例控制：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line">  <span class="comment">// 要保卫的区域： </span></span><br><span class="line">  <span class="comment">// 可能“掷”出 A,B,或C 的危险情况 </span></span><br><span class="line">&#125; <span class="keyword">catch</span> (A a1) &#123; </span><br><span class="line">  <span class="comment">// 控制器 A </span></span><br><span class="line">&#125; <span class="keyword">catch</span> (B b1) &#123; </span><br><span class="line">  <span class="comment">// 控制器 B </span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123; </span><br><span class="line">  <span class="comment">// 每次都会发生的情况 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>无论是否掷出违例，finally从句都会执行</li>
+<li>即使违例不在当前的catch从句集里捕获，finally都会在违例控制机制转到更高级别搜索一个控制器之前得以执行</li>
+</ol>
+<h4 id="违例匹配"><a href="#违例匹配" class="headerlink" title="违例匹配"></a>违例匹配</h4><ol>
+<li><p>“掷”出一个违例后，违例控制系统会按当初编写的顺序搜索“最接近”的控制器，一旦找到相符的控制器，就认为违例已得到控制，不再进行更多的搜索工作</p>
+</li>
+<li><p>在违例和它的控制器之间，并不需要非常精确的匹配，一个衍生类对象可与基础类的一个控制器相配</p>
+</li>
+<li><p>违例准则：</p>
+<p>（1）解决问题并再次调用造成违例的方法</p>
+<p>（2）平息事态的发展，并在不重新尝试方法的前提下继续</p>
+<p>（3）计算另一些结果，而不是希望方法产生的结果</p>
+<p>（4）在当前环境中尽可能解决问题，以及将相同的违例重新“掷”出一个更高级的环境</p>
+<p>（5）在当前环境中尽可能解决问题，以及将不同的违例重新“掷”出一个更高级的环境</p>
+<p>（6）中止程序执行</p>
+<p>（7）简化编码。若违例方案使事情变得更加复杂，那就会令人非常烦恼，不如不用</p>
+<p>（8）使自己的库和程序变得更加安全。这既是一种“短期投资”（便于调试），也是一种“长期投资”（改 善应用程序的健壮性）</p>
+</li>
+</ol>
 
       
     </div>
@@ -645,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第九章-违例差错控制"><span class="nav-number">1.</span> <span class="nav-text">第九章 违例差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本违例"><span class="nav-number">1.1.</span> <span class="nav-text">基本违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#违例的捕获"><span class="nav-number">1.2.</span> <span class="nav-text">违例的捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准Java违例"><span class="nav-number">1.3.</span> <span class="nav-text">标准Java违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建自己的违例"><span class="nav-number">1.4.</span> <span class="nav-text">创建自己的违例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第九章-违例差错控制"><span class="nav-number">1.</span> <span class="nav-text">第九章 违例差错控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本违例"><span class="nav-number">1.1.</span> <span class="nav-text">基本违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#违例的捕获"><span class="nav-number">1.2.</span> <span class="nav-text">违例的捕获</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#标准Java违例"><span class="nav-number">1.3.</span> <span class="nav-text">标准Java违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建自己的违例"><span class="nav-number">1.4.</span> <span class="nav-text">创建自己的违例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#违例的限制"><span class="nav-number">1.5.</span> <span class="nav-text">违例的限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用finally清除"><span class="nav-number">1.6.</span> <span class="nav-text">用finally清除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#违例匹配"><span class="nav-number">1.7.</span> <span class="nav-text">违例匹配</span></a></li></ol></li></ol></div>
             
 
           </div>

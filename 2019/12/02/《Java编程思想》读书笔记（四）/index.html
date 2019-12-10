@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中  8.2 集合 集合实际容纳的是类型为Object的">
+<meta name="description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Java编程思想》读书笔记（四）">
 <meta property="og:url" content="http://salanghei.github.io/2019/12/02/《Java编程思想》读书笔记（四）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中  8.2 集合 集合实际容纳的是类型为Object的">
+<meta property="og:description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://salanghei.github.io/img/java/java4-1.png">
-<meta property="og:updated_time" content="2019-12-02T11:12:50.796Z">
+<meta property="og:updated_time" content="2019-12-10T09:09:02.981Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Java编程思想》读书笔记（四）">
-<meta name="twitter:description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中  8.2 集合 集合实际容纳的是类型为Object的">
+<meta name="twitter:description" content="第八章 对象的容纳8.1 数组 对象数组容纳的是句柄，而基本类型的数组容纳的是具体的数值 对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型） 数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中">
 <meta name="twitter:image" content="http://salanghei.github.io/img/java/java4-1.png">
 
 
@@ -401,6 +401,8 @@
 <li>对象数组创建之初会初始化为null，基本数据类型的数组会初始化为0（数值型）、null（字符型）或false（布尔型）</li>
 <li>数组可以容纳基本数据类型和对象句柄，但集合只能容纳对象句柄，利用Integer、Double等“封装类”可以将基本数据类型的值置入集合中</li>
 </ol>
+<a id="more"></a>
+
 <h4 id="8-2-集合"><a href="#8-2-集合" class="headerlink" title="8.2 集合"></a><strong>8.2</strong> <strong>集合</strong></h4><ol>
 <li><p>集合实际容纳的是类型为Object的一些对象句柄</p>
 <p>（1）将一个对象句柄置入集合时，由于类型信息会被抛弃，所以任何类型的对象都可以进入集合中</p>
@@ -411,8 +413,6 @@
 <li><p>可以创建一个新类，只接受指定类型的对象</p>
 </li>
 </ol>
-<a id="more"></a>
-
 <h4 id="8-3-枚举器（Iterator）"><a href="#8-3-枚举器（Iterator）" class="headerlink" title="8.3 枚举器（Iterator）"></a><strong>8.3</strong> 枚举器（Iterator）</h4><ol>
 <li><p>作用：遍历一系列对象，并选择序列中的每个对象，同时不让用户程序员知道或关注那个序列的基础结构</p>
 </li>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="ZHAOYANGのBlog">
 <meta property="og:description" content="模板引擎中的绑定事件失效目前普遍的解决方法：更新渲染 官方文档：跟表单元素一样，很多时候你的页面元素可能是动态生成的，这时element的相关功能将不会对其有效，你必须手工执行 element.init(type, filter) 方法即可。注意：2.1.6 开始，可以用 element.render(type, filter); 方法替代 123456var getTpl = demo.inne">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-07T10:30:04.006Z">
+<meta property="og:updated_time" content="2019-12-10T09:10:10.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Layui模板引擎绑定事件失效的问题">
 <meta name="twitter:description" content="模板引擎中的绑定事件失效目前普遍的解决方法：更新渲染 官方文档：跟表单元素一样，很多时候你的页面元素可能是动态生成的，这时element的相关功能将不会对其有效，你必须手工执行 element.init(type, filter) 方法即可。注意：2.1.6 开始，可以用 element.render(type, filter); 方法替代 123456var getTpl = demo.inne">
@@ -399,6 +399,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> getTpl = demo.innerHTML</span><br><span class="line">,view = <span class="built_in">document</span>.getElementById(<span class="string">'view'</span>);</span><br><span class="line">laytpl(getTpl).render(data, <span class="function"><span class="keyword">function</span>(<span class="params">html</span>)</span>&#123;</span><br><span class="line">  view.innerHTML = html;</span><br><span class="line">&#125;);</span><br><span class="line">element.render();</span><br></pre></td></tr></table></figure>
 
 <p><strong>结果：更新渲染后事件仍失效</strong></p>
+<a id="more"></a>
+
 <p>官方文档给出了element.render()两个参数的说明：</p>
 <ul>
 <li><p>第一个参数：type，为表单的type类型，可选。默认对全部类型的<strong>表单</strong>进行一次更新，type类型包括tab/nav/breadcrumb/progress/collapse</p>
@@ -407,8 +409,6 @@
 </li>
 </ul>
 <p>文档中明确说明，默认是对全部类型的<strong>表单</strong>进行更新。当要更新渲染的元素不是表单时，失效（这里不知道是不是文档的错误，也可能是我的理解错误）</p>
-<a id="more"></a>
-
 <p><strong>亲测可行的解决方法：事件委托</strong></p>
 <p>由于模板引擎（laytpl）是动态渲染的，通过选择器直接绑定的事件会失效，要采用事件委托的方式</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#dom"</span>).on(<span class="string">"click"</span>, <span class="string">".click-btn"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
