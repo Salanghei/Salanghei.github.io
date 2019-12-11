@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="Notes and Experiences">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZHAOYANGのBlog">
-<meta property="og:url" content="http://salanghei.github.io/archives/2018/index.html">
+<meta name="description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Java编程思想》读书笔记（六）">
+<meta property="og:url" content="http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="Notes and Experiences">
+<meta property="og:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-11T11:11:49.449Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZHAOYANGのBlog">
-<meta name="twitter:description" content="Notes and Experiences">
+<meta name="twitter:title" content="《Java编程思想》读书笔记（六）">
+<meta name="twitter:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://salanghei.github.io/archives/2018/">
+  <link rel="canonical" href="http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/">
 
 
 
 
 
-  <title>归档 | ZHAOYANGのBlog</title>
+  <title>《Java编程思想》读书笔记（六） | ZHAOYANGのBlog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -279,212 +281,272 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZhaoYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/img/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZHAOYANGのBlog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">《Java编程思想》读书笔记（六）</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T18:54:58+08:00">
+                2019-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 30 篇日志。 继续努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/12/11/《Java编程思想》读书笔记（六）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/12/11/《Java编程思想》读书笔记（六）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/26/Soul产品分析报告/" itemprop="url">
-              
-                <span itemprop="name">Soul产品分析报告</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-07-26T17:11:03+08:00" content="2018-07-26">
-          07-26
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/08/简单的HTTP代理服务器的实现（基本功能-拓展功能）/" itemprop="url">
-              
-                <span itemprop="name">简单的HTTP代理服务器的实现</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-08T21:22:38+08:00" content="2018-05-08">
-          05-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（三）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(三)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-18T17:14:50+08:00" content="2018-02-18">
-          02-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h3 id="第十章-Java-IO系统"><a href="#第十章-Java-IO系统" class="headerlink" title="第十章 Java IO系统"></a>第十章 Java IO系统</h3><p>前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流</p>
+<h4 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h4><p>与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承</p>
+<h4 id="IO流的典型应用"><a href="#IO流的典型应用" class="headerlink" title="IO流的典型应用"></a>IO流的典型应用</h4><ol>
+<li>缓冲的输入文件：<ul>
+<li>打开一个文件以便输入使用FileInputStream，参数为String或File对象；</li>
+<li>为提高速度，对文件进行缓冲处理，使用BufferedInputStream；</li>
+<li>为以格式化的形式输入数据，将结果句柄赋给DataInputStream，这是进行读取操作的接口</li>
+</ul>
+</li>
+<li>从内存输入：<ul>
+<li>StringBufferInputStream，参数为String，而不是StringBuffer；</li>
+<li>read()依次读取每个字符，返回为int</li>
+</ul>
+</li>
+<li>格式化内存输入：<ul>
+<li>将StringBufferInputStream封装到DataInputStream中；</li>
+<li>readByte()方法每次读取一个字符，且都是有效的，不可用返回值来侦测何时结束输入，可用avilable()方法判断有多少字符可用，或用捕获违例控制数据流（大材小用）</li>
+</ul>
+</li>
+<li>行的编号与文件输出：<ul>
+<li>LineNumberInputStream跟踪输入行的编号，在其基础上创建一个DataInputStream，以便读入数据；</li>
+<li>格式化输出首先创建FileOutputStream，将其与一个文件链接，考虑效率问题，将其传入BufferedOutputStream，为进行格式化将其再转为PrintStream</li>
+</ul>
+</li>
+<li>如果不为自己的所有输出文件调用close()，就可能发生缓冲区不会得到刷新，造成文件不完整</li>
+<li>保存与恢复数据：为了输出数据，以便由另一个数据流恢复（读取），需使用DataOutputStream写入数据，使用DataInputStream恢复数据</li>
+<li>读写随即访问文件：<ul>
+<li>RandomAccessFile与IO层次结构的剩余部分几乎是完全隔离的，不可将其与InputStream及OutputStream子类的任何部分关联起来；</li>
+<li>使用RandomAccessFile的时候，类似于组合使用DataInputStream和DataOutputStream，还可以通过seek()再文件中移动，对某个值作出修改</li>
+</ul>
+</li>
+<li>从标准输入中读取数据：System.out和System.err为PrintStream对象，System.in为原始的InputStream，也就是说可以直接使用System.out和System.err，但必须事先封装System.in，否则不能从中读取数据，将其封装到一个DataInputStream中</li>
+<li>管道化数据流用于线程间的通信</li>
+</ol>
+<a id="more"></a>
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/18/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（二）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(二)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-18T16:38:29+08:00" content="2018-02-18">
-          02-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<h4 id="Java1-1的IO流"><a href="#Java1-1的IO流" class="headerlink" title="Java1.1的IO流"></a>Java1.1的IO流</h4><ol>
+<li>Java1.1中添加了Writter和Reader层次；若想使用readLine()，应改用BufferedReader，而不是DataInputStream，但除了这种情况外，DataInputStream仍是Java1.1 IO库的首选成员</li>
+<li>Java 1.1在System 类中添加了特殊的方法，允许我们重新定向标准输入、输出以及错误 IO流：setIn(InputStream)，setOut(PrintStream)，setErr(PrintStream)；Java1.1不推荐使用PrintStream构建器</li>
+</ol>
+<h4 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a><strong>压缩</strong></h4><ol>
+<li>Java1.1添加一个支持对压缩格式的数据流的读写，属于InputStream和OutputStream层次结构的一部分，而不是从新的Reader和Writer中衍生出来的（可用InputStreamReader和OuputStreamWriter在不同的类型间方便地进行转换）</li>
+<li>压缩类的用法：将输出流封装到一个GZIPOutputStream 或者ZipOutputStream 内，将输入流封装到GZIPInputStream 或者ZipInputStream 内</li>
+<li>多文件压缩保存：<ul>
+<li>对于要加入压缩档的每一个文件，都必须调用putNextEntry()，并将其传递给一个 ZipEntry 对象；</li>
+<li>CheckedInputStream 和CheckedOutputStream同时提供了对Adler32 和CRC32 校验和 的支持，但是ZipEntry 只支持 CRC的接口；</li>
+<li>为解压文件，ZipInputStream提供了一个 getNextEntry()方法，能在有的前提下返回下一个ZipEntry；</li>
+<li>也可以使用ZipFile读取文件，使用entries()方法获取ZipEntry的一个Enumeration（枚举）；</li>
+<li>使用setCommit()可以在写一个文件时设置注释内容，但却没有办法取出ZipInputStream内的注释；</li>
+<li>使用 GZIP 或Zip库可以压缩任何东西，包括要通过网络连接发送的数据</li>
+</ul>
+</li>
+<li>JAR文件是跨平台的，一个JAR文件由一系列采用Zip压缩格式的文件构成，同时还有一张“详情单”，对所有这些文件进行了描述，可以自己创建“详情单”，否则jar程序会自动创建</li>
+<li>在命令行调用jar程序：<strong>jar [选项] 说明 [详情单] 输入文件</strong></li>
+</ol>
+<h4 id="对象序列化"><a href="#对象序列化" class="headerlink" title="对象序列化"></a>对象序列化</h4><ol>
+<li>对象序列化：面向那些实现了Serializable接口的对象，可将它们转换成一系列字节，并可在以后完全恢复回原来的样子，利用它可实现“有限持久化”</li>
+<li>“持久化”意味着对象的生存时间并不取决于程序是否正在执行，它存在或生存于程序的每一次调用之间</li>
+<li>序列化对象：<ul>
+<li>创建某些OutputStream对象，然后将其封装到ObjectOutputStream 对象内，调用writeObject()即可完成对象的序列化，并将其发送给OutputStream；</li>
+<li>相反的过程是是将一个InputStream封装到ObjectInputStream内，然后调用 readObject()；</li>
+<li>最后得到的是指向上溯造型Object的句柄，必须下溯造型</li>
+</ul>
+</li>
+<li>“序列网”：对象序列化能追踪对象内包含的所有句柄并保存那些对象，接着又能对每个对象内包含的句柄进行追踪，以此类推</li>
+<li>在对一个Serializable（可序列化）对象进行重新装配的过程中，不会调用任何构建器（甚至默认构建器），整个对象都是通过从InputStream中取得数据恢复的</li>
+<li>对象的序列化并不属于新的 Reader和Writer层次结构的一部分，而是沿用老式的InputStream 和OutputStream 结构</li>
+<li>恢复了一个序列化的对象后，如果想对其做更多的事情，必须保证JVM能在本地类路径或者因特网的其他什么地方找到相关的.class文件</li>
+<li>通过实现Externalizable接口，用它代替Serializable接口来控制序列化的具体过程；Externalizable接口扩展了 Serializable，并增添了两个方法：writeExternal()和readExternal()</li>
+<li>恢复一个Serializable时，不调用构建器，但恢复Externalizable对象时，<strong>所有</strong>普通的默认构建器行为都会发生，包括字段定义时的初始化，而且会调用readExternal()</li>
+<li>不可仅在writeExternal()中写入重要数据，还必须在readExternal()中恢复这些数据</li>
+<li>Serializable会将所有信息自动序列化，包括private的部分，而Externalizable不会自动序列化任何东西，需自定义要序列化的部分；在Serializable中可使用transient逐个关闭序列化，transient关键字只能伴随Serializable使用</li>
+<li>Externalizable的替代方法：实现Serializable接口，并添加writeObject()和readObject()方法（private方法），一旦对象被序列化或重新装配，会分别调用这两个方法，也就是说，只要提供了这两个方法，就会优先调用它们，而不考虑默认的序列化机制</li>
+<li>只要将所有东西都序列化到单独一个数据流里，就能恢复获得与以前写入时完全一样的对象网</li>
+<li>static值的序列化需自定义，Serializable不会将static值自动序列化</li>
+</ol>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/11/远程服务器-ubuntu16-04-caffe-matlab-r2014b-python-cpu-only配置（一）/" itemprop="url">
-              
-                <span itemprop="name">远程服务器 ubuntu16.04 caffe+matlab r2014b+python+cpu配置(一)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-02-11T21:04:12+08:00" content="2018-02-11">
-          02-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    ZhaoYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/" title="《Java编程思想》读书笔记（六）">http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/09/《Java编程思想》读书笔记（五）/" rel="next" title="《Java编程思想》读书笔记（五）">
+                <i class="fa fa-chevron-left"></i> 《Java编程思想》读书笔记（五）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -492,6 +554,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -512,8 +581,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,6 +669,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第十章-Java-IO系统"><span class="nav-number">1.</span> <span class="nav-text">第十章 Java IO系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入和输出"><span class="nav-number">1.1.</span> <span class="nav-text">输入和输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IO流的典型应用"><span class="nav-number">1.2.</span> <span class="nav-text">IO流的典型应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java1-1的IO流"><span class="nav-number">1.3.</span> <span class="nav-text">Java1.1的IO流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#压缩"><span class="nav-number">1.4.</span> <span class="nav-text">压缩</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象序列化"><span class="nav-number">1.5.</span> <span class="nav-text">对象序列化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -731,6 +825,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
