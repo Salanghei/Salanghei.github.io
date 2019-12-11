@@ -398,38 +398,6 @@
         
           <h3 id="第十章-Java-IO系统"><a href="#第十章-Java-IO系统" class="headerlink" title="第十章 Java IO系统"></a>第十章 Java IO系统</h3><p>前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流</p>
 <h4 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h4><p>与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承</p>
-<h4 id="IO流的典型应用"><a href="#IO流的典型应用" class="headerlink" title="IO流的典型应用"></a>IO流的典型应用</h4><ol>
-<li>缓冲的输入文件：<ul>
-<li>打开一个文件以便输入使用FileInputStream，参数为String或File对象；</li>
-<li>为提高速度，对文件进行缓冲处理，使用BufferedInputStream；</li>
-<li>为以格式化的形式输入数据，将结果句柄赋给DataInputStream，这是进行读取操作的接口</li>
-</ul>
-</li>
-<li>从内存输入：<ul>
-<li>StringBufferInputStream，参数为String，而不是StringBuffer；</li>
-<li>read()依次读取每个字符，返回为int</li>
-</ul>
-</li>
-<li>格式化内存输入：<ul>
-<li>将StringBufferInputStream封装到DataInputStream中；</li>
-<li>readByte()方法每次读取一个字符，且都是有效的，不可用返回值来侦测何时结束输入，可用avilable()方法判断有多少字符可用，或用捕获违例控制数据流（大材小用）</li>
-</ul>
-</li>
-<li>行的编号与文件输出：<ul>
-<li>LineNumberInputStream跟踪输入行的编号，在其基础上创建一个DataInputStream，以便读入数据；</li>
-<li>格式化输出首先创建FileOutputStream，将其与一个文件链接，考虑效率问题，将其传入BufferedOutputStream，为进行格式化将其再转为PrintStream</li>
-</ul>
-</li>
-<li>如果不为自己的所有输出文件调用close()，就可能发生缓冲区不会得到刷新，造成文件不完整</li>
-<li>保存与恢复数据：为了输出数据，以便由另一个数据流恢复（读取），需使用DataOutputStream写入数据，使用DataInputStream恢复数据</li>
-<li>读写随即访问文件：<ul>
-<li>RandomAccessFile与IO层次结构的剩余部分几乎是完全隔离的，不可将其与InputStream及OutputStream子类的任何部分关联起来；</li>
-<li>使用RandomAccessFile的时候，类似于组合使用DataInputStream和DataOutputStream，还可以通过seek()再文件中移动，对某个值作出修改</li>
-</ul>
-</li>
-<li>从标准输入中读取数据：System.out和System.err为PrintStream对象，System.in为原始的InputStream，也就是说可以直接使用System.out和System.err，但必须事先封装System.in，否则不能从中读取数据，将其封装到一个DataInputStream中</li>
-<li>管道化数据流用于线程间的通信</li>
-</ol>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/12/11/《Java编程思想》读书笔记（六）/#more" rel="contents">

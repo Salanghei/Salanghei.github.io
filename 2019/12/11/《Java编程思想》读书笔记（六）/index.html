@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
+<meta name="description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Java编程思想》读书笔记（六）">
 <meta property="og:url" content="http://salanghei.github.io/2019/12/11/《Java编程思想》读书笔记（六）/index.html">
 <meta property="og:site_name" content="ZHAOYANGのBlog">
-<meta property="og:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
+<meta property="og:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T11:11:49.449Z">
+<meta property="og:updated_time" content="2019-12-11T12:06:28.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Java编程思想》读书笔记（六）">
-<meta name="twitter:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承 IO流的典型应用 缓冲的输入文件： 打开一个文件以便输入使用FileInputStream，参数为String或File对象； 为提高速度，对文件进行缓冲处理，使用BufferedInputSt">
+<meta name="twitter:description" content="第十章 Java IO系统前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流 输入和输出与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承">
 
 
 
@@ -396,6 +396,8 @@
       
         <h3 id="第十章-Java-IO系统"><a href="#第十章-Java-IO系统" class="headerlink" title="第十章 Java IO系统"></a>第十章 Java IO系统</h3><p>前6小节介绍Java1.0的IO流，之后介绍Java1.1的IO流</p>
 <h4 id="输入和输出"><a href="#输入和输出" class="headerlink" title="输入和输出"></a>输入和输出</h4><p>与输入有关的所有类都从InputStream继承，与输出有关的所有类都从OutputStream继承</p>
+<a id="more"></a>
+
 <h4 id="IO流的典型应用"><a href="#IO流的典型应用" class="headerlink" title="IO流的典型应用"></a>IO流的典型应用</h4><ol>
 <li>缓冲的输入文件：<ul>
 <li>打开一个文件以便输入使用FileInputStream，参数为String或File对象；</li>
@@ -428,8 +430,6 @@
 <li>从标准输入中读取数据：System.out和System.err为PrintStream对象，System.in为原始的InputStream，也就是说可以直接使用System.out和System.err，但必须事先封装System.in，否则不能从中读取数据，将其封装到一个DataInputStream中</li>
 <li>管道化数据流用于线程间的通信</li>
 </ol>
-<a id="more"></a>
-
 <h4 id="Java1-1的IO流"><a href="#Java1-1的IO流" class="headerlink" title="Java1.1的IO流"></a>Java1.1的IO流</h4><ol>
 <li>Java1.1中添加了Writter和Reader层次；若想使用readLine()，应改用BufferedReader，而不是DataInputStream，但除了这种情况外，DataInputStream仍是Java1.1 IO库的首选成员</li>
 <li>Java 1.1在System 类中添加了特殊的方法，允许我们重新定向标准输入、输出以及错误 IO流：setIn(InputStream)，setOut(PrintStream)，setErr(PrintStream)；Java1.1不推荐使用PrintStream构建器</li>
